@@ -1,8 +1,32 @@
-## Classes So Far
+Menus
+-
 
-----
-Please use this going forward to log our class fields
-----
+These are the menu we are thinking of so far for the Roles
+
+Student
+
+    MyProfile
+    MyRequest
+    MyProfress
+    Messages
+    FYP Topics
+    Supervisors
+    Login/Logout
+
+Faculty
+
+    MyProfile
+    Students
+    Topic Requests
+    Messages
+    Login/Logout
+
+Admin
+
+    Users
+    UserManagement
+    Login/Logout
+
 ### Roles
 
     Student
