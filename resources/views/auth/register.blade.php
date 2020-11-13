@@ -48,10 +48,17 @@
                                     </div>
                                     <input class="form-control{{ $errors->has('email') ? ' is-invalid' : '' }}" placeholder="{{ __('Email') }}" type="email" name="email" value="{{ old('email') }}" required>
                                 </div>
-                                @if ($errors->has('email'))
+
+                                @if ($errors->has('email')){
                                     <span class="invalid-feedback" style="display: block;" role="alert">
                                         <strong>{{ $errors->first('email') }}</strong>
                                     </span>
+                                }
+                                @elseif ($errors->has('wrong_email')){
+                                    <span class="invalid-feedback" style="display: block;" role="alert">
+                                        <strong>{{ $errors->first('wrong_email') }}</strong>
+                                    </span>
+                                }
                                 @endif
                             </div>
                             <div class="form-group{{ $errors->has('password') ? ' has-danger' : '' }}">
