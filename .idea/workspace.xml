@@ -2,7 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e9da3909-1066-4903-be41-b063a719072d" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/config/app.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/app.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/presets/argon/screens/Dashboard.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/presets/argon/screens/Login.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/presets/argon/screens/Profile.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/presets/argon/screens/Users.png" beforeDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -134,7 +137,13 @@
             <path>
               <item name="fyp_topics" type="b2602c69:ProjectViewProjectNode" />
               <item name="fyp_topics" type="462c0819:PsiDirectoryNode" />
-              <item name="config" type="462c0819:PsiDirectoryNode" />
+              <item name="presets" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="fyp_topics" type="b2602c69:ProjectViewProjectNode" />
+              <item name="fyp_topics" type="462c0819:PsiDirectoryNode" />
+              <item name="presets" type="462c0819:PsiDirectoryNode" />
+              <item name="argon" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="fyp_topics" type="b2602c69:ProjectViewProjectNode" />
@@ -192,16 +201,15 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1605215169323</updated>
-      <workItem from="1605215176952" duration="7412000" />
+      <workItem from="1605215176952" duration="7752000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="7412000" />
+    <option name="totallyTimeSpent" value="7752000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1440" height="829" extended-state="0" />
-    <editor active="true" />
     <layout>
       <window_info id="Favorites" side_tool="true" />
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.24964234" />
