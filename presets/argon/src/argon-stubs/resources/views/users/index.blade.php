@@ -40,24 +40,6 @@
     <meta property="og:image" content="https://s3.amazonaws.com/creativetim_bucket/products/96/original/opt_ad_thumbnail.jpg" />
     <meta property="og:description" content="Start your development with a Dashboard for Bootstrap 4." />
     <meta property="og:site_name" content="Creative Tim" />
-    <!-- Google Tag Manager -->
-    <script>
-        (function(w, d, s, l, i) {
-            w[l] = w[l] || [];
-            w[l].push({
-                'gtm.start': new Date().getTime(),
-                event: 'gtm.js'
-            });
-            var f = d.getElementsByTagName(s)[0],
-                j = d.createElement(s),
-                dl = l != 'dataLayer' ? '&l=' + l : '';
-            j.async = true;
-            j.src =
-                'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
-            f.parentNode.insertBefore(j, f);
-        })(window, document, 'script', 'dataLayer', 'GTM-NKDMSK6');
-    </script>
-    <!-- End Google Tag Manager -->
 </head>
 <body class="clickup-chrome-ext_installed">
     <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">

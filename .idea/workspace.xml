@@ -2,14 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e9da3909-1066-4903-be41-b063a719072d" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/presets/argon/src/argon-stubs/resources/views/layouts/navbars/sidebar.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/presets/argon/src/argon-stubs/resources/views/layouts/navbars/sidebar.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/presets/argon/src/argon-stubs/resources/views/pages/icons.blade.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/presets/argon/src/argon-stubs/resources/views/users/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/presets/argon/src/argon-stubs/resources/views/users/index.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/presets/argon/src/argon-stubs/resources/views/users/partials/header.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/presets/argon/src/argon-stubs/resources/views/users/partials/header.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/layouts/navbars/sidebar.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/navbars/sidebar.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/users/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/users/index.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/users/partials/header.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/users/partials/header.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/presets/argon/src/argon-stubs/resources/views/pages/maps.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/presets/argon/src/argon-stubs/resources/views/pages/maps.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/presets/argon/src/argon-stubs/resources/views/pages/tables.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/presets/argon/src/argon-stubs/resources/views/pages/tables.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/pages/maps.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/pages/maps.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/pages/tables.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/pages/tables.blade.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -25,22 +21,6 @@
             <state relative-caret-position="243">
               <caret line="94" column="67" selection-start-line="94" selection-start-column="67" selection-end-line="94" selection-end-column="67" />
             </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/presets/argon/src/argon-stubs/resources/views/layouts/navbars/navbar.blade.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="90">
-              <caret line="6" column="9" selection-start-line="6" selection-start-column="9" selection-end-line="6" selection-end-column="9" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/presets/argon/src/argon-stubs/resources/views/layouts/headers/cards.blade.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-28" />
           </provider>
         </entry>
       </file>
@@ -63,10 +43,10 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/presets/argon/src/argon-stubs/resources/views/users/index.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2997">
+            <state relative-caret-position="3026">
               <caret line="255" column="29" selection-start-line="255" selection-start-column="29" selection-end-line="255" selection-end-column="29" />
             </state>
           </provider>
@@ -81,11 +61,29 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/routes/web.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="352">
               <caret line="34" selection-start-line="34" selection-end-line="34" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/presets/argon/src/argon-stubs/resources/views/pages/tables.blade.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="99">
+              <caret line="1023" column="12" selection-start-line="1023" selection-start-column="12" selection-end-line="1023" selection-end-column="12" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/presets/argon/src/argon-stubs/resources/views/pages/maps.blade.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="138">
+              <caret line="139" column="59" selection-start-line="139" selection-start-column="59" selection-end-line="139" selection-end-column="59" />
             </state>
           </provider>
         </entry>
@@ -105,7 +103,6 @@
     <findStrings>
       <find>getting</find>
       <find>tables</find>
-      <find>upgrade</find>
       <find>upgra</find>
       <find>icon</find>
       <find>laravel</find>
@@ -115,8 +112,11 @@
       <find>autu</find>
       <find>This is a PRO feature!</find>
       <find>Full Stack Bundles</find>
-      <find>AUTUMN SALE</find>
       <find>View Offers</find>
+      <find>footer</find>
+      <find>icons</find>
+      <find>upgrade</find>
+      <find>AUTUMN SALE</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -132,13 +132,13 @@
         <option value="$PROJECT_DIR$/.env" />
         <option value="$PROJECT_DIR$/presets/argon/src/argon-stubs/resources/views/layouts/footers/nav.blade.php" />
         <option value="$PROJECT_DIR$/presets/argon/src/argon-stubs/resources/views/pages/upgrade.blade.php" />
-        <option value="$PROJECT_DIR$/presets/argon/src/argon-stubs/resources/views/pages/tables.blade.php" />
-        <option value="$PROJECT_DIR$/presets/argon/src/argon-stubs/resources/views/pages/maps.blade.php" />
         <option value="$PROJECT_DIR$/presets/argon/src/argon-stubs/resources/views/pages/icons.blade.php" />
         <option value="$PROJECT_DIR$/presets/argon/src/argon-stubs/resources/views/layouts/navbars/sidebar.blade.php" />
         <option value="$PROJECT_DIR$/presets/argon/src/argon-stubs/resources/views/users/index.blade.php" />
         <option value="$PROJECT_DIR$/presets/argon/src/argon-stubs/resources/views/layouts/headers/guest.blade.php" />
         <option value="$PROJECT_DIR$/presets/argon/src/argon-stubs/resources/views/users/partials/header.blade.php" />
+        <option value="$PROJECT_DIR$/presets/argon/src/argon-stubs/resources/views/pages/tables.blade.php" />
+        <option value="$PROJECT_DIR$/presets/argon/src/argon-stubs/resources/views/pages/maps.blade.php" />
         <option value="$PROJECT_DIR$/routes/web.php" />
       </list>
     </option>
@@ -174,6 +174,85 @@
               <item name="fyp_topics" type="b2602c69:ProjectViewProjectNode" />
               <item name="fyp_topics" type="462c0819:PsiDirectoryNode" />
               <item name="app" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="fyp_topics" type="b2602c69:ProjectViewProjectNode" />
+              <item name="fyp_topics" type="462c0819:PsiDirectoryNode" />
+              <item name="presets" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="fyp_topics" type="b2602c69:ProjectViewProjectNode" />
+              <item name="fyp_topics" type="462c0819:PsiDirectoryNode" />
+              <item name="presets" type="462c0819:PsiDirectoryNode" />
+              <item name="argon" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="fyp_topics" type="b2602c69:ProjectViewProjectNode" />
+              <item name="fyp_topics" type="462c0819:PsiDirectoryNode" />
+              <item name="presets" type="462c0819:PsiDirectoryNode" />
+              <item name="argon" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="fyp_topics" type="b2602c69:ProjectViewProjectNode" />
+              <item name="fyp_topics" type="462c0819:PsiDirectoryNode" />
+              <item name="presets" type="462c0819:PsiDirectoryNode" />
+              <item name="argon" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="argon-stubs" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="fyp_topics" type="b2602c69:ProjectViewProjectNode" />
+              <item name="fyp_topics" type="462c0819:PsiDirectoryNode" />
+              <item name="presets" type="462c0819:PsiDirectoryNode" />
+              <item name="argon" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="argon-stubs" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="fyp_topics" type="b2602c69:ProjectViewProjectNode" />
+              <item name="fyp_topics" type="462c0819:PsiDirectoryNode" />
+              <item name="presets" type="462c0819:PsiDirectoryNode" />
+              <item name="argon" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="argon-stubs" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+              <item name="views" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="fyp_topics" type="b2602c69:ProjectViewProjectNode" />
+              <item name="fyp_topics" type="462c0819:PsiDirectoryNode" />
+              <item name="presets" type="462c0819:PsiDirectoryNode" />
+              <item name="argon" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="argon-stubs" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+              <item name="views" type="462c0819:PsiDirectoryNode" />
+              <item name="layouts" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="fyp_topics" type="b2602c69:ProjectViewProjectNode" />
+              <item name="fyp_topics" type="462c0819:PsiDirectoryNode" />
+              <item name="presets" type="462c0819:PsiDirectoryNode" />
+              <item name="argon" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="argon-stubs" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+              <item name="views" type="462c0819:PsiDirectoryNode" />
+              <item name="layouts" type="462c0819:PsiDirectoryNode" />
+              <item name="navbars" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="fyp_topics" type="b2602c69:ProjectViewProjectNode" />
+              <item name="fyp_topics" type="462c0819:PsiDirectoryNode" />
+              <item name="presets" type="462c0819:PsiDirectoryNode" />
+              <item name="argon" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="argon-stubs" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+              <item name="views" type="462c0819:PsiDirectoryNode" />
+              <item name="users" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="fyp_topics" type="b2602c69:ProjectViewProjectNode" />
@@ -231,12 +310,12 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1605215169323</updated>
-      <workItem from="1605215176952" duration="9982000" />
+      <workItem from="1605215176952" duration="10501000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="9982000" />
+    <option name="totallyTimeSpent" value="10501000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1440" height="829" extended-state="0" />
@@ -366,13 +445,6 @@
         <state relative-caret-position="-98" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/presets/argon/src/argon-stubs/resources/views/pages/maps.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="69">
-          <caret line="135" column="13" selection-start-line="135" selection-start-column="13" selection-end-line="135" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/presets/argon/src/argon-stubs/resources/views/pages/icons.blade.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="15">
@@ -384,13 +456,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="138">
           <caret line="49" column="38" selection-start-line="49" selection-start-column="38" selection-end-line="49" selection-end-column="38" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/presets/argon/src/argon-stubs/resources/views/pages/tables.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="444">
-          <caret line="93" column="13" selection-start-line="93" selection-start-column="13" selection-end-line="93" selection-end-column="13" />
         </state>
       </provider>
     </entry>
@@ -421,13 +486,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/presets/argon/src/argon-stubs/resources/views/layouts/navbars/sidebar.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="243">
-          <caret line="94" column="67" selection-start-line="94" selection-start-column="67" selection-end-line="94" selection-end-column="67" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/presets/argon/src/argon-stubs/resources/views/welcome.blade.php">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -438,13 +496,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/presets/argon/src/argon-stubs/resources/views/users/index.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2997">
-          <caret line="255" column="29" selection-start-line="255" selection-start-column="29" selection-end-line="255" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/presets/argon/src/argon-stubs/resources/views/users/partials/header.blade.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="15">
@@ -452,10 +503,38 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/presets/argon/src/argon-stubs/resources/views/pages/tables.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="99">
+          <caret line="1023" column="12" selection-start-line="1023" selection-start-column="12" selection-end-line="1023" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/presets/argon/src/argon-stubs/resources/views/pages/maps.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="138">
+          <caret line="139" column="59" selection-start-line="139" selection-start-column="59" selection-end-line="139" selection-end-column="59" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/routes/web.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="352">
           <caret line="34" selection-start-line="34" selection-end-line="34" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/presets/argon/src/argon-stubs/resources/views/layouts/navbars/sidebar.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="243">
+          <caret line="94" column="67" selection-start-line="94" selection-start-column="67" selection-end-line="94" selection-end-column="67" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/presets/argon/src/argon-stubs/resources/views/users/index.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3026">
+          <caret line="255" column="29" selection-start-line="255" selection-start-column="29" selection-end-line="255" selection-end-column="29" />
         </state>
       </provider>
     </entry>
