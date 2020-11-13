@@ -46,6 +46,7 @@ Message
     -Timestamp (Date student sent request)
     -State (Idle, Reviewing, Successful, Failed)
     -DecissionDate (Date of the outcome)
+    -Note (Thank you but I have gave this to someone else | Thank you I have decided to select you for this topic please come to my office)
 
 -Topic
 
