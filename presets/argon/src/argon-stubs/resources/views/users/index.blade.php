@@ -42,6 +42,7 @@
     <meta property="og:site_name" content="Creative Tim" />
 </head>
 <body class="clickup-chrome-ext_installed">
+
     <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
         @csrf
     </form>
@@ -199,7 +200,9 @@
                         <img alt="Image placeholder" src="{{ asset('argon') }}/img/theme/team-4-800x800.jpg">
                     </span>
                     <div class="media-body ml-2 d-none d-lg-block">
-                        <span class="mb-0 text-sm  font-weight-bold">Admin Admin</span>
+                            <h3>
+                                {{ auth()->user()->name }}
+                            </h3>
                     </div>
                 </div>
             </a>
@@ -352,28 +355,45 @@
                                 <th scope="col">Name</th>
                                 <th scope="col">Email</th>
                                 <th scope="col">Creation Date</th>
+                                <th scope="col">Admin</th>
                                 <th scope="col"></th>
                             </tr>
                         </thead>
                         <tbody>
-                                                                <tr>
-                                    <td>Admin Admin</td>
-                                    <td>
-                                        <a href="mailto:admin@argon.com">admin@argon.com</a>
-                                    </td>
-                                    <td>12/02/2020 11:00</td>
-                                    <td class="text-right">
-                                        <div class="dropdown">
-                                            <a class="btn btn-sm btn-icon-only text-light" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                                <i class="fas fa-ellipsis-v"></i>
-                                            </a>
-                                            <div class="dropdown-menu dropdown-menu-right dropdown-menu-arrow">
-                                                                                                        <a class="dropdown-item" href="">Edit</a>
-                                                                                                </div>
-                                        </div>
-                                    </td>
+                            @foreach ($users as $user)
+                                <tr>
+                                    <td>{{ $user->name }}</td>
+                                    <td>{{ $user->email }}</td>
+                                    <td>{{ $user->created_at }}</td>
+                                    @if($user->role == 0)
+                                        <td><span class="badge badge-primary">Student</span></td>
+                                    @elseif($user->role == 1)
+                                        <td><span class="badge badge-success">Supervisor</span></td>
+                                    @else
+                                        <td><span class="badge badge-danger">Administrator</span></td>
+                                    @endif
+
+                                    @if(auth()->user()->role == 2)
+                                        <td>
+                                            <div class="dropdown show">
+                                              <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                Options
+                                              </a>
+                                              <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                                                <a class="dropdown-item" href="#">Delete User</a>
+                                                @if($user->role == 2)
+                                                  <a class="dropdown-item" href="#">Remove As Admin</a>
+                                                @else
+                                                  <a class="dropdown-item" href="#">Add As Admin</a>
+                                                @endif
+                                              </div>
+                                            </div>
+                                        </td>
+
+                                    @endif
                                 </tr>
-                                                        </tbody>
+                            @endforeach
+                        </tbody>
                     </table>
                 </div>
                 <div class="card-footer py-4">
