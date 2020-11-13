@@ -19,7 +19,7 @@ Profile (Links to a User)
 	-QCA
 	-Course of study
 	-etc.....
--User
+User
 
     -StudentId
 	-Email
@@ -38,7 +38,7 @@ Message
     -Message body
     -RequestId all the messages should be linked to a Request (Maybe)
 
--Request
+Request
 
     -User (Student)
     -Topic
@@ -48,7 +48,7 @@ Message
     -DecissionDate (Date of the outcome)
     -Note (Thank you but I have gave this to someone else | Thank you I have decided to select you for this topic please come to my office)
 
--Topic
+Topic
 
     -Title
     -Body
