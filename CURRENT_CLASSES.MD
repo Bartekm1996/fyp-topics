@@ -43,7 +43,9 @@ Message
     -User (Student)
     -Topic
     -User (Faculty)
-    -Timestamp
+    -Timestamp (Date student sent request)
+    -State (Idle, Reviewing, Successful, Failed)
+    -DecissionDate (Date of the outcome)
 
 -Topic
 
