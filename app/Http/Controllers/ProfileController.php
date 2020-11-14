@@ -8,6 +8,7 @@ use Illuminate\Support\Facades\Hash;
 
 class ProfileController extends Controller
 {
+
     /**
      * Show the form for editing the profile.
      *
@@ -27,6 +28,7 @@ class ProfileController extends Controller
     public function update(ProfileRequest $request)
     {
         if (auth()->user()->id == 1) {
+
             return back()->withErrors(['not_allow_profile' => __('You are not allowed to change data for a default user.')]);
         }
 
