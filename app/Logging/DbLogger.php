@@ -18,7 +18,6 @@ class DbLogger implements ILogger
         $log = new LogMessage();
         $log->tag = $tag;
         $log->message = $message;
-        $log->testcol = $message;
         $log->type = $type;
         $log->save();
     }
