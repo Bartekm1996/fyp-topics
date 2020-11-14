@@ -46,11 +46,11 @@
       <div class="navbar-inner">
         <!-- Collapse -->
         <div class="collapse navbar-collapse" id="sidenav-collapse-main">
-          <!-- Navigation -->
+         <!-- Navigation -->
             <ul class="navbar-nav">
                 <li class="nav-item">
                     <a class="nav-link" href="{{ route('home') }}">
-                        @if (auth()->user()->role == 0) <i class="ni ni-tv-2 text-primary"></i> {{ __('My Fineal Year Project') }}
+                        @if (auth()->user()->role == 0) <i class="ni ni-tv-2 text-primary"></i> {{ __('Dashboard') }}
                         @elseif (auth()->user()->role == 0)  <i class="ni ni-tv-2 text-primary"></i> {{ __('My Supervisees') }}
                         @endif
                     </a>
@@ -79,31 +79,9 @@
                     </li>
                 @else
                     <li class="nav-item">
-                        <a class="nav-link active" href="#navbar-examples" data-toggle="collapse" role="button" aria-expanded="true" aria-controls="navbar-examples">
-                            <i class="fab fa-laravel" style="color: #f4645f;"></i>
-                            <span class="nav-link-text" style="color: #f4645f;">{{ __('User') }}</span>
-                        </a>
-                        @if (auth()->user()->role == 0)
-                           <div class="collapse show" id="navbar-examples">
-                            <ul class="nav nav-sm flex-column">
-                                <li class="nav-item">
-                                    <a class="nav-link" href="{{ route('profile.edit') }}">
-                                        {{ __('Profile') }}
-                                    </a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" href="">
-                                        {{ __('Messages') }}
-                                    </a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" href="{{ route('user.index') }}">
-                                        {{ __('My Requests') }}
-                                    </a>
-                                </li>
-                            </ul>
-                        </div>
-                        @endif
+                       <a class="nav-link" href="{{ route('profile.edit') }}">
+                          {{ __('User profile') }}
+                       </a>
                     </li>
                 @endif
                 <li class="nav-item ">
