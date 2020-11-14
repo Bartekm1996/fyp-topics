@@ -40,6 +40,9 @@
     <meta property="og:image" content="https://s3.amazonaws.com/creativetim_bucket/products/96/original/opt_ad_thumbnail.jpg" />
     <meta property="og:description" content="Start your development with a Dashboard for Bootstrap 4." />
     <meta property="og:site_name" content="Creative Tim" />
+
+{{--    <link rel="stylesheet" href="https://cdn.datatables.net/1.10.12/css/dataTables.bootstrap.min.css">--}}
+
 </head>
 <body class="clickup-chrome-ext_installed">
 
@@ -374,22 +377,23 @@
                                         </div>
 
                 <div class="table-responsive">
-                    <table class="table align-items-center table-flush">
-                        <thead class="thead-light">
+{{--                    <table id="myTable" class="table align-items-center table-flush">--}}
+                    <table id="myTable" class="table table-striped">
+                        <thead>
                             <tr>
-                                <th scope="col">Tag</th>
-                                <th scope="col">Message</th>
-                                <th scope="col">Type</th>
-                                <th scope="col">Timestamp</th>
+                                <th>Tag</th>
+                                <th>Message</th>
+                                <th>Type</th>
+                                <th>Timestamp</th>
                             </tr>
                         </thead>
                         <tbody>
                             @foreach ($messages as $msg)
                                 <tr>
                                     <td>{{ $msg->tag }}</td>
-                                    <td>{{ $msg->message }}</td>
-                                    <td>{{ $msg->type }}</td>
-                                    <td>{{ $msg->created_at }}</td>
+                                    <td>{{ $msg->message}}</td>
+                                    <td>{{ $msg->type}}</td>
+                                    <td>{{ $msg->created_at}}</td>
                                 </tr>
                             @endforeach
                         </tbody>
@@ -407,10 +411,24 @@
     </div>
 
 
-    <script src="{{ asset('argon') }}/vendor/jquery/dist/jquery.min.js"></script>
-        <script src="{{ asset('argon') }}/vendor/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+{{--    <script src="{{ asset('argon') }}/vendor/jquery/dist/jquery.min.js"></script>--}}
+{{--        <script src="{{ asset('argon') }}/vendor/bootstrap/dist/js/bootstrap.bundle.min.js"></script>--}}
+
+    <script src='https://code.jquery.com/jquery-1.12.3.js'></script>
+    <script src='https://cdn.datatables.net/1.10.12/js/jquery.dataTables.min.js'></script>
+    <script src="https://cdn.datatables.net/1.10.12/js/dataTables.bootstrap.min.js" charset="utf-8"></script>
+{{--    <script src="http://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"></script>--}}
 
 
     <!-- Argon JS -->
-    <script src="{{ asset('argon') }}/js/argon.js?v=1.0.0"></script>
+{{--    <script src="{{ asset('argon') }}/js/argon.js?v=1.0.0"></script>--}}
+
+    <script>
+        $(document).ready(function () {
+
+            $('#myTable').DataTable({
+
+            });
+        });
+    </script>
 </body></html>
