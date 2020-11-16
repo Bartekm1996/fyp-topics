@@ -3,6 +3,8 @@
 namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
+use App\Logging\DbLogger;
+use App\Logging\LoggerFactory;
 use App\Models\Profile;
 use App\Providers\RouteServiceProvider;
 use App\Models\User;
@@ -80,13 +82,14 @@ class RegisterController extends Controller
 
         if(strpos($user->email, '@studentmail.ul.ie') == true) {
             $profile->student_id = str_replace('@studentmail.ul.ie','', $user->email);
-            //default role_id = 0 which is student
+            $user->role_id = 0;
         } else if (strpos($user->email, '@ul.ie') == true) {
             $user->role_id = 1;
         }
 
         $profile->save();
-
+        LoggerFactory::getLogger(DbLogger::LOGGER_CODE)
+            ->info('RegisterController::create', "{$user->email} has registered. Role:{$user->role_id}");
         return $user;
     }
 }
