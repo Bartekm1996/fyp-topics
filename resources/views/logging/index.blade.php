@@ -392,7 +392,12 @@
                                 <tr>
                                     <td>{{ $msg->tag }}</td>
                                     <td>{{ $msg->message}}</td>
-                                    <td>{{ $msg->type}}</td>
+                                    <td>@switch ($msg->type)
+                                        @case(0) DEBUG @break
+                                        @case(1) INFO @break
+                                        @case(2) ERROR @break
+                                        @endswitch
+                                    </td>
                                     <td>{{ $msg->created_at}}</td>
                                 </tr>
                             @endforeach
@@ -426,9 +431,9 @@
     <script>
         $(document).ready(function () {
 
-            $('#myTable').DataTable({
-
-            });
+            // $('#myTable').DataTable({
+            //
+            // });
         });
     </script>
 </body></html>
