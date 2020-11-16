@@ -379,9 +379,9 @@
                                     <td>{{ $msg->tag }}</td>
                                     <td>{{ $msg->message}}</td>
                                     <td>@switch ($msg->type)
-                                        @case(0) DEBUG @break
-                                        @case(1) INFO @break
-                                        @case(2) ERROR @break
+                                        @case(0) <span class="badge badge-primary">DEBUG</span> @break
+                                        @case(1) <span class="badge badge-info">INFO</span> @break
+                                        @case(2) <span class="badge badge-warning">ERROR</span> @break
                                         @endswitch
                                     </td>
                                     <td>{{ $msg->created_at}}</td>
