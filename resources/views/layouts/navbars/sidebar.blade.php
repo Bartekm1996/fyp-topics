@@ -104,6 +104,11 @@
                                         {{ __('User Management') }}
                                     </a>
                                 </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="{{ route('logging.index') }}">
+                                        {{ __('Log Messages') }}
+                                    </a>
+                                </li>
                             </ul>
                         </div>
                     </li>
