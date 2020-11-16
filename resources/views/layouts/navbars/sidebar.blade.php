@@ -136,6 +136,11 @@
                                         {{ __('My Requests') }}
                                     </a>
                                 </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="{{ route('user.index') }}">
+                                        {{ __('My Progress') }}
+                                    </a>
+                                </li>
                             </ul>
                         </div>
                         @endif
