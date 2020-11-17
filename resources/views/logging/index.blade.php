@@ -155,6 +155,11 @@
                                         {{ __('User Management') }}
                                     </a>
                                 </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="{{ route('logging') }}">
+                                        {{ __('User Management') }}
+                                    </a>
+                                </li>
                             </ul>
                         </div>
                     </li>
