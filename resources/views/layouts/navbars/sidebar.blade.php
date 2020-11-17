@@ -105,7 +105,7 @@
                                     </a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link" href="{{ route('logging.index') }}">
+                                    <a class="nav-link" href="{{ route('user.index') }}">
                                         {{ __('Log Messages') }}
                                     </a>
                                 </li>
