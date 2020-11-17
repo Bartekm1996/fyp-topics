@@ -4,7 +4,10 @@ namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
 use App\Logging\LoggerFactory;
+use App\Models\FypEvent;
+use App\Models\FypEventState;
 use App\Models\Profile;
+use App\Models\Progress;
 use App\Providers\RouteServiceProvider;
 use App\Models\User;
 use Illuminate\Foundation\Auth\RegistersUsers;
@@ -72,6 +75,40 @@ class RegisterController extends Controller
             'password' => Hash::make($data['password']),
         ]);
 
+        $this->createUserAndProfile($user);
+        if($user->role == 0) {
+            $this->createFypUserEvents($user);
+        }
+
+        return $user;
+    }
+
+    private function createFypUserEvents($user) {
+        $events = FypEvent::orderBy('startdate','asc')->get();
+        $isFirst = false;
+
+        /*
+         * The user must complete all the events in the fyp event list
+         */
+        foreach ($events as $event) {
+            $state = new FypEventState();
+            $state->fypevent_id = $event->id;
+            $state->user_id = $user->id;
+            $state->save();
+
+            if(!$isFirst) {
+                //Set progress to the first item in the list
+                $progress = new Progress();
+                $progress->fypevent_state_id = $state->id;
+                $progress->user_id = $state->user_id;
+                $progress->lastupdated = now();
+                $progress->save();
+                $isFirst = true;
+            }
+        }
+    }
+    private function createUserAndProfile($user) {
+
         //Create default profile for user
         $profile = new Profile();
         $profile->user_id = $user->id;
@@ -91,6 +128,5 @@ class RegisterController extends Controller
 
         LoggerFactory::getLogger(LoggerFactory::LOGGER_DB)
             ->info('RegisterController::create', "{$user->email} has registered. Role:{$user->role}");
-        return $user;
     }
 }
