@@ -3,7 +3,6 @@
 namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
-use App\Logging\DbLogger;
 use App\Logging\LoggerFactory;
 use App\Models\Profile;
 use App\Providers\RouteServiceProvider;
@@ -88,7 +87,9 @@ class RegisterController extends Controller
         }
 
         $profile->save();
-        LoggerFactory::getLogger(DbLogger::LOGGER_CODE)
+        $user->save();//update the role for user
+
+        LoggerFactory::getLogger(LoggerFactory::LOGGER_DB)
             ->info('RegisterController::create', "{$user->email} has registered. Role:{$user->role_id}");
         return $user;
     }

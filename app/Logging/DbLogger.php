@@ -12,7 +12,6 @@ use App\Models\LogMessage;
  */
 class DbLogger implements ILogger
 {
-    const LOGGER_CODE = 0;
 
     private function log($tag, $message, $type) {
         $log = new LogMessage();

@@ -12,6 +12,9 @@ namespace App\Logging;
  */
 class LoggerFactory
 {
+    const LOGGER_DB = 0;
+    const LOGGER_FILE = 1;
+    const LOGGER_REMOTE_API = 2;
     private function __construct() {
     }
 
@@ -22,10 +25,10 @@ class LoggerFactory
      */
     public static  function getLogger($loggerCode) {
         switch ($loggerCode) {
-            case FileLogger::LOGGER_CODE: return new FileLogger();
-            case RemoteApiLogger::LOGGER_CODE: return new RemoteApiLogger();
+            case LoggerFactory::LOGGER_FILE: return new FileLogger();
+            case LoggerFactory::LOGGER_REMOTE_API: return new RemoteApiLogger();
         }
 
-        return new DbLogger();
+        return new DbLogger(); //default is DbLogger
     }
 }

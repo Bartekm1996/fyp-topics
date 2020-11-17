@@ -10,7 +10,6 @@ namespace App\Logging;
  */
 class FileLogger implements ILogger
 {
-    const LOGGER_CODE = 1;
     public function debug($tag, $message)
     {
         // TODO: Implement debug() method.

@@ -10,7 +10,6 @@ namespace App\Logging;
  */
 class RemoteApiLogger implements ILogger
 {
-    const LOGGER_CODE = 2;
     public function debug($tag, $message)
     {
         // TODO: Implement debug() method.
