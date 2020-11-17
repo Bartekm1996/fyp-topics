@@ -1,32 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="e9da3909-1066-4903-be41-b063a719072d" name="Default Changelist" comment="Edited user pannel, added the functionallity of adding and removing admins and also edited cards to count each type of users by roles">
-      <change afterPath="$PROJECT_DIR$/presets/argon/src/argon-stubs/resources/views/pages/messages.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/pages/messages.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+    <list default="true" id="e9da3909-1066-4903-be41-b063a719072d" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/presets/argon/src/argon-stubs/resources/argon/css/argon.css" beforeDir="false" afterPath="$PROJECT_DIR$/presets/argon/src/argon-stubs/resources/argon/css/argon.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/presets/argon/src/argon-stubs/resources/assets/css/argon.css" beforeDir="false" afterPath="$PROJECT_DIR$/presets/argon/src/argon-stubs/resources/assets/css/argon.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/presets/argon/src/argon-stubs/resources/views/layouts/navbars/navs/auth.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/presets/argon/src/argon-stubs/resources/views/layouts/navbars/navs/auth.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/presets/argon/src/argon-stubs/resources/views/layouts/navbars/navs/guest.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/presets/argon/src/argon-stubs/resources/views/layouts/navbars/navs/guest.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/presets/argon/src/argon-stubs/resources/views/layouts/navbars/sidebar.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/presets/argon/src/argon-stubs/resources/views/layouts/navbars/sidebar.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/presets/argon/src/argon-stubs/resources/views/pages/maps.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/presets/argon/src/argon-stubs/resources/views/pages/maps.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/presets/argon/src/argon-stubs/resources/views/pages/messages.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/presets/argon/src/argon-stubs/resources/views/pages/tables.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/presets/argon/src/argon-stubs/resources/views/pages/tables.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/presets/argon/src/argon-stubs/resources/views/pages/upgrade.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/presets/argon/src/argon-stubs/resources/views/pages/upgrade.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/presets/argon/src/argon-stubs/resources/views/profile/edit.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/presets/argon/src/argon-stubs/resources/views/profile/edit.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/presets/argon/src/argon-stubs/resources/views/users/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/presets/argon/src/argon-stubs/resources/views/users/index.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/argon/css/argon.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/argon/css/argon.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/css/argon.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/css/argon.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/layouts/navbars/navs/auth.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/navbars/navs/auth.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/layouts/navbars/navs/guest.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/navbars/navs/guest.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/layouts/navbars/sidebar.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/navbars/sidebar.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/pages/maps.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/pages/maps.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/pages/tables.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/pages/tables.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/pages/upgrade.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/pages/upgrade.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/profile/edit.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/profile/edit.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/users/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/users/index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -203,7 +184,7 @@
       <option name="presentableId" value="Default" />
       <updated>1605215169323</updated>
       <workItem from="1605215176952" duration="25022000" />
-      <workItem from="1605622193440" duration="20532000" />
+      <workItem from="1605622193440" duration="22191000" />
     </task>
     <task id="LOCAL-00001" summary="Edited user pannel, added the functionallity of adding and removing admins and also edited cards to count each type of users by roles">
       <created>1605641245073</created>
@@ -212,7 +193,14 @@
       <option name="project" value="LOCAL" />
       <updated>1605641245073</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Cleaned up layout, edited user sub menu">
+      <created>1605646928370</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1605646928370</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -220,17 +208,18 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Edited user pannel, added the functionallity of adding and removing admins and also edited cards to count each type of users by roles" />
-    <option name="LAST_COMMIT_MESSAGE" value="Edited user pannel, added the functionallity of adding and removing admins and also edited cards to count each type of users by roles" />
+    <MESSAGE value="Cleaned up layout, edited user sub menu" />
+    <option name="LAST_COMMIT_MESSAGE" value="Cleaned up layout, edited user sub menu" />
   </component>
   <component name="WindowStateProjectService">
     <state x="458" y="198" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1605638677845">
       <screen x="0" y="23" width="1440" height="837" />
     </state>
     <state x="458" y="198" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.23.1440.837@0.23.1440.837" timestamp="1605638677845" />
-    <state x="90" y="38" key="CommitChangelistDialog2" timestamp="1605646823588">
+    <state x="90" y="38" key="CommitChangelistDialog2" timestamp="1605646927785">
       <screen x="0" y="23" width="1440" height="837" />
     </state>
-    <state x="90" y="38" key="CommitChangelistDialog2/0.23.1440.837@0.23.1440.837" timestamp="1605646823588" />
+    <state x="90" y="38" key="CommitChangelistDialog2/0.23.1440.837@0.23.1440.837" timestamp="1605646927785" />
     <state x="676" y="249" key="MultipleFileMergeDialog" timestamp="1605624841095">
       <screen x="0" y="23" width="1920" height="1006" />
     </state>
@@ -239,11 +228,11 @@
       <screen x="0" y="23" width="1920" height="1006" />
     </state>
     <state x="784" y="456" key="NewPhpFileDialog/-1920.23.1920.1057/0.23.1920.1006@0.23.1920.1006" timestamp="1605627519782" />
-    <state x="420" y="225" key="Vcs.Push.Dialog.v2" timestamp="1605641253426">
+    <state x="420" y="225" key="Vcs.Push.Dialog.v2" timestamp="1605647079771">
       <screen x="0" y="23" width="1440" height="837" />
     </state>
     <state x="560" y="266" key="Vcs.Push.Dialog.v2/-1920.23.1920.1057/0.23.1920.1006@0.23.1920.1006" timestamp="1605624784762" />
-    <state x="420" y="225" key="Vcs.Push.Dialog.v2/0.23.1440.837@0.23.1440.837" timestamp="1605641253426" />
+    <state x="420" y="225" key="Vcs.Push.Dialog.v2/0.23.1440.837@0.23.1440.837" timestamp="1605647079770" />
     <state x="765" y="450" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1605624826659">
       <screen x="0" y="23" width="1920" height="1006" />
     </state>

@@ -26,18 +26,6 @@
                         <i class="ni ni-single-02"></i>
                         <span>{{ __('My profile') }}</span>
                     </a>
-                    <a href="#" class="dropdown-item">
-                        <i class="ni ni-settings-gear-65"></i>
-                        <span>{{ __('Settings') }}</span>
-                    </a>
-                    <a href="#" class="dropdown-item">
-                        <i class="ni ni-calendar-grid-58"></i>
-                        <span>{{ __('Activity') }}</span>
-                    </a>
-                    <a href="#" class="dropdown-item">
-                        <i class="ni ni-support-16"></i>
-                        <span>{{ __('Support') }}</span>
-                    </a>
                     <div class="dropdown-divider"></div>
                     <a href="{{ route('logout') }}" class="dropdown-item" onclick="event.preventDefault();
                     document.getElementById('logout-form').submit();">
@@ -65,58 +53,65 @@
                     </div>
                 </div>
             </div>
-            <!-- Form -->
-            <form class="mt-4 mb-3 d-md-none">
-                <div class="input-group input-group-rounded input-group-merge">
-                    <input type="search" class="form-control form-control-rounded form-control-prepended" placeholder="{{ __('Search') }}" aria-label="Search">
-                    <div class="input-group-prepend">
-                        <div class="input-group-text">
-                            <span class="fa fa-search"></span>
-                        </div>
-                    </div>
-                </div>
-            </form>
             <!-- Navigation -->
             <ul class="navbar-nav">
+
                 <li class="nav-item">
                     <a class="nav-link" href="{{ route('home') }}">
                         @if (auth()->user()->role == 0) <i class="ni ni-tv-2 text-primary"></i> {{ __('My Fineal Year Project') }}
-                        @elseif (auth()->user()->role == 1)  <i class="ni ni-tv-2 text-primary"></i> {{ __('My Supervisees') }}
                         @endif
                     </a>
                 </li>
                 @if (auth()->user()->role == 1 || auth()->user()->role == 2)
                     <li class="nav-item">
+                      <a class="nav-link" href="{{ route('profile.edit') }}">
+                         {{ __('My profile') }}
+                      </a>
+                    </li>
+                    <li class="nav-item">
                         <a class="nav-link active" href="#navbar-examples" data-toggle="collapse" role="button" aria-expanded="true" aria-controls="navbar-examples">
                             <i class="fab fa-laravel" style="color: #f4645f;"></i>
-                            <span class="nav-link-text" style="color: #f4645f;">{{ __('User Management') }}</span>
+                            <span class="nav-link-text" style="color: #f4645f;">{{ __('Management') }}</span>
                         </a>
-
-                        <div class="collapse show" id="navbar-examples">
-                            <ul class="nav nav-sm flex-column">
-                                <li class="nav-item">
-                                    <a class="nav-link" href="{{ route('profile.edit') }}">
-                                        {{ __('User profile') }}
-                                    </a>
-                                </li>
-                                @if (auth()->user()->role == 2)
-                                    <div class="collapse show" id="navbar-examples">
-                                        <ul class="nav nav-sm flex-column">
-                                            <li class="nav-item">
-                                                <a class="nav-link" href="{{ route('user.index') }}">
-                                                    {{ __('Admin Panel') }}
-                                                </a>
-                                            </li>
-                                            <li class="nav-item">
-                                                <a class="nav-link" href="{{ route('logging') }}">
-                                                    {{ __('Log Messages') }}
-                                                </a>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                @endif
-                            </ul>
-                        </div>
+                        @if (auth()->user()->role == 2)
+                            <div class="collapse show" id="navbar-examples">
+                                <div class="collapse show" id="navbar-examples">
+                                    <ul class="nav nav-sm flex-column">
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="{{ route('user.index') }}">
+                                                {{ __('Admin Panel') }}
+                                            </a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="{{ route('logging') }}">
+                                                {{ __('Log Messages') }}
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        @elseif (auth()->user()->role == 1)
+                            <div class="collapse show" id="navbar-examples">
+                                <div class="collapse show" id="navbar-examples">
+                                    <ul class="nav nav-sm flex-column">
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="{{ route('user.index') }}">
+                                                {{ __('My Supervisees') }}                                            </a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="{{ route('logging') }}">
+                                                {{ __('Messages') }}
+                                            </a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="{{ route('logging') }}">
+                                                {{ __('My Topics') }}
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        @endif
                     </li>
                 @else
                     <li class="nav-item">
