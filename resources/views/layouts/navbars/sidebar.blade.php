@@ -80,8 +80,8 @@
             <ul class="navbar-nav">
                 <li class="nav-item">
                     <a class="nav-link" href="{{ route('home') }}">
-                        @if (auth()->user()->role_id == 0) <i class="ni ni-tv-2 text-primary"></i> {{ __('My Final Year Project') }}
-                        @elseif (auth()->user()->role_id == 1)  <i class="ni ni-tv-2 text-primary"></i> {{ __('My Supervisees') }}
+                        @if (auth()->user()->role == 0) <i class="ni ni-tv-2 text-primary"></i> {{ __('My Final Year Project') }}
+                        @elseif (auth()->user()->role == 1)  <i class="ni ni-tv-2 text-primary"></i> {{ __('My Supervisees') }}
                         @endif
                     </a>
                 </li>

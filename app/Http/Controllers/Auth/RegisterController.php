@@ -81,16 +81,16 @@ class RegisterController extends Controller
 
         if(strpos($user->email, '@studentmail.ul.ie') == true) {
             $profile->student_id = str_replace('@studentmail.ul.ie','', $user->email);
-            $user->role_id = 0;
+            $user->role = 0;
         } else if (strpos($user->email, '@ul.ie') == true) {
-            $user->role_id = 1;
+            $user->role = 1;
         }
 
         $profile->save();
         $user->save();//update the role for user
 
         LoggerFactory::getLogger(LoggerFactory::LOGGER_DB)
-            ->info('RegisterController::create', "{$user->email} has registered. Role:{$user->role_id}");
+            ->info('RegisterController::create', "{$user->email} has registered. Role:{$user->role}");
         return $user;
     }
 }

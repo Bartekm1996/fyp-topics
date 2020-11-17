@@ -24,12 +24,12 @@
                         </span>
                         <div class="media-body ml-2 d-none d-lg-block">
                             <span class="mb-0 text-sm  font-weight-bold">
-                            @if (auth()->user()->role_id == 0)
+                            @if (auth()->user()->role == 0)
                                 {{ auth()->user()->name }}, Student
-                            @elseif (auth()->user()->role_id == 1)
+                            @elseif (auth()->user()->role == 1)
                                 {{ auth()->user()->name }}, Supervisor
                             @else
-                               {{ auth()->user()->role_id }}, Admin
+                               {{ auth()->user()->role }}, Admin
                             @endif
                             </span>
                         </div>

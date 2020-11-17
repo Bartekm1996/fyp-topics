@@ -39,13 +39,13 @@
                                     <td>{{ $user->created_at }}</td>
                                     @if($user->role == 0)
                                         <td><span class="badge badge-primary">Student</span></td>
-                                    @elseif($user->role_id == 1)
+                                    @elseif($user->role == 1)
                                         <td><span class="badge badge-success">Supervisor</span></td>
                                     @else
                                         <td><span class="badge badge-danger">Administrator</span></td>
                                     @endif
 
-                                    @if(auth()->user()->role_id == 2)
+                                    @if(auth()->user()->role == 2)
                                         <td>
                                             <div class="dropdown show">
                                               <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -53,7 +53,7 @@
                                               </a>
                                               <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
                                                 <a class="dropdown-item" href="#">Delete User</a>
-                                                @if($user->role_id == 2)
+                                                @if($user->role == 2)
                                                   <a class="dropdown-item" href="#">Remove As Admin</a>
                                                 @else
                                                   <a class="dropdown-item" href="#">Add As Admin</a>

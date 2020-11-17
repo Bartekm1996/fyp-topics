@@ -26,7 +26,7 @@
                             <div class="row">
                                 <div class="col">
                                     <h5 class="card-title text-uppercase text-muted mb-0">Supervisors</h5>
-                                    <span class="h2 font-weight-bold mb-0">{{count($users->where('role_id', '=', 1))}}</span>
+                                    <span class="h2 font-weight-bold mb-0">{{count($users->where('role', '=', 1))}}</span>
                                 </div>
                                 <div class="col-auto">
                                     <div class="icon icon-shape bg-green text-white rounded-circle shadow">
@@ -43,7 +43,7 @@
                             <div class="row">
                                 <div class="col">
                                     <h5 class="card-title text-uppercase text-muted mb-0">Students</h5>
-                                    <span class="h2 font-weight-bold mb-0">{{count($users->where('role_id', '=', 0))}}</span>
+                                    <span class="h2 font-weight-bold mb-0">{{count($users->where('role', '=', 0))}}</span>
                                 </div>
                                 <div class="col-auto">
                                     <div class="icon icon-shape bg-yellow text-white rounded-circle shadow">
