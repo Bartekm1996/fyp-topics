@@ -29,7 +29,7 @@
                             @elseif (auth()->user()->role == 1)
                                 {{ auth()->user()->name }}, Supervisor
                             @else
-                               {{ auth()->user()->role }}, Admin
+                               {{ auth()->user()->name }}, Admin
                             @endif
                             </span>
                         </div>

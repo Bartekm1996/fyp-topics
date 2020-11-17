@@ -81,11 +81,11 @@
                 <li class="nav-item">
                     <a class="nav-link" href="{{ route('home') }}">
                         @if (auth()->user()->role == 0) <i class="ni ni-tv-2 text-primary"></i> {{ __('My Fineal Year Project') }}
-                        @elseif (auth()->user()->role == 0)  <i class="ni ni-tv-2 text-primary"></i> {{ __('My Supervisees') }}
+                        @elseif (auth()->user()->role == 1)  <i class="ni ni-tv-2 text-primary"></i> {{ __('My Supervisees') }}
                         @endif
                     </a>
                 </li>
-                @if (auth()->user()->role == 2)
+                @if (auth()->user()->role == 1 || auth()->user()->role == 2)
                     <li class="nav-item">
                         <a class="nav-link active" href="#navbar-examples" data-toggle="collapse" role="button" aria-expanded="true" aria-controls="navbar-examples">
                             <i class="fab fa-laravel" style="color: #f4645f;"></i>
@@ -99,11 +99,22 @@
                                         {{ __('User profile') }}
                                     </a>
                                 </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" href="{{ route('user.index') }}">
-                                        {{ __('User Management') }}
-                                    </a>
-                                </li>
+                                @if (auth()->user()->role == 2)
+                                    <div class="collapse show" id="navbar-examples">
+                                        <ul class="nav nav-sm flex-column">
+                                            <li class="nav-item">
+                                                <a class="nav-link" href="{{ route('user.index') }}">
+                                                    {{ __('Admin Panel') }}
+                                                </a>
+                                            </li>
+                                            <li class="nav-item">
+                                                <a class="nav-link" href="{{ route('logging') }}">
+                                                    {{ __('Log Messages') }}
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                @endif
                             </ul>
                         </div>
                     </li>

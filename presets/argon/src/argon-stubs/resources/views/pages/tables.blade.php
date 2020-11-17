@@ -46,72 +46,7 @@
       <div class="navbar-inner">
         <!-- Collapse -->
         <div class="collapse navbar-collapse" id="sidenav-collapse-main">
-          <!-- Navigation -->
-            <ul class="navbar-nav">
-                <li class="nav-item">
-                    <a class="nav-link" href="{{ route('home') }}">
-                        @if (auth()->user()->role == 0) <i class="ni ni-tv-2 text-primary"></i> {{ __('My Fineal Year Project') }}
-                        @elseif (auth()->user()->role == 0)  <i class="ni ni-tv-2 text-primary"></i> {{ __('My Supervisees') }}
-                        @endif
-                    </a>
-                </li>
-                @if (auth()->user()->role == 2)
-                    <li class="nav-item">
-                        <a class="nav-link active" href="#navbar-examples" data-toggle="collapse" role="button" aria-expanded="true" aria-controls="navbar-examples">
-                            <i class="fab fa-laravel" style="color: #f4645f;"></i>
-                            <span class="nav-link-text" style="color: #f4645f;">{{ __('User Management') }}</span>
-                        </a>
-
-                        <div class="collapse show" id="navbar-examples">
-                            <ul class="nav nav-sm flex-column">
-                                <li class="nav-item">
-                                    <a class="nav-link" href="{{ route('profile.edit') }}">
-                                        {{ __('User profile') }}
-                                    </a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" href="{{ route('user.index') }}">
-                                        {{ __('User Management') }}
-                                    </a>
-                                </li>
-                            </ul>
-                        </div>
-                    </li>
-                @else
-                    <li class="nav-item">
-                        <a class="nav-link active" href="#navbar-examples" data-toggle="collapse" role="button" aria-expanded="true" aria-controls="navbar-examples">
-                            <i class="fab fa-laravel" style="color: #f4645f;"></i>
-                            <span class="nav-link-text" style="color: #f4645f;">{{ __('User') }}</span>
-                        </a>
-                        @if (auth()->user()->role == 0)
-                           <div class="collapse show" id="navbar-examples">
-                            <ul class="nav nav-sm flex-column">
-                                <li class="nav-item">
-                                    <a class="nav-link" href="{{ route('profile.edit') }}">
-                                        {{ __('Profile') }}
-                                    </a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" href="">
-                                        {{ __('Messages') }}
-                                    </a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" href="{{ route('user.index') }}">
-                                        {{ __('My Requests') }}
-                                    </a>
-                                </li>
-                            </ul>
-                        </div>
-                        @endif
-                    </li>
-                @endif
-                <li class="nav-item ">
-                    <a class="nav-link" href="{{ route('map') }}">
-                        <i class="ni ni-pin-3 text-orange"></i> {{ __('Final Year Projects') }}
-                    </a>
-                </li>
-            </ul>
+            @include('layouts.navbars.sidebar')
         </div>
       </div>
     </div>

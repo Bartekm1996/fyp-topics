@@ -4,12 +4,10 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\ProfileRequest;
 use App\Http\Requests\PasswordRequest;
-use App\Models\Profile;
 use Illuminate\Support\Facades\Hash;
 
 class ProfileController extends Controller
 {
-
     /**
      * Show the form for editing the profile.
      *
@@ -17,12 +15,7 @@ class ProfileController extends Controller
      */
     public function edit()
     {
-        $user = auth()->user();
-        $profile = Profile::all()->where('user_id', '=', auth()->id())->first();
-
-        return view('profile.edit')->with(
-            ['puser' => $user,
-                'profile' => $profile]);
+        return view('profile.edit');
     }
 
     /**
@@ -34,7 +27,6 @@ class ProfileController extends Controller
     public function update(ProfileRequest $request)
     {
         if (auth()->user()->id == 1) {
-
             return back()->withErrors(['not_allow_profile' => __('You are not allowed to change data for a default user.')]);
         }
 
