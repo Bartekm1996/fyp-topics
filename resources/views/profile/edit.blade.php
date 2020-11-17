@@ -41,16 +41,31 @@
                         </div>
                         <div class="text-center">
                             <h3>
-                                {{ auth()->user()->name }}<span class="font-weight-light">, 27</span>
+                                {{ auth()->user()->name }}<span class="font-weight-light"></span>
                             </h3>
-                            @if(auth()->user()->role == 0)
-                                <div class="h5 font-weight-300">
-                                    <i class="ni location_pin mr-2"></i>{{ __('QCA : ') }}
-                                </div>
-                                <div class="h5 mt-4">
-                                    <i class="ni business_briefcase-24 mr-2"></i>{{ __('Course: ') }}
-                                </div>
-                            @endif
+                            <div class="h5 font-weight-300">
+                                <i class="ni location_pin mr-2"></i>{{ $profile->student_id }}
+                            </div>
+                            <h3>
+                                QCA<span class="font-weight-light"></span>
+                            </h3>
+                            <div class="h5 font-weight-300">
+                                <i class="ni location_pin mr-2"></i>{{ $profile->qca }}
+                            </div>
+                            <div class="h2 mt-4">
+                                <i class="ni business_briefcase-24 mr-2"></i>{{ __('Course Of Study') }}
+                            </div>
+                            <div>
+                                <i class="ni education_hat mr-2"></i>{{ $profile->course }}
+                            </div>
+
+                            <div class="h2 mt-4">
+                                <i class="ni business_briefcase-24 mr-2"></i>{{ __('Supervisor') }}
+                            </div>
+                            <div>
+                                <i class="ni education_hat mr-2"></i>{{ __('Paddy Healy') }}
+                            </div>
+
                         </div>
                     </div>
                 </div>

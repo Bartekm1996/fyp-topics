@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\ProfileRequest;
 use App\Http\Requests\PasswordRequest;
+use App\Models\Profile;
 use Illuminate\Support\Facades\Hash;
 
 class ProfileController extends Controller
@@ -15,7 +16,14 @@ class ProfileController extends Controller
      */
     public function edit()
     {
-        return view('profile.edit');
+        $user = auth()->user();
+        $profile = Profile::all()->where('user_id', '=', auth()->id())->first();
+
+        return view('profile.edit')->with(
+            ['puser' => $user,
+                'profile' => $profile]);
+        //TODO: remove this after this is working
+        //return view('profile.edit');
     }
 
     /**
