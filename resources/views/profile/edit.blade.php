@@ -15,7 +15,13 @@
                         <div class="col-lg-3 order-lg-2">
                             <div class="card-profile-image">
                                 <a href="#">
-                                    <img src="{{ asset('argon') }}/img/theme/team-4-800x800.jpg" class="rounded-circle">
+                                    <img src="
+                                        @if(strlen($profile->image) > 10)
+                                        {{$profile->image}}
+                                        @else
+                                        {{ asset('argon') }}/img/theme/team-4-800x800.jpg
+                                        @endif"
+                                         class="rounded-circle">
                                 </a>
                             </div>
                         </div>
