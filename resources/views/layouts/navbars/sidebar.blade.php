@@ -148,7 +148,7 @@
                     </li>
                 @endif
                 <li class="nav-item ">
-                    <a class="nav-link" href="{{ route('map') }}">
+                    <a class="nav-link" href="{{ route('messages') }}">
                         <i class="ni ni-pin-3 text-orange"></i> {{ __('Final Year Projects') }}
                     </a>
                 </li>
