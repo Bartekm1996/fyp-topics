@@ -27,11 +27,17 @@
                                                 <div class="timeline-badge bg-gray"><i class="fa fa-times"></i></div>
                                         @endswitch
 
+
+
                                         <div class="timeline-panel">
                                             <div class="timeline-heading">
                                                 <h4 class="timeline-title">{{$event->title}}</h4>
                                             </div>
                                             <p><small class="text-muted"><i class="fa fa-clock"></i> {{$event->enddate}}</small></p>
+                                            <p><input id="uploadDocument" class="btn-sm" type="file" accept="application/pdf/*" name="pdf"/>
+                                                <img src="{{ asset('argon') }}/img/brand/file.png" width="40" height="40" />
+                                                <input class="btn btn-success btn-sm" type="submit" style="right: 190px" value="Upload"></p>
+
                                         </div>
                                     </li>
                                 @endforeach
@@ -76,6 +82,17 @@
                         </ul>
                     </div>
                 </div>
+                <div class="row">
+                    <div class="col-md-12" style="margin-top: 150px">
+                        <h1 style="color: white;font-weight: bold">Documents</h1>
+                        <div style="display:inline-block;width:100%;overflow-y:auto; margin-top: 50px">
+                            <input id="uploadDocument" type="file" accept="application/pdf/*" name="pdf"/><br>
+                            <div id="preview"><img src="{{ asset('argon') }}/img/brand/file.png" width="70" height="80" /></div><br>
+
+                            <input class="btn btn-success" type="submit" value="Upload">
+                        </div>
+                    </div>
+                </div>
                 <!-- test code end -->
 
 
@@ -91,3 +108,4 @@
     <script src="{{ asset('argon') }}/vendor/chart.js/dist/Chart.min.js"></script>
     <script src="{{ asset('argon') }}/vendor/chart.js/dist/Chart.extension.js"></script>
 @endpush
+
