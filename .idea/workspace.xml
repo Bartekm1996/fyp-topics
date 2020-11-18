@@ -2,20 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e9da3909-1066-4903-be41-b063a719072d" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/TicketController.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Models/Ticket.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/tickets/index.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Auth/RegisterController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Auth/RegisterController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/ProfileController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/ProfileController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/userApi.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/Progress.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Progress.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/auth/register.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/auth/register.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/layouts/app.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/app.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/layouts/navbars/navs/auth.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/navbars/navs/auth.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/layouts/navbars/sidebar.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/navbars/sidebar.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/profile/edit.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/profile/edit.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/users/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/users/index.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -194,7 +181,7 @@
       <updated>1605215169323</updated>
       <workItem from="1605215176952" duration="25022000" />
       <workItem from="1605622193440" duration="22191000" />
-      <workItem from="1605703013704" duration="9595000" />
+      <workItem from="1605703013704" duration="9966000" />
     </task>
     <task id="LOCAL-00001" summary="Edited user pannel, added the functionallity of adding and removing admins and also edited cards to count each type of users by roles">
       <created>1605641245073</created>
@@ -210,7 +197,14 @@
       <option name="project" value="LOCAL" />
       <updated>1605646928370</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Added the functionality which allows users to submit tickets">
+      <created>1605714666661</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1605714666661</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -219,7 +213,8 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Edited user pannel, added the functionallity of adding and removing admins and also edited cards to count each type of users by roles" />
     <MESSAGE value="Cleaned up layout, edited user sub menu" />
-    <option name="LAST_COMMIT_MESSAGE" value="Cleaned up layout, edited user sub menu" />
+    <MESSAGE value="Added the functionality which allows users to submit tickets" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added the functionality which allows users to submit tickets" />
   </component>
   <component name="WindowStateProjectService">
     <state x="722" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1605714117328">
@@ -231,9 +226,10 @@
     </state>
     <state x="611" y="226" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/-1920.0.1920.1080/0.0.1920.1080@0.0.1920.1080" timestamp="1605712900564" />
     <state x="458" y="198" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.23.1440.837@0.23.1440.837" timestamp="1605638677845" />
-    <state x="90" y="38" key="CommitChangelistDialog2" timestamp="1605646927785">
-      <screen x="0" y="23" width="1440" height="837" />
+    <state x="120" y="19" key="CommitChangelistDialog2" timestamp="1605714665747">
+      <screen x="0" y="0" width="1920" height="1080" />
     </state>
+    <state x="120" y="19" key="CommitChangelistDialog2/-1920.0.1920.1080/0.0.1920.1080@0.0.1920.1080" timestamp="1605714665747" />
     <state x="90" y="38" key="CommitChangelistDialog2/0.23.1440.837@0.23.1440.837" timestamp="1605646927785" />
     <state x="676" y="243" key="MultipleFileMergeDialog" timestamp="1605714603670">
       <screen x="0" y="0" width="1920" height="1080" />
@@ -249,16 +245,18 @@
     </state>
     <state x="784" y="465" key="NewPhpFileDialog/-1920.0.1920.1080/0.0.1920.1080@0.0.1920.1080" timestamp="1605707333153" />
     <state x="784" y="456" key="NewPhpFileDialog/-1920.23.1920.1057/0.23.1920.1006@0.23.1920.1006" timestamp="1605627519782" />
-    <state x="420" y="225" key="Vcs.Push.Dialog.v2" timestamp="1605647079771">
-      <screen x="0" y="23" width="1440" height="837" />
+    <state x="560" y="261" key="Vcs.Push.Dialog.v2" timestamp="1605714671067">
+      <screen x="0" y="0" width="1920" height="1080" />
     </state>
+    <state x="560" y="261" key="Vcs.Push.Dialog.v2/-1920.0.1920.1080/0.0.1920.1080@0.0.1920.1080" timestamp="1605714671067" />
     <state x="560" y="266" key="Vcs.Push.Dialog.v2/-1920.23.1920.1057/0.23.1920.1006@0.23.1920.1006" timestamp="1605624784762" />
     <state x="420" y="225" key="Vcs.Push.Dialog.v2/0.23.1440.837@0.23.1440.837" timestamp="1605647079770" />
-    <state x="765" y="458" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1605714585130">
-      <screen x="0" y="0" width="1920" height="1080" />
+    <state x="574" y="378" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1605717717078">
+      <screen x="0" y="23" width="1440" height="836" />
     </state>
     <state x="765" y="458" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/-1920.0.1920.1080/0.0.1920.1080@0.0.1920.1080" timestamp="1605714585130" />
     <state x="765" y="450" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/-1920.23.1920.1057/0.23.1920.1006@0.23.1920.1006" timestamp="1605624826659" />
+    <state x="574" y="378" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.23.1440.836@0.23.1440.836" timestamp="1605717717078" />
     <state x="660" y="324" key="git4idea.merge.GitPullDialog" timestamp="1605624792977">
       <screen x="0" y="23" width="1920" height="1006" />
     </state>
