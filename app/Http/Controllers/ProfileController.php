@@ -20,8 +20,7 @@ class ProfileController extends Controller
         $profile = Profile::all()->where('user_id', '=', auth()->id())->first();
 
         return view('profile.edit')->with(
-            ['puser' => $user,
-                'profile' => $profile]);
+            ['user' => $user, 'profile' => $profile]);
         //TODO: remove this after this is working
         //return view('profile.edit');
     }

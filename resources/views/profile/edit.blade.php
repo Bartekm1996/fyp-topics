@@ -33,14 +33,14 @@
                             <div class="col">
                                     <div class="card-profile-stats d-flex justify-content-center mt-md-5">
                                         @if(auth()->user()->role == 0)
-                                        <div>
-                                            <span class="heading">22</span>
-                                            <span class="description">{{ __('Requests') }}</span>
-                                        </div>
-                                        <div>
-                                            <span class="heading">10</span>
-                                            <span class="description">{{ __('Messages') }}</span>
-                                        </div>
+                                            <div>
+                                                <span class="heading">22</span>
+                                                <span class="description">{{ __('Requests') }}</span>
+                                            </div>
+                                            <div>
+                                                <span class="heading">10</span>
+                                                <span class="description">{{ __('Messages') }}</span>
+                                            </div>
                                         @endif
                                     </div>
                             </div>
@@ -88,7 +88,13 @@
                             @csrf
                             @method('put')
 
-                            <h6 class="heading-small text-muted mb-4">{{ __('User information') }}</h6>
+                            <div class="row">
+                                <h6 class="heading-small text-muted mb-4 col">{{ __('User information') }}</h6>
+                                <a class="nav-link pull-right" onclick="infoWindow('{{auth()->user()->id}}', '0')">
+                                    <i class="d-inline fas fa-info-circle " ></i>
+                                </a>
+                            </div>
+
 
                             @if (session('status'))
                                 <div class="alert alert-success alert-dismissible fade show" role="alert">
@@ -103,7 +109,7 @@
                             <div class="pl-lg-4">
                                 <div class="form-group{{ $errors->has('name') ? ' has-danger' : '' }}">
                                     <label class="form-control-label" for="input-name">{{ __('Name') }}</label>
-                                    <input type="text" name="name" id="input-name" class="form-control form-control-alternative{{ $errors->has('name') ? ' is-invalid' : '' }}" placeholder="{{ __('Name') }}" value="{{ old('name', auth()->user()->name) }}" required autofocus>
+                                    <input @if(auth()->user()->role == 0 || auth()->user()->role == 1)disabled @endif type="text" name="name" id="input-name" class="form-control form-control-alternative{{ $errors->has('name') ? ' is-invalid' : '' }}" placeholder="{{ __('Name') }}" value="{{ old('name', auth()->user()->name) }}" required autofocus>
 
                                     @if ($errors->has('name'))
                                         <span class="invalid-feedback" role="alert">
@@ -120,10 +126,6 @@
                                             <strong>{{ $errors->first('email') }}</strong>
                                         </span>
                                     @endif
-                                </div>
-
-                                <div class="text-center">
-                                    <button type="submit" class="btn btn-success mt-4">{{ __('Save') }}</button>
                                 </div>
                             </div>
                         </form>

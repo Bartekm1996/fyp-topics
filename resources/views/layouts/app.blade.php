@@ -19,7 +19,11 @@
         <link href="{{ asset('argon') }}/vendor/@fortawesome/fontawesome-free/css/all.min.css" rel="stylesheet">
         <!-- Argon CSS -->
         <link type="text/css" href="{{ asset('argon') }}/css/argon.css?v=1.0.0" rel="stylesheet">
-
+        <! -- Sweet Alers -->
+        <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+        <script src="sweetalert2.all.min.js"></script>
+        <!-- Optional: include a polyfill for ES6 Promises for IE11 -->
+        <script src="https://cdn.jsdelivr.net/npm/promise-polyfill"></script>
         <style>
             /* Timeline */
             .timeline,
@@ -194,6 +198,58 @@
             }
 
         </style>
+
+        <script>
+
+            function infoWindow(user_id, type) {
+                Swal.fire({
+                    title: 'Details Change',
+                    text: "To change details you will need to submit a ticket to admin",
+                    icon: 'info',
+                    showCancelButton: true,
+                    confirmButtonColor: '#3085d6',
+                    cancelButtonColor: '#d33',
+                    confirmButtonText: 'Submit'
+                }).then((result) => {
+                    if(result.isConfirmed){
+                        (async () => {
+                            const { value: text } = await Swal.fire({
+                                input: 'textarea',
+                                inputLabel: 'Message',
+                                inputPlaceholder: 'Type your message here...',
+                                inputAttributes: {
+                                    'aria-label': 'Type your message here'
+                                },
+                                showCancelButton: true,
+                                confirmButtonText: 'Submit',
+                                confirmButtonColor: '#3085d6',
+                                cancelButtonColor: '#d33'
+                            })
+
+                            if(text){
+                                jQuery.ajax({
+                                    type: "POST",
+                                    url: 'ticket/create',
+                                    dataType: 'json',
+                                    data: {'user_id' : user_id, 'message': text, 'type': type, "_token": "{{ csrf_token() }}",},
+                                        success: function (response) {
+                                        console.log(JSON.stringify(response));
+                                    },
+                                    failure: function (response) {
+                                         console.log('failure:' + JSON.stringify(response));
+                                    },
+                                    error: function (response) {
+                                         console.log('error:' + JSON.stringify(response));
+                                    }
+                                });
+                            }
+                        })()
+                    }
+                })
+            }
+
+        </script>
+
     </head>
     <body class="{{ $class ?? '' }}">
         @auth()

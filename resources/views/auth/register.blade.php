@@ -2,7 +2,6 @@
 
 @section('content')
     @include('layouts.headers.guest')
-
     <div class="container mt--8 pb-5">
         <!-- Table -->
         <div class="row justify-content-center">
@@ -12,7 +11,7 @@
                         <div class="text-center text-muted mb-4">
                             {{ __('Sign up') }}
                         </div>
-                        <form role="form" method="POST" action="{{ route('register') }}">
+                        <form role="form" method="POST" action="{{ route('register') }}" id="register_form">
                             @csrf
 
                             <div class="form-group{{ $errors->has('name') ? ' has-danger' : '' }}">
@@ -80,7 +79,7 @@
                                 </div>
                             </div>
                             <div class="text-center">
-                                <button type="submit" class="btn btn-primary mt-4">{{ __('Create account') }}</button>
+                                <button type="submit"  class="btn btn-primary mt-4">{{ __('Create account') }}</button>
                             </div>
                         </form>
                     </div>

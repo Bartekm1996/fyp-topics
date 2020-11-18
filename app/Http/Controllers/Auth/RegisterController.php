@@ -107,13 +107,18 @@ class RegisterController extends Controller
             }
         }
     }
+
     private function createUserAndProfile($user) {
 
         //Create default profile for user
+
+        $courses = ["Computer Systems", "Games Development", 'Information and Network Security', "Creative Media"];
+
+
         $profile = new Profile();
         $profile->user_id = $user->id;
-        $profile->qca = 0;
-        $profile->course = '';
+        $profile->qca = rand(2.0,4.0);
+        $profile->course = $courses[rand(0, (count($courses))-1)];
         $profile->image = '';
 
         if(strpos($user->email, '@studentmail.ul.ie') == true) {
