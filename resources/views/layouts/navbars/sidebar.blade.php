@@ -1,7 +1,7 @@
 <nav class="navbar navbar-vertical fixed-left navbar-expand-md navbar-light bg-white" id="sidenav-main">
-    <div class="container-fluid">
+    <div class="container-fluid"style="background-color: #00BB33">
         <!-- Toggler -->
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#sidenav-collapse-main" aria-controls="sidenav-main" aria-expanded="false" aria-label="Toggle navigation">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#sidenav-collapse-main" aria-controls="sidenav-main" aria-expanded="false" aria-label="Toggle navigation"style="background-color: #00BB33">
             <span class="navbar-toggler-icon"></span>
         </button>
         <!-- Brand -->
@@ -36,7 +36,7 @@
             </li>
         </ul>
         <!-- Collapse -->
-        <div class="collapse navbar-collapse" id="sidenav-collapse-main">
+        <div class="collapse navbar-collapse" id="sidenav-collapse-main"style="background-color: #00BB33">
             <!-- Collapse header -->
             <div class="navbar-collapse-header d-md-none">
                 <div class="row">

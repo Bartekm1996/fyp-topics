@@ -110,7 +110,7 @@ body
 
     text-align: left;
 
-    color: #525f7f;
+    color: white;
     background-color: #f8f9fe;
 }
 
@@ -15411,15 +15411,10 @@ button.section-darker:focus
 
 .bg-gradient-primary
 {
-    background: linear-gradient(87deg, #5e72e4 0, #825ee4 100%) !important;
+    background: linear-gradient(87deg, green 0, green 100%) !important;
 }
 
 .bg-gradient-secondary
-{
-    background: linear-gradient(87deg, #f7fafc 0, #f7f8fc 100%) !important;
-}
-
-.bg-gradient-success
 {
     background: linear-gradient(87deg, #2dce89 0, #2dcecc 100%) !important;
 }
@@ -19012,7 +19007,8 @@ textarea[resize='horizontal']
 }
 .navbar-horizontal .navbar-brand img
 {
-    height: 30px;
+    height: initial;
+    padding-right: 9rem
 }
 
 .navbar-horizontal .navbar-dark .navbar-brand
