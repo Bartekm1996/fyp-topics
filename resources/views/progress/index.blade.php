@@ -9,7 +9,7 @@
                 <div class="row">
                     <div class="col-md-12">
 
-                            <h1 style="color: white;font-weight: bold">My Progress</h1>
+                        <h1 style="color: white;font-weight: bold">My Progress</h1>
 
                         <div style="display:inline-block;width:100%;overflow-y:auto;">
                             <ul class="timeline timeline-horizontal">
@@ -18,25 +18,36 @@
 
                                         @switch($eventstates->where('fypevent_id','=', $event->id)->first()->state)
                                             @case(1)
-                                                <div class="timeline-badge bg-orange"><i class="fa fa-clock"></i></div>
+                                            <div class="timeline-badge bg-orange"><i class="fa fa-clock"></i></div>
                                             @break
                                             @case(2)
-                                                <div class="timeline-badge bg-green"><i class="fa fa-check"></i></div>
+                                            <div class="timeline-badge bg-green"><i class="fa fa-check"></i></div>
                                             @break
                                             @default
-                                                <div class="timeline-badge bg-gray"><i class="fa fa-times"></i></div>
+                                            <div class="timeline-badge bg-gray"><i class="fa fa-times"></i></div>
                                         @endswitch
-
-
 
                                         <div class="timeline-panel">
                                             <div class="timeline-heading">
                                                 <h4 class="timeline-title">{{$event->title}}</h4>
                                             </div>
-                                            <p><small class="text-muted"><i class="fa fa-clock"></i> {{$event->enddate}}</small></p>
-                                            <p><input id="uploadDocument" class="btn-sm" type="file" accept="application/pdf/*" name="pdf"/>
-                                                <img src="{{ asset('argon') }}/img/brand/file.png" width="40" height="40" />
-                                                <input class="btn btn-success btn-sm" type="submit" style="right: 190px" value="Upload"></p>
+                                            <p><small class="text-muted"><i class="fa fa-clock"></i> {{$event->enddate}}
+                                                </small></p>
+                                            <p>
+                                                @switch($eventstates->where('fypevent_id','=', $event->id)->first()->state)
+                                                    @case(\App\Models\FypEventState::COMPLETE)
+                                                    <button type="submit" id="filedl_{{$event->id}}"
+                                                            class="btn btn-warning btn-sm"><i class="fa fa-file"></i> Download</button>
+                                                    @break
+                                                    @case(\App\Models\FypEventState::IN_PROGRESS)
+                                                <div class="row">
+                                                    <div class="col-4"><input id="uploadDocument_{{$event->id}}" class="btn-sm" type="file"
+                                                                              accept="application/pdf/*" name="pdf"/></div>
+                                                    <div class="col-4"><button type="submit" class="btn btn-success btn-sm"><i class="fa fa-file"></i> Upload</button></div>
+                                                </div>
+                                                                                                 @break
+                                                @endswitch
+                                            </p>
 
                                         </div>
                                     </li>
@@ -50,7 +61,7 @@
 
                 <div class="row">
                     <div class="col-md-12">
-                            <h1 style="color: white;font-weight: bold">Timeline</h1>
+                        <h1 style="color: white;font-weight: bold">Timeline</h1>
 
                         <ul class="timeline">
 
@@ -72,7 +83,8 @@
                                         <div class="timeline-heading">
                                             <h4 class="timeline-title">{{$event->title}}</h4>
                                         </div>
-                                        <p><small class="text-muted"><i class="fa fa-clock"></i> {{$event->enddate}}</small></p>
+                                        <p><small class="text-muted"><i class="fa fa-clock"></i> {{$event->enddate}}
+                                            </small></p>
                                         <div class="timeline-body">
                                             <p>{{$event->description}}</p>
                                         </div>
@@ -82,18 +94,19 @@
                         </ul>
                     </div>
                 </div>
-                <div class="row">
-                    <div class="col-md-12" style="margin-top: 150px">
-                        <h1 style="color: white;font-weight: bold">Documents</h1>
-                        <div style="display:inline-block;width:100%;overflow-y:auto; margin-top: 50px">
-                            <input id="uploadDocument" type="file" accept="application/pdf/*" name="pdf"/><br>
-                            <div id="preview"><img src="{{ asset('argon') }}/img/brand/file.png" width="70" height="80" /></div><br>
+                <!-- TODO: Remove this as documents are only linked to the event in timeline -->
+            {{--                <div class="row">--}}
+            {{--                    <div class="col-md-12" style="margin-top: 150px">--}}
+            {{--                        <h1 style="color: white;font-weight: bold">Documents</h1>--}}
+            {{--                        <div style="display:inline-block;width:100%;overflow-y:auto; margin-top: 50px">--}}
+            {{--                            <input id="uploadDocument" type="file" accept="application/pdf/*" name="pdf"/><br>--}}
+            {{--                            <div id="preview"><img src="{{ asset('argon') }}/img/brand/file.png" width="70" height="80" /></div><br>--}}
 
-                            <input class="btn btn-success" type="submit" value="Upload">
-                        </div>
-                    </div>
-                </div>
-                <!-- test code end -->
+            {{--                            <input class="btn btn-success" type="submit" value="Upload">--}}
+            {{--                        </div>--}}
+            {{--                    </div>--}}
+            {{--                </div>--}}
+            <!-- test code end -->
 
 
             </div>
