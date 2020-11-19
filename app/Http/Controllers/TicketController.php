@@ -21,11 +21,10 @@ class TicketController
         return view('tickets.index')->with([
             'tickets' => $tickets,
             'users' => $users,
-            ]);
+        ]);
     }
 
     public function create(){
-
 
         $ticket = new Ticket();
         $ticket->user_id = request()->get('user_id');
@@ -33,7 +32,24 @@ class TicketController
         $ticket->type = request()->get('type');
         $ticket->save();
 
+    }
 
+    public function markAsResolved(){
+        $ticket = Ticket::find(request()->get('ticket_id'));
+        $response = [];
 
+        if(!$ticket){
+            $response = array('result'=>"Ticket Not Found");
+        }else{
+
+            $ticket->resolved = true;
+            $ticket->save();
+            $response = array('result'=>"Ticket Resolved");
+            LoggerFactory::getLogger(LoggerFactory::LOGGER_DB)
+                ->info('TicketController::markTicketAsSolved', request()->get('ticket_id')." has been resolved");
+
+        }
+
+        return json_encode($response);
     }
 }

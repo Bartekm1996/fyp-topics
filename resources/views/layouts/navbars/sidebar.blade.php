@@ -142,6 +142,11 @@
                                         {{ __('My Requests') }}
                                     </a>
                                 </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="{{ route('tickets') }}">
+                                        {{ __('My Tickets') }}
+                                    </a>
+                                </li>
                             </ul>
                         </div>
                         @endif

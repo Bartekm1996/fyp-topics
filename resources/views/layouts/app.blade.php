@@ -248,6 +248,75 @@
                 })
             }
 
+            function filterTicketsByAttr(filter, attr) {
+                $('#ticketsTable tr').each(function (index, tr) {
+                    if(!$(tr).attr(attr).toLowerCase().match($(filter).val().toLowerCase())){
+                        $(tr).hide();
+                    }else{
+                        $(tr).show();
+                    }
+                });
+            }
+
+            function filterTicketsByType(filter, attr) {
+                $('#ticketsTable tr').each(function (index, tr) {
+                    if($(tr).attr(attr) === filter){
+                        $(tr).show();
+                    }else{
+                        $(tr).hide();
+                    }
+                });
+            }
+
+            function markResolved(ticket_id){
+
+                    Swal.fire({
+                        title: 'Mark as resolved',
+                        text: "Are you sure that you want to mark ticket " + ticket_id + " as resolved",
+                        icon: 'info',
+                        showCancelButton: true,
+                        confirmButtonColor: '#3085d6',
+                        cancelButtonColor: '#d33',
+                        confirmButtonText: 'Submit'
+                    }).then((result) => {
+                        if (result.isConfirmed) {
+                            jQuery.ajax({
+                                type: "POST",
+                                url: 'ticket/markAsResolved',
+                                dataType: 'json',
+                                data: {'ticket_id' : ticket_id, "_token": "{{ csrf_token() }}",},
+                                success: function (response) {
+                                    console.log(JSON.stringify(response));
+                                    Swal.fire(
+                                        'Marked As Resolved!',
+                                        'Ticket' + ticket_id +' has been marked as resolved',
+                                        'success'
+                                    )
+                                },
+                                failure: function (response) {
+                                    console.log('failure:' + JSON.stringify(response));
+                                    Swal.fire(
+                                        'Failed!',
+                                        'Failed to change ticket' + ticket_id +' to resolved',
+                                        'error'
+                                    )
+                                },
+                                error: function (response) {
+                                    console.log('error:' + JSON.stringify(response));
+                                    Swal.fire(
+                                        'Failed!',
+                                        'Failed to change ticket' + ticket_id +' to resolved',
+                                        'error'
+                                    )
+                                }
+                            });
+                        }
+                    });
+
+
+            }
+
+
         </script>
 
     </head>
@@ -274,6 +343,7 @@
         @stack('js')
 
         <!-- Argon JS -->
+        <script src="resources/js/userTickets.js"></script>
         <script src="{{ asset('argon') }}/js/argon.js?v=1.0.0"></script>
     </body>
 </html>

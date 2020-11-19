@@ -18,6 +18,8 @@
            <!-- Extra details for Live View on GitHub Pages -->
     <!-- Canonical SEO -->
     <link rel="canonical" href="https://www.creative-tim.com/product/argon-dashboard-laravel" />
+    <link rel="stylesheet" type="text/css" href="resources/css/support.css">
+
     <! -- Sweet Alers -->
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
     <script src="sweetalert2.all.min.js"></script>
@@ -380,7 +382,7 @@
                                                 Options
                                               </a>
                                               <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-                                                  <a class="dropdown-item" href="#">View User</a>
+                                                  <a class="dropdown-item" href="#">Edit User</a>
                                                 @if($user->role == 2)
                                                     <a class="dropdown-item" href="#" onclick="confirmWindow('{{ $user->id }}', '{{ $user->name }}', 'remove')">Remove As Admin</a>
                                                 @else
@@ -410,10 +412,8 @@
     </div>
     </div>
     </div>
-
-
     <script src="{{ asset('argon') }}/vendor/jquery/dist/jquery.min.js"></script>
-        <script src="{{ asset('argon') }}/vendor/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="{{ asset('argon') }}/vendor/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
 
 
     <!-- Argon JS -->

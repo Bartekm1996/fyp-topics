@@ -25,6 +25,7 @@ Route::group(['middleware' => 'auth'], function () {
 	Route::resource('user', 'App\Http\Controllers\UserController', ['except' => ['show']]);
 	Route::post('user/changeAdminRights', ['as' => 'user.changeAdminRights', 'uses' => 'App\Http\Controllers\UserController@changeAdminRights']);
     Route::post('ticket/create', ['as' => 'ticket.create', 'uses' => 'App\Http\Controllers\TicketController@create']);
+    Route::post('ticket/markAsResolved', ['as' => 'ticket.markAsResolved', 'uses' => 'App\Http\Controllers\TicketController@markAsResolved']);
     Route::get('logging', 'App\Http\Controllers\LogMessageController@index')->name('logging');
     Route::get('progress', 'App\Http\Controllers\ProgressController@index')->name('progress');
     Route::get('tickets', 'App\Http\Controllers\TicketController@index')->name('tickets');
