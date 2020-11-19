@@ -12,3 +12,6 @@ yarn-error.log
 tasks.xml
 vcs.xml
 workspace.xml
+/.idea/*
+.idea/fyp_topics.iml
+/.idea/workspace.xml
