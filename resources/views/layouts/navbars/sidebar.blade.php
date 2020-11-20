@@ -1,12 +1,11 @@
 <nav class="navbar navbar-vertical fixed-left navbar-expand-md navbar-light bg-white" id="sidenav-main">
-    <div class="container-fluid"style="background-color: #00BB33">
+    <div class="container-fluid"style="background-color: whitesmoke">
         <!-- Toggler -->
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#sidenav-collapse-main" aria-controls="sidenav-main" aria-expanded="false" aria-label="Toggle navigation"style="background-color: #00BB33">
             <span class="navbar-toggler-icon"></span>
         </button>
         <!-- Brand -->
         <a class="navbar-brand pt-0" href="{{ route('home') }}">
-            <img src="{{ asset('argon') }}/img/brand/ul.png" class="navbar-brand-img" alt="..." width="150" height="32">
+            <img src="{{ asset('argon') }}/img/brand/ul.png" class="navbar-brand-img" alt="..." width="160rem" height="190rem">
         </a>
         <!-- User -->
         <ul class="nav align-items-center d-md-none">
@@ -36,7 +35,7 @@
             </li>
         </ul>
         <!-- Collapse -->
-        <div class="collapse navbar-collapse" id="sidenav-collapse-main"style="background-color: #00BB33">
+        <div class="collapse navbar-collapse" id="sidenav-collapse-main"style="background-color: whitesmoke">
             <!-- Collapse header -->
             <div class="navbar-collapse-header d-md-none">
                 <div class="row">
