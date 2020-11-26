@@ -1,16 +1,18 @@
 <nav class="navbar navbar-vertical fixed-left navbar-expand-md navbar-light bg-white" id="sidenav-main">
-    <div class="container-fluid"style="background-color: whitesmoke">
+    <div class="container-fluid" style="background-color: whitesmoke">
         <!-- Toggler -->
-            <span class="navbar-toggler-icon"></span>
+        <span class="navbar-toggler-icon"></span>
         </button>
         <!-- Brand -->
         <a class="navbar-brand pt-0" href="{{ route('home') }}">
-            <img src="{{ asset('argon') }}/img/brand/ul.png" class="navbar-brand-img" alt="..." width="160rem" height="190rem">
+            <img src="{{ asset('argon') }}/img/brand/ul.png" class="navbar-brand-img" alt="..." width="160rem"
+                 height="190rem">
         </a>
         <!-- User -->
         <ul class="nav align-items-center d-md-none">
             <li class="nav-item dropdown">
-                <a class="nav-link" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <a class="nav-link" href="#" role="button" data-toggle="dropdown" aria-haspopup="true"
+                   aria-expanded="false">
                     <div class="media align-items-center">
                         <span class="avatar avatar-sm rounded-circle">
                         <img alt="Image placeholder" src="{{ asset('argon') }}/img/theme/team-1-800x800.jpg">
@@ -35,7 +37,7 @@
             </li>
         </ul>
         <!-- Collapse -->
-        <div class="collapse navbar-collapse" id="sidenav-collapse-main"style="background-color: whitesmoke">
+        <div class="collapse navbar-collapse" id="sidenav-collapse-main" style="background-color: whitesmoke">
             <!-- Collapse header -->
             <div class="navbar-collapse-header d-md-none">
                 <div class="row">
@@ -45,7 +47,9 @@
                         </a>
                     </div>
                     <div class="col-6 collapse-close">
-                        <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#sidenav-collapse-main" aria-controls="sidenav-main" aria-expanded="false" aria-label="Toggle sidenav">
+                        <button type="button" class="navbar-toggler" data-toggle="collapse"
+                                data-target="#sidenav-collapse-main" aria-controls="sidenav-main" aria-expanded="false"
+                                aria-label="Toggle sidenav">
                             <span></span>
                             <span></span>
                         </button>
@@ -57,18 +61,20 @@
 
                 <li class="nav-item">
                     <a class="nav-link" href="{{ route('home') }}">
-                        @if (auth()->user()->role == 0) <i class="ni ni-tv-2 text-primary"></i> {{ __('My Fineal Year Project') }}
+                        @if (auth()->user()->role == 0) <i
+                            class="ni ni-tv-2 text-primary"></i> {{ __('My Fineal Year Project') }}
                         @endif
                     </a>
                 </li>
                 @if (auth()->user()->role == 1 || auth()->user()->role == 2)
                     <li class="nav-item">
-                      <a class="nav-link" href="{{ route('profile.edit') }}">
-                         {{ __('My profile') }}
-                      </a>
+                        <a class="nav-link" href="{{ route('profile.edit') }}">
+                            {{ __('My profile') }}
+                        </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link active" href="#navbar-examples" data-toggle="collapse" role="button" aria-expanded="true" aria-controls="navbar-examples">
+                        <a class="nav-link active" href="#navbar-examples" data-toggle="collapse" role="button"
+                           aria-expanded="true" aria-controls="navbar-examples">
                             <i class="fab fa-laravel" style="color: #f4645f;"></i>
                             <span class="nav-link-text" style="color: #f4645f;">{{ __('Management') }}</span>
                         </a>
@@ -119,35 +125,36 @@
                     </li>
                 @else
                     <li class="nav-item">
-                        <a class="nav-link active" href="#navbar-examples" data-toggle="collapse" role="button" aria-expanded="true" aria-controls="navbar-examples">
+                        <a class="nav-link active" href="#navbar-examples" data-toggle="collapse" role="button"
+                           aria-expanded="true" aria-controls="navbar-examples">
                             <i class="fab fa-laravel" style="color: #f4645f;"></i>
                             <span class="nav-link-text" style="color: #f4645f;">{{ __('User') }}</span>
                         </a>
                         @if (auth()->user()->role == 0)
-                           <div class="collapse show" id="navbar-examples">
-                            <ul class="nav nav-sm flex-column">
-                                <li class="nav-item">
-                                    <a class="nav-link" href="{{ route('profile.edit') }}">
-                                        {{ __('Profile') }}
-                                    </a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" href="">
-                                        {{ __('Messages') }}
-                                    </a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" href="{{ route('progress') }}">
-                                        {{ __('My Requests') }}
-                                    </a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" href="{{ route('tickets') }}">
-                                        {{ __('My Tickets') }}
-                                    </a>
-                                </li>
-                            </ul>
-                        </div>
+                            <div class="collapse show" id="navbar-examples">
+                                <ul class="nav nav-sm flex-column">
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="{{ route('profile.edit') }}">
+                                            {{ __('Profile') }}
+                                        </a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="">
+                                            {{ __('Messages') }}
+                                        </a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="{{ route('progress') }}">
+                                            {{ __('My Requests') }}
+                                        </a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="{{ route('tickets') }}">
+                                            {{ __('My Tickets') }}
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
                         @endif
                     </li>
                 @endif

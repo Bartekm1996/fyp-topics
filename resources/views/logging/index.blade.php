@@ -94,20 +94,26 @@
                             <div class="col-12">
                                 <h3 class="mb-0">Log Messages</h3>
                                 <div class="form-check form-check-inline" onclick="filterlog('-1')">
-                                    <input class="form-check-input" type="radio" name="inlineRadioOptions" id="rad1" value="0" checked>
-                                    <label class="form-check-label mb-0" for="rad1"><span class="badge badge-dark">All</span></label>
+                                    <input class="form-check-input" type="radio" name="inlineRadioOptions" id="rad1"
+                                           value="0" checked>
+                                    <label class="form-check-label mb-0" for="rad1"><span
+                                            class="badge badge-dark">All</span></label>
                                 </div>
 
                                 <div class="form-check form-check-inline" onclick="filterlog('0')">
-                                    <input class="form-check-input" type="radio" name="inlineRadioOptions" id="rad1" value="0">
+                                    <input class="form-check-input" type="radio" name="inlineRadioOptions" id="rad1"
+                                           value="0">
                                     <label class="form-check-label mb-0" for="rad1"><span class="badge badge-primary">DEBUG</span></label>
                                 </div>
                                 <div class="form-check form-check-inline" onclick="filterlog('1')">
-                                    <input class="form-check-input" type="radio" name="inlineRadioOptions" id="rad2" value="1">
-                                    <label class="form-check-label mb-0" for="rad2"><span class="badge badge-info">INFO</span></label>
+                                    <input class="form-check-input" type="radio" name="inlineRadioOptions" id="rad2"
+                                           value="1">
+                                    <label class="form-check-label mb-0" for="rad2"><span
+                                            class="badge badge-info">INFO</span></label>
                                 </div>
                                 <div class="form-check form-check-inline" onclick="filterlog('2')">
-                                    <input class="form-check-input" type="radio" name="inlineRadioOptions" id="rad3" value="2">
+                                    <input class="form-check-input" type="radio" name="inlineRadioOptions" id="rad3"
+                                           value="2">
                                     <label class="form-check-label mb-0" for="rad3"><span class="badge badge-warning">ERROR</span></label>
                                 </div>
                             </div>
@@ -141,7 +147,7 @@
                                         @endswitch
                                     </td>
                                     <td style="font-weight: bold">{{ $msg->tag }}</td>
-                                    <td >{{ $msg->message}}</td>
+                                    <td>{{ $msg->message}}</td>
 
                                     <td>{{ $msg->created_at}}</td>
                                 </tr>
@@ -170,13 +176,13 @@
 
                 t = '' + t;
                 const m = t.split('_')[0];
-                if(mode === '-1') {
-                    $('#'+ t).show();
+                if (mode === '-1') {
+                    $('#' + t).show();
                 } else {
-                    if(m === mode) {
-                        $('#'+ t).show();
+                    if (m === mode) {
+                        $('#' + t).show();
                     } else {
-                        $('#'+ t).hide();
+                        $('#' + t).hide();
                     }
                 }
 

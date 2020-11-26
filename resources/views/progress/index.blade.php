@@ -11,7 +11,8 @@
 
                         <h1 onclick='function toggleTimeline() {
                             $("#vtimeline").toggle();
-                        } toggleTimeline()' style="color: white;font-weight: bold"><i class="fa fa-external-link-alt"> </i> My Progress</h1>
+                        } toggleTimeline()' style="color: white;font-weight: bold"><i
+                                class="fa fa-external-link-alt"> </i> My Progress</h1>
 
                         <div class="cbar" id="vtimeline" style="display:inline-block;width:100%;overflow-y:auto;">
                             <ul class="timeline timeline-horizontal">
@@ -39,16 +40,23 @@
                                                 @switch($eventstates->where('fypevent_id','=', $event->id)->first()->state)
                                                     @case(\App\Models\FypEventState::COMPLETE)
                                                     <button type="submit" id="filedl_{{$event->id}}"
-                                                            class="btn btn-warning btn-sm"><i class="fa fa-file"></i> Download</button>
-                                                    @break
-                                                    @case(\App\Models\FypEventState::IN_PROGRESS)
-                                                <div class="row">
-                                                    <div class="col-4"><input id="uploadDocument_{{$event->id}}" class="btn-sm" type="file"
-                                                                              accept="application/pdf/*" name="pdf"/></div>
-                                                    <div class="col-4"><button type="submit" class="btn btn-success btn-sm"><i class="fa fa-file"></i> Upload</button></div>
+                                                            class="btn btn-warning btn-sm"><i class="fa fa-file"></i>
+                                                        Download
+                                                    </button>
+                                            @break
+                                            @case(\App\Models\FypEventState::IN_PROGRESS)
+                                            <div class="row">
+                                                <div class="col-4"><input id="uploadDocument_{{$event->id}}"
+                                                                          class="btn-sm" type="file"
+                                                                          accept="application/pdf/*" name="pdf"/></div>
+                                                <div class="col-4">
+                                                    <button type="submit" class="btn btn-success btn-sm"><i
+                                                            class="fa fa-file"></i> Upload
+                                                    </button>
                                                 </div>
-                                                   @BREAK
-                                                @ENDSWITCH
+                                            </div>
+                                            @BREAK
+                                            @ENDSWITCH
                                             </P>
 
                                         </div>
@@ -65,7 +73,8 @@
                     <div class="col-md-12">
                         <h1 onclick='function toggleTimeline() {
                             $("#htimeline").toggle();
-                        } toggleTimeline()' style="color: white;font-weight: bold"><i class="fa fa-external-link-alt"> Timeline</i></h1>
+                        } toggleTimeline()' style="color: white;font-weight: bold"><i class="fa fa-external-link-alt">
+                                Timeline</i></h1>
 
                         <ul id="htimeline" class="timeline">
 
