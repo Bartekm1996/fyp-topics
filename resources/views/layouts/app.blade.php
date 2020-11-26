@@ -215,6 +215,22 @@
             .cbar::-webkit-scrollbar:vertical {
                 display: none;
             }
+            .tablealt {}
+            .tablealt table {
+                border-collapse: collapse;
+                border-spacing: 0;
+                width: 100%;
+                border: 1px solid #ddd;
+            }
+            .tablealt th, td {
+                text-align: left;
+                padding: 5px;
+            }
+            .tablealt tr:nth-child(even) {
+                background-color: #d7d7d7;
+                color: white;
+            }
+
         </style>
 
         <script>

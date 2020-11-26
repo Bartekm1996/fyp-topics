@@ -103,9 +103,8 @@
                     <div class="col-12">
                     </div>
 
-                    <div class="table-responsive">
-                        {{--                    <table id="myTable" class="table align-items-center table-flush">--}}
-                        <table class="table table-striped">
+                    <div class="tablealt">
+                        <table>
                             <thead>
                             <tr>
                                 <th>Tag</th>
@@ -116,9 +115,9 @@
                             </thead>
                             <tbody>
                             @foreach ($messages as $msg)
-                                <tr>
-                                    <td>{{ $msg->tag }}</td>
-                                    <td>{{ $msg->message}}</td>
+                                <tr style="color: #0a0c0d">
+                                    <td style="font-weight: bold">{{ $msg->tag }}</td>
+                                    <td >{{ $msg->message}}</td>
                                     <td>@switch ($msg->type)
                                             @case(0) <span class="badge badge-primary">DEBUG</span> @break
                                             @case(1) <span class="badge badge-info">INFO</span> @break
