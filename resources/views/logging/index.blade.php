@@ -90,10 +90,28 @@
             <div class="col">
                 <div class="card shadow">
                     <div class="card-header border-0">
-                        <div class="row align-items-center">
-                            <div class="col-8">
+                        <div class="row align-items-end">
+                            <div class="col-12">
                                 <h3 class="mb-0">Log Messages</h3>
+                                <div class="form-check form-check-inline" onclick="filterlog('-1')">
+                                    <input class="form-check-input" type="radio" name="inlineRadioOptions" id="rad1" value="0" checked>
+                                    <label class="form-check-label mb-0" for="rad1"><span class="badge badge-dark">All</span></label>
+                                </div>
+
+                                <div class="form-check form-check-inline" onclick="filterlog('0')">
+                                    <input class="form-check-input" type="radio" name="inlineRadioOptions" id="rad1" value="0">
+                                    <label class="form-check-label mb-0" for="rad1"><span class="badge badge-primary">DEBUG</span></label>
+                                </div>
+                                <div class="form-check form-check-inline" onclick="filterlog('1')">
+                                    <input class="form-check-input" type="radio" name="inlineRadioOptions" id="rad2" value="1">
+                                    <label class="form-check-label mb-0" for="rad2"><span class="badge badge-info">INFO</span></label>
+                                </div>
+                                <div class="form-check form-check-inline" onclick="filterlog('2')">
+                                    <input class="form-check-input" type="radio" name="inlineRadioOptions" id="rad3" value="2">
+                                    <label class="form-check-label mb-0" for="rad3"><span class="badge badge-warning">ERROR</span></label>
+                                </div>
                             </div>
+
                             <div class="col-4 text-right">
                                 {{--                            <a href="" class="btn btn-sm btn-primary">Add user</a>--}}
                             </div>
@@ -103,27 +121,28 @@
                     <div class="col-12">
                     </div>
 
-                    <div class="tablealt">
+                    <div id="logtable" class="tablealt">
                         <table>
                             <thead>
-                            <tr>
+                            <tr style="color: #0a0c0d">
+                                <th>Type</th>
                                 <th>Tag</th>
                                 <th>Message</th>
-                                <th>Type</th>
                                 <th>Timestamp</th>
                             </tr>
                             </thead>
                             <tbody>
                             @foreach ($messages as $msg)
-                                <tr style="color: #0a0c0d">
-                                    <td style="font-weight: bold">{{ $msg->tag }}</td>
-                                    <td >{{ $msg->message}}</td>
+                                <tr id="{{$msg->type.'_'.$msg->id}}" style="color: #0a0c0d">
                                     <td>@switch ($msg->type)
                                             @case(0) <span class="badge badge-primary">DEBUG</span> @break
                                             @case(1) <span class="badge badge-info">INFO</span> @break
                                             @case(2) <span class="badge badge-warning">ERROR</span> @break
                                         @endswitch
                                     </td>
+                                    <td style="font-weight: bold">{{ $msg->tag }}</td>
+                                    <td >{{ $msg->message}}</td>
+
                                     <td>{{ $msg->created_at}}</td>
                                 </tr>
                             @endforeach
@@ -144,4 +163,25 @@
 @push('js')
     <script src="{{ asset('argon') }}/vendor/chart.js/dist/Chart.min.js"></script>
     <script src="{{ asset('argon') }}/vendor/chart.js/dist/Chart.extension.js"></script>
+    <script>
+        function filterlog(mode) {
+            $('.tablealt tr').each(function () {
+                var t = $(this).attr('id');
+
+                t = '' + t;
+                const m = t.split('_')[0];
+                if(mode === '-1') {
+                    $('#'+ t).show();
+                } else {
+                    if(m === mode) {
+                        $('#'+ t).show();
+                    } else {
+                        $('#'+ t).hide();
+                    }
+                }
+
+            });
+        }
+
+    </script>
 @endpush
