@@ -119,11 +119,12 @@
             }
             .timeline .timeline-item .timeline-panel .timeline-title {
                 margin-top: 0;
-                color: inherit;
+                color: #000000;
             }
             .timeline .timeline-item .timeline-panel .timeline-body > p,
             .timeline .timeline-item .timeline-panel .timeline-body > ul {
                 margin-bottom: 0;
+                color: #000000;
             }
             .timeline .timeline-item .timeline-panel .timeline-body > p + p {
                 margin-top: 5px;
