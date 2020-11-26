@@ -169,3 +169,21 @@
     bottom: 0px;
     left: 43px;
 }
+
+.logging,
+
+.logging table {
+    border-collapse: collapse;
+    width: 50%;
+}
+
+.logging th, td {
+    border: 2px solid black;
+    text-align: left;
+    color: #0a0c0d;
+}
+.logging th {
+    background-color: #8842d5;
+    color: white;
+}
+.logging tr:nth-child(even) { background-color: darkgrey;}

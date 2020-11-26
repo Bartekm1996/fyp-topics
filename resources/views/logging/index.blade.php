@@ -105,7 +105,7 @@
 
                     <div class="table-responsive">
                         {{--                    <table id="myTable" class="table align-items-center table-flush">--}}
-                        <table id="myTable" class="table table-striped">
+                        <table class="table table-striped">
                             <thead>
                             <tr>
                                 <th>Tag</th>

@@ -19,9 +19,8 @@
         <link href="{{ asset('argon') }}/vendor/@fortawesome/fontawesome-free/css/all.min.css" rel="stylesheet">
         <!-- Argon CSS -->
         <link type="text/css" href="{{ asset('argon') }}/css/argon.css?v=1.0.0" rel="stylesheet">
-        <! -- Sweet Alers -->
         <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
-        <script src="sweetalert2.all.min.js"></script>
+{{--        <script src="sweetalert2.all.min.js"></script>--}}
         <!-- Optional: include a polyfill for ES6 Promises for IE11 -->
         <script src="https://cdn.jsdelivr.net/npm/promise-polyfill"></script>
         <style>
@@ -198,6 +197,24 @@
                 left: 43px;
             }
 
+            .cbar::-webkit-scrollbar {
+                width: 1em;
+            }
+
+            .cbar::-webkit-scrollbar-track {
+                border-radius: 10px;
+                -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+            }
+
+            .cbar::-webkit-scrollbar-thumb {
+                border-radius: 10px;
+                background-color: #ffe623;
+
+            }
+
+            .cbar::-webkit-scrollbar:vertical {
+                display: none;
+            }
         </style>
 
         <script>

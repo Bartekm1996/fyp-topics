@@ -13,7 +13,7 @@
                             $("#vtimeline").toggle();
                         } toggleTimeline()' style="color: white;font-weight: bold"><i class="fa fa-external-link-alt"> </i> My Progress</h1>
 
-                        <div id="vtimeline" style="display:inline-block;width:100%;overflow-y:auto;">
+                        <div class="cbar" id="vtimeline" style="display:inline-block;width:100%;overflow-y:auto;">
                             <ul class="timeline timeline-horizontal">
                                 @foreach ($events as $event)
                                     <li class="timeline-item">
