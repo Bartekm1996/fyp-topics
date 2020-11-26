@@ -9,9 +9,11 @@
                 <div class="row">
                     <div class="col-md-12">
 
-                        <h1 style="color: white;font-weight: bold">My Progress</h1>
+                        <h1 onclick='function toggleTimeline() {
+                            $("#vtimeline").toggle();
+                        } toggleTimeline()' style="color: white;font-weight: bold"><i class="fa fa-external-link-alt"> </i> My Progress</h1>
 
-                        <div style="display:inline-block;width:100%;overflow-y:auto;">
+                        <div id="vtimeline" style="display:inline-block;width:100%;overflow-y:auto;">
                             <ul class="timeline timeline-horizontal">
                                 @foreach ($events as $event)
                                     <li class="timeline-item">
@@ -45,9 +47,9 @@
                                                                               accept="application/pdf/*" name="pdf"/></div>
                                                     <div class="col-4"><button type="submit" class="btn btn-success btn-sm"><i class="fa fa-file"></i> Upload</button></div>
                                                 </div>
-                                                                                                 @break
-                                                @endswitch
-                                            </p>
+                                                   @BREAK
+                                                @ENDSWITCH
+                                            </P>
 
                                         </div>
                                     </li>
@@ -61,9 +63,11 @@
 
                 <div class="row">
                     <div class="col-md-12">
-                        <h1 style="color: white;font-weight: bold">Timeline</h1>
+                        <h1 onclick='function toggleTimeline() {
+                            $("#htimeline").toggle();
+                        } toggleTimeline()' style="color: white;font-weight: bold"><i class="fa fa-external-link-alt"> Timeline</i></h1>
 
-                        <ul class="timeline">
+                        <ul id="htimeline" class="timeline">
 
                             @foreach ($events as $event)
                                 <li class="timeline-item">
