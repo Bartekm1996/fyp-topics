@@ -113,7 +113,7 @@
                                             </a>
                                         </li>
                                         <li class="nav-item">
-                                            <a class="nav-link" href="{{ route('logging') }}">
+                                            <a class="nav-link" href="{{ route('topics') }}">
                                                 {{ __('My Topics') }}
                                             </a>
                                         </li>
