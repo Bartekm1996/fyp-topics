@@ -2,7 +2,7 @@
     <div class="container-fluid" style="background-color: whitesmoke">
         <!-- Toggler -->
         <span class="navbar-toggler-icon"></span>
-        </button>
+{{--        </button>--}}
         <!-- Brand -->
         <a class="navbar-brand pt-0" href="{{ route('home') }}">
             <img src="{{ asset('argon') }}/img/brand/ul.png" class="navbar-brand-img" alt="..." width="160rem"
@@ -61,8 +61,7 @@
 
                 <li class="nav-item">
                     <a class="nav-link" href="{{ route('home') }}">
-                        @if (auth()->user()->role == 0) <i
-                            class="ni ni-tv-2 text-primary"></i> {{ __('My Fineal Year Project') }}
+                        @if (auth()->user()->role == 0) <i class="ni ni-tv-2 text-primary"></i> {{ __('My Final Year Project') }}
                         @endif
                     </a>
                 </li>
@@ -106,7 +105,7 @@
                                     <ul class="nav nav-sm flex-column">
                                         <li class="nav-item">
                                             <a class="nav-link" href="{{ route('user.index') }}">
-                                                {{ __('My Supervisees') }}                                            </a>
+                                                {{ __('My Supervisees') }} </a>
                                         </li>
                                         <li class="nav-item">
                                             <a class="nav-link" href="{{ route('logging') }}">
@@ -125,36 +124,35 @@
                     </li>
                 @else
                     <li class="nav-item">
-                        <a class="nav-link active" href="#navbar-examples" data-toggle="collapse" role="button"
-                           aria-expanded="true" aria-controls="navbar-examples">
+                        <a class="nav-link active" href="#navbar-examples" data-toggle="collapse" role="button" aria-expanded="true" aria-controls="navbar-examples">
                             <i class="fab fa-laravel" style="color: #f4645f;"></i>
                             <span class="nav-link-text" style="color: #f4645f;">{{ __('User') }}</span>
                         </a>
                         @if (auth()->user()->role == 0)
-                            <div class="collapse show" id="navbar-examples">
-                                <ul class="nav nav-sm flex-column">
-                                    <li class="nav-item">
-                                        <a class="nav-link" href="{{ route('profile.edit') }}">
-                                            {{ __('Profile') }}
-                                        </a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a class="nav-link" href="">
-                                            {{ __('Messages') }}
-                                        </a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a class="nav-link" href="{{ route('progress') }}">
-                                            {{ __('My Requests') }}
-                                        </a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a class="nav-link" href="{{ route('tickets') }}">
-                                            {{ __('My Tickets') }}
-                                        </a>
-                                    </li>
-                                </ul>
-                            </div>
+                           <div class="collapse show" id="navbar-examples">
+                            <ul class="nav nav-sm flex-column">
+                                <li class="nav-item">
+                                    <a class="nav-link" href="{{ route('profile.edit') }}">
+                                        {{ __('Profile') }}
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="">
+                                        {{ __('Messages') }}
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="{{ route('progress') }}">
+                                        {{ __('My Requests') }}
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="{{ route('tickets') }}">
+                                        {{ __('My Tickets') }}
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
                         @endif
                     </li>
                 @endif
