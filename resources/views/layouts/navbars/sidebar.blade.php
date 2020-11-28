@@ -143,7 +143,7 @@
                                 </li>
                                 <li class="nav-item">
                                     <a class="nav-link" href="{{ route('progress') }}">
-                                        {{ __('My Requests') }}
+                                        {{ __('My Progress') }}
                                     </a>
                                 </li>
                                 <li class="nav-item">
