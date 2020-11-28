@@ -259,21 +259,6 @@
     <div class="header bg-gradient-primary pb-8 pt-5 pt-md-8">
         <div class="container-fluid">
             <div class="header-body">
-                <!-- Card stats -->
-                @php
-                    $count = 0;
-                    $supCount = 0;
-                    $adminCount = 0;
-                @endphp
-                @foreach($users as $user)
-                    @if($user->role == 0)
-                        @php($count++)
-                    @elseif($user->role == 1)
-                        @php($supCount++)
-                    @elseif($user->role == 2)
-                        @php($adminCount++)
-                    @endif
-                @endforeach
                 <div class="row">
                     <div class="col-xl-3 col-lg-6">
                         <div class="card card-stats mb-4 mb-xl-0">
@@ -281,7 +266,7 @@
                                 <div class="row">
                                     <div class="col">
                                         <h5 class="card-title text-uppercase text-muted mb-0">Total Users</h5>
-                                        <span class="h2 font-weight-bold mb-0">{{ sizeof($users)  }}</span>
+                                        <span class="h2 font-weight-bold mb-0">{{ count($users)  }}</span>
                                     </div>
                                     <div class="col-auto">
                                         <div class="icon icon-shape bg-danger text-white rounded-circle shadow">
@@ -298,7 +283,7 @@
                                 <div class="row">
                                     <div class="col">
                                         <h5 class="card-title text-uppercase text-muted mb-0">Students</h5>
-                                        <span class="h2 font-weight-bold mb-0">{{ $count }}</span>
+                                        <span class="h2 font-weight-bold mb-0">{{ count($users->where('role', 0)) }}</span>
                                     </div>
                                     <div class="col-auto">
                                         <div class="icon icon-shape bg-warning text-white rounded-circle shadow">
@@ -315,7 +300,7 @@
                                 <div class="row">
                                     <div class="col">
                                         <h5 class="card-title text-uppercase text-muted mb-0">Supervisors</h5>
-                                        <span class="h2 font-weight-bold mb-0">{{ $supCount }}</span>
+                                        <span class="h2 font-weight-bold mb-0">{{ count($users->where('role', 1)) }}</span>
                                     </div>
                                     <div class="col-auto">
                                         <div class="icon icon-shape bg-yellow text-white rounded-circle shadow">
@@ -332,7 +317,7 @@
                                 <div class="row">
                                     <div class="col">
                                         <h5 class="card-title text-uppercase text-muted mb-0">Administrators</h5>
-                                        <span class="h2 font-weight-bold mb-0">{{ $adminCount }}</span>
+                                        <span class="h2 font-weight-bold mb-0">{{ count($users->where('role', 2)) }}</span>
                                     </div>
                                     <div class="col-auto">
                                         <div class="icon icon-shape bg-info text-white rounded-circle shadow">
