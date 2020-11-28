@@ -61,14 +61,14 @@
                             <div class="h2 mt-4">
                                 <i class="ni business_briefcase-24 mr-2"></i>{{ __('Course Of Study') }}
                             </div>
-                            <div>
+                            <div class="h5 mt-3">
                                 <i class="ni education_hat mr-2"></i>{{ $profile->course }}
                             </div>
 
                             <div class="h2 mt-4">
                                 <i class="ni business_briefcase-24 mr-2"></i>{{ __('Supervisor') }}
                             </div>
-                            <div>
+                            <div class="h5">
                                 <i class="ni education_hat mr-2"></i>{{ __('Paddy Healy') }}
                             </div>
 
