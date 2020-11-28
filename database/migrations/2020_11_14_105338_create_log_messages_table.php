@@ -15,6 +15,9 @@ class CreateLogMessagesTable extends Migration
     {
         Schema::create('log_messages', function (Blueprint $table) {
             $table->id();
+            $table->string('tag');
+            $table->string('message');
+            $table->integer('type');
             $table->timestamps();
         });
     }

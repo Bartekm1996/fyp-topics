@@ -15,9 +15,9 @@ class UpdateProfiles extends Migration
     {
         Schema::create('profiles', function (Blueprint $table) {
             $table->id();
-            $table->string('student_id')->unique()->default('00000000');
-            $table->string('course')->default(null);
-            $table->text('image')->default(null);
+            $table->string('student_id')->nullable();
+            $table->string('course')->nullable();
+            $table->text('image')->nullable();
             $table->float('qca')->default(0);
             $table->timestamps();
             $table->bigInteger('user_id')->unsigned();
