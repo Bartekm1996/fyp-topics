@@ -125,7 +125,7 @@
                 @else
                     <li class="nav-item">
                         <a class="nav-link active" href="#navbar-examples" data-toggle="collapse" role="button" aria-expanded="true" aria-controls="navbar-examples">
-                            <i class="fab fa-laravel" style="color: #f4645f;"></i>
+                            <i class="fa fa-user" style="color: #f4645f;"></i>
                             <span class="nav-link-text" style="color: #f4645f;">{{ __('User') }}</span>
                         </a>
                         @if (auth()->user()->role == 0)
@@ -157,8 +157,8 @@
                     </li>
                 @endif
                 <li class="nav-item ">
-                    <a class="nav-link" href="{{ route('messages') }}">
-                        <i class="ni ni-pin-3 text-orange"></i> {{ __('Final Year Projects') }}
+                    <a class="nav-link" href="{{ route('topics') }}">
+                        <i class="fa fa-book-reader"></i> {{ __('Final Year Topics') }}
                     </a>
                 </li>
             </ul>

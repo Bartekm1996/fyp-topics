@@ -90,21 +90,24 @@
                         <div class="row align-items-end">
                             <div class="col-12">
                                 <h3 class="mb-0">Topics</h3>
-                                <div class="form-check form-check-inline" onclick="filterlog('-1')">
-                                    <input class="form-check-input" type="radio" name="inlineRadioOptions" id="rad1" value="0" checked>
-                                    <label class="form-check-label mb-0" for="rad1"><span class="badge badge-dark">All</span></label>
-                                </div>
+                                @if(auth()->user()->role == 1)
 
-                                <div class="form-check form-check-inline" onclick="filterlog('{{auth()->id()}}')">
-                                    <input class="form-check-input" type="radio" name="inlineRadioOptions" id="rad1" value="0">
-                                    <label class="form-check-label mb-0" for="rad1"><span class="badge badge-primary">My Topics</span></label>
-                                </div>
+                                    <div class="form-check form-check-inline" onclick="filterlog('-1')">
+                                        <input class="form-check-input" type="radio" name="inlineRadioOptions" id="rad1" value="0" checked>
+                                        <label class="form-check-label mb-0" for="rad1"><span class="badge badge-dark">All</span></label>
+                                    </div>
 
+                                    <div class="form-check form-check-inline" onclick="filterlog('{{auth()->id()}}')">
+                                        <input class="form-check-input" type="radio" name="inlineRadioOptions" id="rad1" value="0">
+                                        <label class="form-check-label mb-0" for="rad1"><span class="badge badge-primary">My Topics</span></label>
+                                    </div>
+                                    <div>
+                                        <a onclick="add_topic()" class="btn btn-sm btn-primary">Add Topic</a>
+                                    </div>
+                                @endif
 
                             </div>
-                            <div>
-                                <a onclick="add_topic()" class="btn btn-sm btn-primary">Add Topic</a>
-                            </div>
+
                         </div>
                     </div>
 
@@ -133,7 +136,13 @@
                                     <td>{{$topic->max_requests}}</td>
                                     <td>{{$topic->created_at}}</td>
                                     <td>{{$users->where('id', '=', $topic->user_id)->first()->name}}</td>
-                                    <td><button class="btn btn-danger" onclick="deleteTopic({{$topic->id}})"><i class="fa fa-trash"></i></button> </td>
+                                    <td>
+                                        @if(auth()->user()->role == 1)
+                                            <button class="btn btn-danger" onclick="deleteTopic({{$topic->id}})"><i class="fa fa-trash"></i></button>
+                                        @else
+                                            <button class="btn btn-primary" onclick="requestTopic({{$topic->id}}, {{$topic->user_id}})"><i class="fa fa-external-link-alt"></i></button>
+                                        @endif
+                                    </td>
                                 </tr>
                             @endforeach
                             </tbody>
@@ -162,6 +171,25 @@
                 dataType:type,
                 success:success,
             });
+        }
+        function requestTopic(topic_id, supervisor_id) {
+            sendRequest(
+                {
+                    id: topic_id,
+                    supervisor_id: supervisor_id,
+                    _token : $('meta[name="csrf-token"]').attr('content')
+                },
+                'PATCH', '/topics', 'json',
+                function (response){
+                    if(response) {
+                        console.log(response);
+                        if(response.status) {
+                            console.log('Requested:' + response.id);
+                            window.location.href = window.location.href;
+                        }
+                    }
+                }
+            );
         }
 
         function deleteTopic(id) {

@@ -21,11 +21,11 @@ class CreateRequestTable extends Migration
         Schema::create('requests', function (Blueprint $table) {
             $table->id();
             $table->integer('state')->default(0);
-            $table->text('note');
+            $table->text('note')->nullable();
             $table->bigInteger('topic_id')->unsigned();
             $table->bigInteger('user_id')->unsigned();
             $table->bigInteger('supervisor_id')->unsigned();
-            $table->timestamp('decision_date');
+            $table->timestamp('decision_date')->nullable();
             $table->timestamps();
 
             $table->foreign('topic_id')->references('id')->on('topics')

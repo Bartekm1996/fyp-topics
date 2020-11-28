@@ -20,6 +20,18 @@ class TopicsController extends Controller
     public function delete(Request $request) {
         $id = $request->input('id');
         Topic::where('id', $id)->delete();
+        return response()->json(['status' => true, 'id'=> $id]);
+    }
+
+    public function patch(Request $request) {
+        $id = $request->input('id');
+        $sid = $request->input('supervisor_id');
+
+        $res = new \App\Models\Request();
+        $res->user_id = auth()->id();
+        $res->supervisor_id = $sid;
+        $res->topic_id = $id;
+        $res->save();
 
         return response()->json(['status' => true, 'id'=> $id]);
     }
