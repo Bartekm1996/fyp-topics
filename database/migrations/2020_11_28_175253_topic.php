@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class UpdateProfiles2 extends Migration
+class Topic extends Migration
 {
     /**
      * Run the migrations.
@@ -13,12 +13,12 @@ class UpdateProfiles2 extends Migration
      */
     public function up()
     {
-        Schema::create('profiles', function (Blueprint $table) {
+        Schema::create('topics', function (Blueprint $table) {
             $table->id();
-            $table->string('student_id')->unique()->default('00000000');
-            $table->string('course')->default(null);
-            $table->text('image')->default(null);
-            $table->float('qca')->default(0);
+            $table->string('title');
+            $table->text('body');
+            $table->float('qca', 3, 2)->default(2.0);
+            $table->integer('max_requests')->default(10);
             $table->timestamps();
             $table->bigInteger('user_id')->unsigned();
 
@@ -35,6 +35,6 @@ class UpdateProfiles2 extends Migration
      */
     public function down()
     {
-        Schema::drop('profiles');
+        Schema::drop('topics');
     }
 }

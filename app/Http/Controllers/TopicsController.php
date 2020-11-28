@@ -6,8 +6,8 @@ namespace App\Http\Controllers;
 use App\Logging\LoggerFactory;
 use App\Models\Topic;
 use App\Models\User;
-use http\Client\Request;
-
+use http\Exception;
+use Illuminate\Http\Request;
 class TopicsController extends Controller
 {
 
@@ -16,7 +16,7 @@ class TopicsController extends Controller
         return view('topics.index')->with(['topics' => Topic::all(), 'users' => User::all()]);
     }
 
-    public function add(Request $request)
+    public function store(Request $request)
     {
 
 //        $status = true;
@@ -36,6 +36,6 @@ class TopicsController extends Controller
 //            $status = false;
 //        }
 //        $logger->debug('ProgressController::store', 'Topic Added:'.$status);
-        return response()->json([]);
+        return response()->json($request);
     }
 }

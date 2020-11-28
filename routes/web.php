@@ -39,8 +39,9 @@ Route::group(['middleware' => 'auth'], function () {
     Route::get('progress', 'App\Http\Controllers\ProgressController@index')->name('progress');
     Route::post('progress', 'App\Http\Controllers\ProgressController@store');
 
+
     Route::get('topics', 'App\Http\Controllers\TopicsController@index')->name('topics');
-    Route::post('topics', 'App\Http\Controllers\TopicsController@add');
+    Route::post('topics', 'App\Http\Controllers\TopicsController@store');
 
     Route::get('requests', 'App\Http\Controllers\ReqeustsController@index')->name('requests');
 });

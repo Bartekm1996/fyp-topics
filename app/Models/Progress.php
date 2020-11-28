@@ -16,8 +16,7 @@ class Progress extends Model
 
     protected $fillable = [
         'user_id',
-        'fypevent_state_id',
-        'type',
+        'fypevent_state_id'
     ];
 
     protected $casts = [

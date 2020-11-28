@@ -155,15 +155,17 @@
         function upload_topic(data) {
             $.ajaxSetup({
                 headers: {
-                    'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                    'X-CSRF-TOKEN': @json(csrf_token())
                 }
             });
 
             let ress = {
-                title:data.title,
-                body:data.body,
-                qca:data.qca,
-                max_requests:data.max_requests,
+                data: {
+                    title:data.title,
+                    body:data.body,
+                    qca:data.qca,
+                    max_requests:data.max_requests
+                },
                 _token : $('meta[name="csrf-token"]').attr('content')
             };
             console.log(ress);
@@ -171,10 +173,8 @@
             $.ajax({
                 url: "/topics",
                 type:"POST",
-                dataType: 'JSON',
-                data:  {
-                    _token: $('meta[name="csrf-token"]').attr('content')
-                },
+                data: {_token :  $('meta[name="csrf-token"]').attr('content'), value: 'this is a test'},
+                dataType:"json",
                 success:function(response){
                     console.log(response);
                     if(response) {
