@@ -121,6 +121,7 @@
                                 <th>Max Requests</th>
                                 <th>Created</th>
                                 <th>Supervisor</th>
+                                <th>Action</th>
                             </tr>
                             </thead>
                             <tbody>
@@ -132,6 +133,7 @@
                                     <td>{{$topic->max_requests}}</td>
                                     <td>{{$topic->created_at}}</td>
                                     <td>{{$users->where('id', '=', $topic->user_id)->first()->name}}</td>
+                                    <td><button class="btn btn-danger" onclick="deleteTopic({{$topic->id}})"><i class="fa fa-trash"></i></button> </td>
                                 </tr>
                             @endforeach
                             </tbody>
@@ -152,6 +154,34 @@
     <script src="{{ asset('argon') }}/vendor/chart.js/dist/Chart.min.js"></script>
     <script src="{{ asset('argon') }}/vendor/chart.js/dist/Chart.extension.js"></script>
     <script>
+        function sendRequest(data, method, url, type, success) {
+            $.ajax({
+                url: url,
+                type:method,
+                data: data,
+                dataType:type,
+                success:success,
+            });
+        }
+
+        function deleteTopic(id) {
+            sendRequest(
+                {id: id,
+                _token : $('meta[name="csrf-token"]').attr('content')},
+                'DELETE', '/topics', 'json',
+                function (response){
+                    if(response) {
+                        console.log(response);
+                        if(response.status) {
+                            console.log('deleted:' + response.id);
+                            window.location.href = window.location.href;
+                        }
+                    }
+                }
+            );
+        }
+
+
         function upload_topic(data) {
             $.ajaxSetup({
                 headers: {
@@ -164,21 +194,24 @@
                     title:data.title,
                     body:data.body,
                     qca:data.qca,
-                    max_requests:data.max_requests
+                    max_requests:data.max_requests,
+                    _token : $('meta[name="csrf-token"]').attr('content')
                 },
-                _token : $('meta[name="csrf-token"]').attr('content')
+
             };
-            console.log(ress);
+            //console.log(ress);
 
             $.ajax({
                 url: "/topics",
                 type:"POST",
-                data: {_token :  $('meta[name="csrf-token"]').attr('content'), value: 'this is a test'},
+                data: ress,
                 dataType:"json",
                 success:function(response){
                     console.log(response);
                     if(response) {
-                        alert(response);
+                        if(response.status) {
+                            window.location.href = window.location.href;
+                        }
                     }
                 },
             });
