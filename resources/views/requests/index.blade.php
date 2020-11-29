@@ -100,15 +100,20 @@
 
                                 <div class="form-check form-check-inline" onclick="filterlog('0')">
                                     <input class="form-check-input" type="radio" name="inlineRadioOptions" id="rad1" value="0">
-                                    <label class="form-check-label mb-0" for="rad1"><span class="badge badge-primary">DEBUG</span></label>
+                                    <label class="form-check-label mb-0" for="rad1"><span class="badge badge-primary">Idle</span></label>
                                 </div>
                                 <div class="form-check form-check-inline" onclick="filterlog('1')">
                                     <input class="form-check-input" type="radio" name="inlineRadioOptions" id="rad2" value="1">
-                                    <label class="form-check-label mb-0" for="rad2"><span class="badge badge-info">INFO</span></label>
+                                    <label class="form-check-label mb-0" for="rad2"><span class="badge badge-info">Reviewing</span></label>
                                 </div>
                                 <div class="form-check form-check-inline" onclick="filterlog('2')">
                                     <input class="form-check-input" type="radio" name="inlineRadioOptions" id="rad3" value="2">
-                                    <label class="form-check-label mb-0" for="rad3"><span class="badge badge-warning">ERROR</span></label>
+                                    <label class="form-check-label mb-0" for="rad3"><span class="badge badge-success">Successful</span></label>
+                                </div>
+
+                                <div class="form-check form-check-inline" onclick="filterlog('3')">
+                                    <input class="form-check-input" type="radio" name="inlineRadioOptions" id="rad3" value="2">
+                                    <label class="form-check-label mb-0" for="rad3"><span class="badge badge-warning">Declined</span></label>
                                 </div>
                             </div>
 
@@ -125,27 +130,39 @@
                         <table>
                             <thead>
                             <tr style="color: #0a0c0d">
-                                <th>Type</th>
-                                <th>Tag</th>
-                                <th>Message</th>
-                                <th>Timestamp</th>
+                                <th>State</th>
+                                <th>Title</th>
+                                <th>Description</th>
+                                <th>Supervisor</th>
+                                <th>Requested at</th>
+                                <th>Action</th>
                             </tr>
                             </thead>
                             <tbody>
-{{--                            @foreach ($messages as $msg)--}}
-{{--                                <tr id="{{$msg->type.'_'.$msg->id}}" style="color: #0a0c0d">--}}
-{{--                                    <td>@switch ($msg->type)--}}
-{{--                                            @case(0) <span class="badge badge-primary">DEBUG</span> @break--}}
-{{--                                            @case(1) <span class="badge badge-info">INFO</span> @break--}}
-{{--                                            @case(2) <span class="badge badge-warning">ERROR</span> @break--}}
-{{--                                        @endswitch--}}
-{{--                                    </td>--}}
-{{--                                    <td style="font-weight: bold">{{ $msg->tag }}</td>--}}
-{{--                                    <td >{{ $msg->message}}</td>--}}
+                            @foreach ($requests as $req)
 
-{{--                                    <td>{{ $msg->created_at}}</td>--}}
-{{--                                </tr>--}}
-{{--                            @endforeach--}}
+                                {{$topic = $topics->where('id', $req->topic_id)->first()}}
+                                {{$suser = $users->where('id', $req->supervisor_id)->first()}}
+
+                                <tr id="{{$req->id}}" style="color: #0a0c0d">
+                                    <td>@switch ($req->state)
+                                            @case(0) <span class="badge badge-primary">Idle</span> @break
+                                            @case(1) <span class="badge badge-info">Reviewing</span> @break
+                                            @case(2) <span class="badge badge-success">Successful</span> @break
+                                            @case(3) <span class="badge badge-warning">Declined</span> @break
+                                        @endswitch
+                                    </td>
+                                    <td style="font-weight: bold">{{$topic->title}}</td>
+                                    <td>{{$topic->body}}</td>
+
+                                    <td>{{$suser->name}}</td>
+                                    <td>{{$req->created_at}}</td>
+                                    <td>
+                                        <button class="btn btn-danger"><i class="fa fa-times"></i> </button>
+                                        <button class="btn btn-info"><i class="fa fa-envelope"></i> </button>
+                                    </td>
+                                </tr>
+                            @endforeach
                             </tbody>
                         </table>
                     </div>
