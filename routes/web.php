@@ -45,7 +45,7 @@ Route::group(['middleware' => 'auth'], function () {
     Route::delete('topics', 'App\Http\Controllers\TopicsController@delete');
     Route::patch('topics', 'App\Http\Controllers\TopicsController@patch');
 
-    Route::get('requests', 'App\Http\Controllers\ReqeustsController@index')->name('requests');
+    Route::get('requests', 'App\Http\Controllers\RequestsController@index')->name('requests');
 });
 
 

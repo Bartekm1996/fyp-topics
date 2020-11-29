@@ -12,8 +12,8 @@
                             <div class="card-body">
                                 <div class="row">
                                     <div class="col">
-                                        <h5 class="card-title text-uppercase text-muted mb-0">Total Messages</h5>
-                                        <span class="h2 font-weight-bold mb-0">{{count($messages)}}</span>
+                                        <h5 class="card-title text-uppercase text-muted mb-0">Total Requests</h5>
+                                        <span class="h2 font-weight-bold mb-0">4</span>
                                     </div>
                                     <div class="col-auto">
                                         <div class="icon icon-shape bg-danger text-white rounded-circle shadow">
@@ -31,7 +31,7 @@
                                     <div class="col">
                                         <h5 class="card-title text-uppercase text-muted mb-0">Debug</h5>
                                         <span
-                                            class="h2 font-weight-bold mb-0">{{count($messages->where('type','=',0))}}</span>
+                                            class="h2 font-weight-bold mb-0">0</span>
                                     </div>
                                     <div class="col-auto">
                                         <div class="icon icon-shape bg-primary text-white rounded-circle shadow">
@@ -50,7 +50,7 @@
                                     <div class="col">
                                         <h5 class="card-title text-uppercase text-muted mb-0">Info</h5>
                                         <span
-                                            class="h2 font-weight-bold mb-0">{{count($messages->where('type','=',1))}}</span>
+                                            class="h2 font-weight-bold mb-0">0</span>
                                     </div>
                                     <div class="col-auto">
                                         <div class="icon icon-shape bg-gradient-gray text-white rounded-circle shadow">
@@ -69,7 +69,7 @@
                                     <div class="col">
                                         <h5 class="card-title text-uppercase text-muted mb-0">Error</h5>
                                         <span
-                                            class="h2 font-weight-bold mb-0">{{count($messages->where('type','=',2))}}</span>
+                                            class="h2 font-weight-bold mb-0">0</span>
                                     </div>
                                     <div class="col-auto">
                                         <div class="icon icon-shape bg-red text-white rounded-circle shadow">
@@ -132,20 +132,20 @@
                             </tr>
                             </thead>
                             <tbody>
-                            @foreach ($messages as $msg)
-                                <tr id="{{$msg->type.'_'.$msg->id}}" style="color: #0a0c0d">
-                                    <td>@switch ($msg->type)
-                                            @case(0) <span class="badge badge-primary">DEBUG</span> @break
-                                            @case(1) <span class="badge badge-info">INFO</span> @break
-                                            @case(2) <span class="badge badge-warning">ERROR</span> @break
-                                        @endswitch
-                                    </td>
-                                    <td style="font-weight: bold">{{ $msg->tag }}</td>
-                                    <td >{{ $msg->message}}</td>
+{{--                            @foreach ($messages as $msg)--}}
+{{--                                <tr id="{{$msg->type.'_'.$msg->id}}" style="color: #0a0c0d">--}}
+{{--                                    <td>@switch ($msg->type)--}}
+{{--                                            @case(0) <span class="badge badge-primary">DEBUG</span> @break--}}
+{{--                                            @case(1) <span class="badge badge-info">INFO</span> @break--}}
+{{--                                            @case(2) <span class="badge badge-warning">ERROR</span> @break--}}
+{{--                                        @endswitch--}}
+{{--                                    </td>--}}
+{{--                                    <td style="font-weight: bold">{{ $msg->tag }}</td>--}}
+{{--                                    <td >{{ $msg->message}}</td>--}}
 
-                                    <td>{{ $msg->created_at}}</td>
-                                </tr>
-                            @endforeach
+{{--                                    <td>{{ $msg->created_at}}</td>--}}
+{{--                                </tr>--}}
+{{--                            @endforeach--}}
                             </tbody>
                         </table>
                     </div>
