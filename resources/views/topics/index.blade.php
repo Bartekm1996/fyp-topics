@@ -141,7 +141,9 @@
                                     <td>{{$users->where('id', '=', $topic->user_id)->first()->name}}</td>
                                     <td>
                                         @if(auth()->user()->role == 1)
-                                            <button class="btn btn-danger" onclick="deleteTopic({{$topic->id}})"><i class="fa fa-trash"></i></button>
+                                            @if(auth()->id() == $topic->user_id)
+                                                <button class="btn btn-danger" onclick="deleteTopic({{$topic->id}})"><i class="fa fa-trash"></i></button>
+                                            @endif
                                         @else
                                             <button class="btn btn-primary" onclick="requestTopic({{$topic->id}}, {{$topic->user_id}})"><i class="fa fa-external-link-alt"></i></button>
                                         @endif
