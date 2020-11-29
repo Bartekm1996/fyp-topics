@@ -42,41 +42,6 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-xl-3 col-lg-6">
-                        <div class="card card-stats mb-4 mb-xl-0">
-                            <div class="card-body">
-                                <div class="row">
-                                    <div class="col">
-                                        <h5 class="card-title text-uppercase text-muted mb-0">Info</h5>
-{{--                                        <span class="h2 font-weight-bold mb-0">{{count($messages->where('type','=',1))}}</span>--}}
-                                    </div>
-                                    <div class="col-auto">
-                                        <div class="icon icon-shape bg-gradient-gray text-white rounded-circle shadow">
-                                            <i class="fas fa-info-circle"></i>
-                                        </div>
-                                    </div>
-                                </div>
-
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-xl-3 col-lg-6">
-                        <div class="card card-stats mb-4 mb-xl-0">
-                            <div class="card-body">
-                                <div class="row">
-                                    <div class="col">
-                                        <h5 class="card-title text-uppercase text-muted mb-0">Error</h5>
-{{--                                        <span class="h2 font-weight-bold mb-0">{{count($messages->where('type','=',2))}}</span>--}}
-                                    </div>
-                                    <div class="col-auto">
-                                        <div class="icon icon-shape bg-red text-white rounded-circle shadow">
-                                            <i class="fas fa-exclamation-triangle"></i>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
                 </div>
 
             </div>
@@ -142,10 +107,10 @@
                                     <td>
                                         @if(auth()->user()->role == 1)
                                             @if(auth()->id() == $topic->user_id)
-                                                <button class="btn btn-danger" onclick="deleteTopic({{$topic->id}})"><i class="fa fa-trash"></i></button>
+                                                <button class="btn btn-danger" onclick="deleteTopic({{$topic->id}})" data-toggle="tooltip" data-placement="top" title="Remove Topic"><i class="fa fa-trash"></i></button>
                                             @endif
                                         @else
-                                            <button class="btn btn-primary" onclick="requestTopic({{$topic->id}}, {{$topic->user_id}})"><i class="fa fa-external-link-alt"></i></button>
+                                            <button class="btn btn-primary" onclick="requestTopic({{$topic->id}}, {{$topic->user_id}})" data-toggle="tooltip" data-placement="top" title="Request this Topic"><i class="fa fa-external-link-alt"></i></button>
                                         @endif
                                     </td>
                                 </tr>
@@ -168,6 +133,10 @@
     <script src="{{ asset('argon') }}/vendor/chart.js/dist/Chart.min.js"></script>
     <script src="{{ asset('argon') }}/vendor/chart.js/dist/Chart.extension.js"></script>
     <script>
+        $(document).ready(function(){
+            $('[data-toggle="tooltip"]').tooltip();
+        });
+
         function sendRequest(data, method, url, type, success) {
             $.ajax({
                 url: url,

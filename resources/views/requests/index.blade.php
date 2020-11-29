@@ -6,81 +6,6 @@
         <div class="container-fluid">
             <div class="header-body">
                 <!-- Card stats -->
-                <div class="row">
-                    <div class="col-xl-3 col-lg-6">
-                        <div class="card card-stats mb-4 mb-xl-0">
-                            <div class="card-body">
-                                <div class="row">
-                                    <div class="col">
-                                        <h5 class="card-title text-uppercase text-muted mb-0">Total Requests</h5>
-                                        <span class="h2 font-weight-bold mb-0">{{count($mod_requests)}}</span>
-                                    </div>
-                                    <div class="col-auto">
-                                        <div class="icon icon-shape bg-danger text-white rounded-circle shadow">
-                                            <i class="fas fa-chart-bar"></i>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-xl-3 col-lg-6">
-                        <div class="card card-stats mb-4 mb-xl-0">
-                            <div class="card-body">
-                                <div class="row">
-                                    <div class="col">
-                                        <h5 class="card-title text-uppercase text-muted mb-0">Debug</h5>
-                                        <span
-                                            class="h2 font-weight-bold mb-0">0</span>
-                                    </div>
-                                    <div class="col-auto">
-                                        <div class="icon icon-shape bg-primary text-white rounded-circle shadow">
-                                            <i class="fas fa-bug"></i>
-                                        </div>
-                                    </div>
-                                </div>
-
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-xl-3 col-lg-6">
-                        <div class="card card-stats mb-4 mb-xl-0">
-                            <div class="card-body">
-                                <div class="row">
-                                    <div class="col">
-                                        <h5 class="card-title text-uppercase text-muted mb-0">Info</h5>
-                                        <span
-                                            class="h2 font-weight-bold mb-0">0</span>
-                                    </div>
-                                    <div class="col-auto">
-                                        <div class="icon icon-shape bg-gradient-gray text-white rounded-circle shadow">
-                                            <i class="fas fa-info-circle"></i>
-                                        </div>
-                                    </div>
-                                </div>
-
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-xl-3 col-lg-6">
-                        <div class="card card-stats mb-4 mb-xl-0">
-                            <div class="card-body">
-                                <div class="row">
-                                    <div class="col">
-                                        <h5 class="card-title text-uppercase text-muted mb-0">Error</h5>
-                                        <span
-                                            class="h2 font-weight-bold mb-0">0</span>
-                                    </div>
-                                    <div class="col-auto">
-                                        <div class="icon icon-shape bg-red text-white rounded-circle shadow">
-                                            <i class="fas fa-exclamation-triangle"></i>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
 
             </div>
         </div>
@@ -92,7 +17,7 @@
                     <div class="card-header border-0">
                         <div class="row align-items-end">
                             <div class="col-12">
-                                <h3 class="mb-0">Log Messages</h3>
+                                <h3 class="mb-0">Topics</h3>
                                 <div class="form-check form-check-inline" onclick="filterlog('-1')">
                                     <input class="form-check-input" type="radio" name="inlineRadioOptions" id="rad1" value="0" checked>
                                     <label class="form-check-label mb-0" for="rad1"><span class="badge badge-dark">All</span></label>
@@ -174,12 +99,13 @@
                                     <td>{{$req['requested_at']}}</td>
                                     <td>
                                         @if(auth()->user()->role == 0)
-                                            <button class="btn btn-danger"><i class="fa fa-times"></i> </button>
-                                            <button class="btn btn-info"><i class="fa fa-envelope"></i> </button>
+                                            <button class="btn btn-danger" data-toggle="tooltip" data-placement="top" title="Cancel Request"><i class="fa fa-times"></i> </button>
+                                            <button class="btn btn-info" data-toggle="tooltip" data-placement="top" title="Message Supervisor"><i class="fa fa-envelope"></i> </button>
                                         @elseif(auth()->user()->role == 1)
-                                            <button class="btn btn-danger"><i class="fa fa-times"></i> </button>
-                                            <button class="btn btn-success"><i class="fa fa-check"></i> </button>
-                                            <button class="btn btn-info"><i class="fa fa-envelope"></i> </button>
+                                            <button class="btn btn-warning" data-toggle="tooltip" data-placement="top" title="Review Request"><i class="fa fa-search-plus"></i> </button>
+                                            <button class="btn btn-danger" data-toggle="tooltip" data-placement="top" title="Decline Student Request"><i class="fa fa-times"></i> </button>
+                                            <button class="btn btn-success" data-toggle="tooltip" data-placement="top" title="Accept Request"><i class="fa fa-check"></i> </button>
+                                            <button class="btn btn-info" data-toggle="tooltip" data-placement="top" title="Message Student"><i class="fa fa-envelope"></i> </button>
                                         @endif
                                     </td>
                                 </tr>
@@ -202,6 +128,10 @@
     <script src="{{ asset('argon') }}/vendor/chart.js/dist/Chart.min.js"></script>
     <script src="{{ asset('argon') }}/vendor/chart.js/dist/Chart.extension.js"></script>
     <script>
+        $(document).ready(function(){
+            $('[data-toggle="tooltip"]').tooltip();
+        });
+
         function studentInfo(name,sid, qca) {
             console.log(name,sid, qca)
             Swal.fire(
