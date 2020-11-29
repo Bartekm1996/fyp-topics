@@ -117,6 +117,11 @@
                                                 {{ __('My Topics') }}
                                             </a>
                                         </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="{{ route('requests') }}">
+                                                {{ __('Topic Requests') }}
+                                            </a>
+                                        </li>
                                     </ul>
                                 </div>
                             </div>

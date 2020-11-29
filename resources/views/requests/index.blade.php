@@ -13,7 +13,7 @@
                                 <div class="row">
                                     <div class="col">
                                         <h5 class="card-title text-uppercase text-muted mb-0">Total Requests</h5>
-                                        <span class="h2 font-weight-bold mb-0">{{count($requests)}}</span>
+                                        <span class="h2 font-weight-bold mb-0">{{count($mod_requests)}}</span>
                                     </div>
                                     <div class="col-auto">
                                         <div class="icon icon-shape bg-danger text-white rounded-circle shadow">
@@ -133,33 +133,54 @@
                                 <th>State</th>
                                 <th>Title</th>
                                 <th>Description</th>
-                                <th>Supervisor</th>
+                                <th>
+                                    @if(auth()->user()->role == 0)
+                                        Supervisor
+                                    @else
+                                        Student
+                                    @endif
+
+                                </th>
                                 <th>Requested at</th>
                                 <th>Action</th>
                             </tr>
                             </thead>
                             <tbody>
-                            @foreach ($requests as $req)
+                            @foreach ($mod_requests as $req)
 
-                                {{$topic = $topics->where('id', $req->topic_id)->first()}}
-                                {{$suser = $users->where('id', $req->supervisor_id)->first()}}
-
-                                <tr id="{{$req->id}}" style="color: #0a0c0d">
-                                    <td>@switch ($req->state)
+                                <tr id="{{$req['id']}}" style="color: #0a0c0d">
+                                    <td>@switch ($req['state'])
                                             @case(0) <span class="badge badge-primary">Idle</span> @break
                                             @case(1) <span class="badge badge-info">Reviewing</span> @break
                                             @case(2) <span class="badge badge-success">Successful</span> @break
                                             @case(3) <span class="badge badge-warning">Declined</span> @break
                                         @endswitch
                                     </td>
-                                    <td style="font-weight: bold">{{$topic->title}}</td>
-                                    <td>{{$topic->body}}</td>
+                                    <td style="font-weight: bold">{{$req['title']}}</td>
+                                    <td>{{$req['body']}}</td>
 
-                                    <td>{{$suser->name}}</td>
-                                    <td>{{$req->created_at}}</td>
                                     <td>
-                                        <button class="btn btn-danger"><i class="fa fa-times"></i> </button>
-                                        <button class="btn btn-info"><i class="fa fa-envelope"></i> </button>
+                                        @if(auth()->user()->role == 1)
+                                            <i class="fa fa-info-circle" onclick="studentInfo(
+                                            '{{$req['user_name']}}',
+                                            '{{$req['student_id']}}',
+                                            '{{$req['user_qca']}}'
+                                            )"></i>
+                                        {{$req['user_name']}}
+                                        @else
+                                            {{$req['supervisor_name']}}
+                                        @endif
+                                    </td>
+                                    <td>{{$req['requested_at']}}</td>
+                                    <td>
+                                        @if(auth()->user()->role == 0)
+                                            <button class="btn btn-danger"><i class="fa fa-times"></i> </button>
+                                            <button class="btn btn-info"><i class="fa fa-envelope"></i> </button>
+                                        @elseif(auth()->user()->role == 1)
+                                            <button class="btn btn-danger"><i class="fa fa-times"></i> </button>
+                                            <button class="btn btn-success"><i class="fa fa-check"></i> </button>
+                                            <button class="btn btn-info"><i class="fa fa-envelope"></i> </button>
+                                        @endif
                                     </td>
                                 </tr>
                             @endforeach
@@ -181,6 +202,15 @@
     <script src="{{ asset('argon') }}/vendor/chart.js/dist/Chart.min.js"></script>
     <script src="{{ asset('argon') }}/vendor/chart.js/dist/Chart.extension.js"></script>
     <script>
+        function studentInfo(name,sid, qca) {
+            console.log(name,sid, qca)
+            Swal.fire(
+                name,
+                'Student ID:' + sid + '\<br\>QCA:' + qca,
+                'info'
+            )
+        }
+
         function filterlog(mode) {
             $('.tablealt tr').each(function () {
                 var t = $(this).attr('id');
