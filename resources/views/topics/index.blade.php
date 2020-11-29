@@ -104,6 +104,9 @@
                                     <div>
                                         <a onclick="add_topic()" class="btn btn-sm btn-primary">Add Topic</a>
                                     </div>
+
+                                @elseif(auth()->user()->role == 0)
+                                    <input id="search" class="form-control" type="text" placeholder="Search..." onkeyup="filterTopics()">
                                 @endif
 
                             </div>
@@ -307,6 +310,37 @@
                     })
                 }
             })
+        }
+
+        function filterTopics() {
+            let search = $('#search').val();
+            console.log(search);
+
+            $('.tablealt tr').each(function (j) {
+                if(j > 0) { //skip header
+                    let ele = $(this).text().split('\n');
+                    let id = $(this).attr('id');
+
+                    let hasMatch = false;
+
+                    for(var i = 0; i < ele.length; i++) {
+                        let txt = ele[i].trim();
+                        if(txt.length > 0) {
+                            if(txt.indexOf(search) !== -1) {
+                                hasMatch = true;
+                                break;
+                            }
+                        }
+                    }
+
+                    if(hasMatch) {
+                        $('#'+ id).show();
+                    } else {
+                        $('#'+ id).hide();
+                    }
+                }
+
+            });
         }
 
         function filterlog(mode) {
