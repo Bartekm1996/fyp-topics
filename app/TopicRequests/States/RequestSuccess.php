@@ -33,6 +33,18 @@ class RequestSuccess implements IRequestState
     {
         $topicRequest->setState($topicRequest::SUCCESS);
         $topicRequest->save();
+
+        $userRequests = \App\TopicRequests\Request::all()
+            ->where('user_id', $topicRequest->user_id)
+            ->where('state', '!=', $topicRequest::SUCCESS);
+
+        /*
+         * Now that the student has an FYP delete their requests
+         */
+        foreach($userRequests as $req) {
+            $req->delete();
+        }
+
         /*
           TODO: email student and supervisor here. Send message to other students requesting this topic that it is gone
         */
