@@ -69,9 +69,30 @@
                                 <i class="ni business_briefcase-24 mr-2"></i>{{ __('Supervisor') }}
                             </div>
                             <div class="h5">
-                                <i class="ni education_hat mr-2"></i>{{ __('Paddy Healy') }}
+                                <i class="ni education_hat mr-2"></i>
+                                @if($supervisor)
+                                    {{$supervisor->name}}
+                                @else
+                                    {{ __('------') }}
+                                @endif
                             </div>
 
+                            @if($topic)
+                                <div class="h2 mt-4">
+                                    <i class="ni business_briefcase-24 mr-2"></i>{{ __('Topic') }}
+                                </div>
+                                <div class="h5">
+                                    <i class="ni education_hat mr-2"></i>
+                                    {{$topic->title}}
+                                </div>
+                                <div class="h2 mt-4">
+                                    <i class="ni business_briefcase-24 mr-2"></i>{{ __('Topic Description') }}
+                                </div>
+                                <div class="h5">
+                                    <i class="ni education_hat mr-2"></i>
+                                    {{$topic->body}}
+                                </div>
+                            @endif
                         </div>
                     </div>
                 </div>

@@ -124,8 +124,8 @@
                                                     @endif
                                             ><i class="fa fa-search-plus"></i> </button>
 
-                                            <button class="btn btn-danger" data-toggle="tooltip" data-placement="top" title="Decline Student Request"><i class="fa fa-times"></i> </button>
-                                            <button class="btn btn-success" data-toggle="tooltip" data-placement="top" title="Accept Request"><i class="fa fa-check"></i> </button>
+                                            <button class="btn btn-danger" data-toggle="tooltip" data-placement="top" title="Decline Student Request" onclick="setState('{{$req['id']}}', 3)"><i class="fa fa-times"></i> </button>
+                                            <button class="btn btn-success" data-toggle="tooltip" data-placement="top" title="Accept Request" onclick="setState('{{$req['id']}}', 2)"><i class="fa fa-check"></i> </button>
                                             <button class="btn btn-info" data-toggle="tooltip" data-placement="top" title="Message Student"><i class="fa fa-envelope"></i> </button>
                                         @endif
                                     </td>

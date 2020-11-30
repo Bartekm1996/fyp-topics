@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use App\Http\Requests\ProfileRequest;
 use App\Http\Requests\PasswordRequest;
 use App\Models\Profile;
+use App\Models\Topic;
+use App\Models\User;
 use Illuminate\Support\Facades\Hash;
 
 class ProfileController extends Controller
@@ -19,10 +21,30 @@ class ProfileController extends Controller
         $user = auth()->user();
         $profile = Profile::all()->where('user_id', '=', auth()->id())->first();
 
-        return view('profile.edit')->with(
-            ['user' => $user, 'profile' => $profile]);
-        //TODO: remove this after this is working
-        //return view('profile.edit');
+        $req = \App\TopicRequests\Request::all()
+            ->where('user_id', $user->id)
+            ->where('state', \App\TopicRequests\Request::SUCCESS)
+            ->first();
+
+        if($req) {
+            $topic = Topic::all()->where('id', $req->topic_id)->first();
+            $supervisor = User::all()->where('id', $req->supervisor_id)->first();
+
+            return view('profile.edit')
+                ->with([
+                    'user' => $user,
+                    'profile' => $profile,
+                    'topic' => $topic,
+                    'supervisor' => $supervisor,
+                ]);
+        }
+
+        return view('profile.edit')
+            ->with(['user' => $user,
+                'profile' => $profile,
+                'topic' => null,
+                'supervisor' => null
+            ]);
     }
 
     /**

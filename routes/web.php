@@ -47,6 +47,9 @@ Route::group(['middleware' => 'auth'], function () {
 
     Route::get('requests', 'App\Http\Controllers\RequestsController@index')->name('requests');
     Route::patch('review', 'App\Http\Controllers\RequestsController@review');
+    Route::patch('idle', 'App\Http\Controllers\RequestsController@idle');
+    Route::patch('decline', 'App\Http\Controllers\RequestsController@decline');
+    Route::patch('accept', 'App\Http\Controllers\RequestsController@accept');
 });
 
 
