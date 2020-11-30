@@ -40,7 +40,8 @@ class RequestSuccess implements IRequestState
             ->where('user_id', $topicRequest->user_id)
             ->where('state', '!=', $topicRequest::SUCCESS);
 
-        $this->dropRequests($userRequests);
+        $this->dropUserRequests($userRequests);
+        $this->dropTopicRequests($topicRequest);
         $fypevent = $this->setFirstEventActive($topicRequest);
         $this->setProgress($fypevent);
 
@@ -54,7 +55,7 @@ class RequestSuccess implements IRequestState
         $this->logger->debug('RequestSuccess:onFinish', 'State finished');
     }
 
-    private function dropRequests($userRequests) {
+    private function dropUserRequests($userRequests) {
         /*
         * Now that the student has an FYP delete their requests
         */
@@ -83,6 +84,22 @@ class RequestSuccess implements IRequestState
         $progress = Progress::all()->where('user_id', $fypState->user_id)->first();
         $progress->fypevent_state_id = $fypState->id;
         $progress->save();
+    }
+
+    /*
+     * A student has won this topic so drop for everyone else
+     */
+    private function dropTopicRequests($topicRequest)
+    {
+
+        $topicRequests = \App\TopicRequests\Request::all()
+            ->where('topic_id', $topicRequest->topic_id)
+            ->where('state', '!=', $topicRequest::SUCCESS);
+
+        //TODO: Email other students here that the topic has been given to another student
+        foreach($topicRequests as $req) {
+            $req->delete();
+        }
     }
 
 }
