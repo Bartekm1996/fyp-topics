@@ -5,7 +5,10 @@ namespace App\Http\Controllers;
 use App\Models\Profile;
 use App\Models\Topic;
 use App\Models\User;
+use App\TopicRequests\States\RequestDeclined;
+use App\TopicRequests\States\RequestIdle;
 use App\TopicRequests\States\RequestReview;
+use App\TopicRequests\States\RequestSuccess;
 use Illuminate\Http\Request;
 
 class RequestsController extends Controller
@@ -52,25 +55,45 @@ class RequestsController extends Controller
         return view('requests.index')->with('mod_requests', $mod_requests);
     }
 
-    public function review(Request $request) {
+    public function decline(Request $request) {
         $id = $request->input('id');
-        $nextState = $request->input('state');
-
         $req = \App\TopicRequests\Request::all()->where('id', $id)->first();
 
-        $currentState = $req->getState();
+        $req->setState($req::DECLINED);
+        $req->getState()->onEnter($req); //if needed, add logic here before request has been successful
+        $req->getState()->onFinish($req);
 
-        if($nextState == $req::IDLE) {
-            $currentState->onReturn();//go back into idle state
-        } else if($nextState == $req::REVIEW) {
-            $currentState->onFinish();
-        }
-//
-        $req->setState($nextState);
-        $req->getState()->onEnter();
-        $req->save();
+        return response()->json(['id'=> $id]);
+    }
 
-        return response()->json(['status' => $req->state,
-            'id'=> $request->input('id')]);
+    public function accept(Request $request) {
+        $id = $request->input('id');
+        $req = \App\TopicRequests\Request::all()->where('id', $id)->first();
+
+        $req->setState($req::SUCCESS);
+        $req->getState()->onEnter($req); //if needed, add logic here before request has been successful
+        $req->getState()->onFinish($req);
+
+        return response()->json(['id'=> $id]);
+    }
+
+    public function idle(Request $request) {
+        $id = $request->input('id');
+
+        $req = \App\TopicRequests\Request::all()->where('id', $id)->first();
+        $req->setState($req::REVIEW);
+        $req->getState()->onReturn($req);//we returned from Reviewing state
+
+        return response()->json(['id'=> $id]);
+    }
+
+    public function review(Request $request) {
+        $id = $request->input('id');
+
+        $req = \App\TopicRequests\Request::all()->where('id', $id)->first();
+        $req->setState($req::REVIEW);
+        $req->getState()->onEnter($req);
+
+        return response()->json(['id'=> $id]);
     }
 }

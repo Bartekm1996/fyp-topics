@@ -5,7 +5,7 @@ namespace App\TopicRequests\States;
 
 
 interface IRequestState {
-    public function onEnter();
-    public function onReturn();
-    public function onFinish();
+    public function onEnter($topicRequest);
+    public function onReturn($topicRequest);
+    public function onFinish($topicRequest);
 }

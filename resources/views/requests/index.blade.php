@@ -161,10 +161,20 @@
 
         function setState(id, state) {
             console.log('reviewing:' + id, state)
+            let uurl;
+            switch (state) {
+                case 1: uurl = '/review'; break;
+                case 2: uurl = '/accept'; break;
+                case 3: uurl = '/decline'; break;
+                default:
+                    uurl = '/idle'
+                    break;
+            }
             sendRequest(
-                {
-                    'id' : id, 'state': state
-                }, 'PATCH', '/review', 'json',
+                {'id' : id},
+                'PATCH',
+                uurl,
+                'json',
                 function (response){
                     console.log('Res', response);
                     window.location.href = window.location.href;
