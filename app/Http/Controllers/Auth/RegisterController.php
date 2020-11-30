@@ -112,6 +112,7 @@ class RegisterController extends Controller
 
         //Create default profile for user
 
+        //This site is only a protoype hence why we have hard coded courses
         $courses = ["Computer Systems", "Games Development", 'Information and Network Security', "Creative Media"];
 
 

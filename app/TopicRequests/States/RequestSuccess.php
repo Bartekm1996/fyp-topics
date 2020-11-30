@@ -5,7 +5,9 @@ namespace App\TopicRequests\States;
 
 
 use App\Logging\LoggerFactory;
+use App\Models\FypEventState;
 use App\Models\Profile;
+use App\Models\Progress;
 use App\Models\User;
 
 class RequestSuccess implements IRequestState
@@ -38,12 +40,9 @@ class RequestSuccess implements IRequestState
             ->where('user_id', $topicRequest->user_id)
             ->where('state', '!=', $topicRequest::SUCCESS);
 
-        /*
-         * Now that the student has an FYP delete their requests
-         */
-        foreach($userRequests as $req) {
-            $req->delete();
-        }
+        $this->dropRequests($userRequests);
+        $fypevent = $this->setFirstEventActive($topicRequest);
+        $this->setProgress($fypevent);
 
         /*
           TODO: email student and supervisor here. Send message to other students requesting this topic that it is gone
@@ -54,4 +53,36 @@ class RequestSuccess implements IRequestState
 
         $this->logger->debug('RequestSuccess:onFinish', 'State finished');
     }
+
+    private function dropRequests($userRequests) {
+        /*
+        * Now that the student has an FYP delete their requests
+        */
+        foreach($userRequests as $req) {
+            $req->delete();
+        }
+    }
+
+    private function setFirstEventActive($topicRequest)
+    {
+        $fypState = FypEventState::all()->where('user_id',$topicRequest->user_id)
+            ->sortBy('fypevent_id')->first();
+        $fypState->state = FypEventState::IN_PROGRESS;
+        $fypState->save();
+
+        return $fypState;
+    }
+
+    /**
+     * @param $fypState
+     * When a student has been successful with their FYP request
+     * their timeline will start
+     */
+    private function setProgress($fypState)
+    {
+        $progress = Progress::all()->where('user_id', $fypState->user_id)->first();
+        $progress->fypevent_state_id = $fypState->id;
+        $progress->save();
+    }
+
 }
