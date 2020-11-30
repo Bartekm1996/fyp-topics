@@ -13,8 +13,16 @@ class TopicsController extends Controller
 {
 
     public function index() {
+        $requests = \App\TopicRequests\Request::all()->where('user_id', auth()->id());
+        $hasTopic = count($requests
+                ->where('user_id', auth()->id())
+                ->where('state',\App\TopicRequests\Request::SUCCESS)) > 0;
 
-        return view('topics.index')->with(['topics' => Topic::all(), 'users' => User::all()]);
+        return view('topics.index')
+            ->with(['topics' => Topic::all(),
+                'users' => User::all(),
+                'has_topic' => $hasTopic
+            ]);
     }
 
     public function delete(Request $request) {

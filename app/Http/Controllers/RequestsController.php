@@ -16,6 +16,10 @@ class RequestsController extends Controller
     public function index() {
 
         $requests = \App\TopicRequests\Request::all()->where('user_id', auth()->id());
+        $hasTopic = count($requests
+            ->where('user_id', auth()->id())
+            ->where('state',\App\TopicRequests\Request::SUCCESS)) > 0;
+
 
         if( auth()->user()->role == 1) {
             $requests  = \App\TopicRequests\Request::all()->where('supervisor_id', auth()->id());
@@ -52,7 +56,8 @@ class RequestsController extends Controller
 
         }
 
-        return view('requests.index')->with('mod_requests', $mod_requests);
+        return view('requests.index')->with(['mod_requests'=> $mod_requests,
+            'has_topic' => $hasTopic]);
     }
 
     public function decline(Request $request) {

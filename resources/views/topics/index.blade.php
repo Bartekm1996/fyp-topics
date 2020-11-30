@@ -110,7 +110,11 @@
                                                 <button class="btn btn-danger" onclick="deleteTopic({{$topic->id}})" data-toggle="tooltip" data-placement="top" title="Remove Topic"><i class="fa fa-trash"></i></button>
                                             @endif
                                         @else
-                                            <button class="btn btn-primary" onclick="requestTopic({{$topic->id}}, {{$topic->user_id}})" data-toggle="tooltip" data-placement="top" title="Request this Topic"><i class="fa fa-external-link-alt"></i></button>
+                                            <button class="btn btn-primary"
+                                                    @if($has_topic)
+                                                        disabled
+                                                    @endif
+                                                    onclick="requestTopic({{$topic->id}}, {{$topic->user_id}})" data-toggle="tooltip" data-placement="top" title="Request this Topic"><i class="fa fa-external-link-alt"></i></button>
                                         @endif
                                     </td>
                                 </tr>
