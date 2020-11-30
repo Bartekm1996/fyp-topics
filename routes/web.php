@@ -46,6 +46,7 @@ Route::group(['middleware' => 'auth'], function () {
     Route::patch('topics', 'App\Http\Controllers\TopicsController@patch');
 
     Route::get('requests', 'App\Http\Controllers\RequestsController@index')->name('requests');
+    Route::patch('review', 'App\Http\Controllers\RequestsController@review');
 });
 
 

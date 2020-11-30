@@ -25,11 +25,11 @@
 
                                 <div class="form-check form-check-inline" onclick="filterlog('0')">
                                     <input class="form-check-input" type="radio" name="inlineRadioOptions" id="rad1" value="0">
-                                    <label class="form-check-label mb-0" for="rad1"><span class="badge badge-primary">Idle</span></label>
+                                    <label class="form-check-label mb-0" for="rad1"><span class="badge badge-default">Idle</span></label>
                                 </div>
                                 <div class="form-check form-check-inline" onclick="filterlog('1')">
                                     <input class="form-check-input" type="radio" name="inlineRadioOptions" id="rad2" value="1">
-                                    <label class="form-check-label mb-0" for="rad2"><span class="badge badge-info">Reviewing</span></label>
+                                    <label class="form-check-label mb-0" for="rad2"><span class="badge badge-warning">Reviewing</span></label>
                                 </div>
                                 <div class="form-check form-check-inline" onclick="filterlog('2')">
                                     <input class="form-check-input" type="radio" name="inlineRadioOptions" id="rad3" value="2">
@@ -38,7 +38,7 @@
 
                                 <div class="form-check form-check-inline" onclick="filterlog('3')">
                                     <input class="form-check-input" type="radio" name="inlineRadioOptions" id="rad3" value="2">
-                                    <label class="form-check-label mb-0" for="rad3"><span class="badge badge-warning">Declined</span></label>
+                                    <label class="form-check-label mb-0" for="rad3"><span class="badge badge-danger">Declined</span></label>
                                 </div>
                             </div>
 
@@ -75,10 +75,10 @@
 
                                 <tr id="{{$req['id']}}" style="color: #0a0c0d">
                                     <td>@switch ($req['state'])
-                                            @case(0) <span class="badge badge-primary">Idle</span> @break
-                                            @case(1) <span class="badge badge-info">Reviewing</span> @break
+                                            @case(0) <span class="badge badge-default">Idle</span> @break
+                                            @case(1) <span class="badge badge-warning">Reviewing</span> @break
                                             @case(2) <span class="badge badge-success">Successful</span> @break
-                                            @case(3) <span class="badge badge-warning">Declined</span> @break
+                                            @case(3) <span class="badge badge-danger">Declined</span> @break
                                         @endswitch
                                     </td>
                                     <td style="font-weight: bold">{{$req['title']}}</td>
@@ -99,10 +99,31 @@
                                     <td>{{$req['requested_at']}}</td>
                                     <td>
                                         @if(auth()->user()->role == 0)
-                                            <button class="btn btn-danger" data-toggle="tooltip" data-placement="top" title="Cancel Request"><i class="fa fa-times"></i> </button>
+                                            <button  data-toggle="tooltip" data-placement="top"
+
+                                                    @if($req['state'] != 0)
+                                                        disabled
+                                                        class="btn btn-outline-default"
+                                                        title="Being Reviewed"
+                                                    @else
+                                                        class="btn btn-danger"
+                                                        title="Cancel Request"
+                                                    @endif
+                                            ><i class="fa fa-times"></i> </button>
                                             <button class="btn btn-info" data-toggle="tooltip" data-placement="top" title="Message Supervisor"><i class="fa fa-envelope"></i> </button>
                                         @elseif(auth()->user()->role == 1)
-                                            <button class="btn btn-warning" data-toggle="tooltip" data-placement="top" title="Review Request"><i class="fa fa-search-plus"></i> </button>
+                                            <button data-toggle="tooltip" data-placement="top"
+                                                    @if($req['state'] == 0)
+                                                        class="btn btn-default"
+                                                        title="Set Reviewing Request"
+                                                        onclick="setState('{{$req['id']}}', 1)"
+                                                    @else
+                                                        class="btn btn-warning"
+                                                        title="Set Request Idle"
+                                                        onclick="setState('{{$req['id']}}', 0)"
+                                                    @endif
+                                            ><i class="fa fa-search-plus"></i> </button>
+
                                             <button class="btn btn-danger" data-toggle="tooltip" data-placement="top" title="Decline Student Request"><i class="fa fa-times"></i> </button>
                                             <button class="btn btn-success" data-toggle="tooltip" data-placement="top" title="Accept Request"><i class="fa fa-check"></i> </button>
                                             <button class="btn btn-info" data-toggle="tooltip" data-placement="top" title="Message Student"><i class="fa fa-envelope"></i> </button>
@@ -125,12 +146,30 @@
 @endsection
 
 @push('js')
+
     <script src="{{ asset('argon') }}/vendor/chart.js/dist/Chart.min.js"></script>
     <script src="{{ asset('argon') }}/vendor/chart.js/dist/Chart.extension.js"></script>
     <script>
         $(document).ready(function(){
             $('[data-toggle="tooltip"]').tooltip();
+                $.ajaxSetup({
+                    headers: {
+                        'X-CSRF-TOKEN': @json(csrf_token())
+                    }
+                });
         });
+
+        function setState(id, state) {
+            console.log('reviewing:' + id, state)
+            sendRequest(
+                {
+                    'id' : id, 'state': state
+                }, 'PATCH', '/review', 'json',
+                function (response){
+                    console.log('Res', response);
+                    window.location.href = window.location.href;
+                });
+        }
 
         function studentInfo(name,sid, qca) {
             console.log(name,sid, qca)

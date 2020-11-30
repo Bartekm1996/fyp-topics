@@ -955,7 +955,7 @@ var OrdersChart = (function() {
 							}
 
 							content += '<span class="popover-body-value">' + yLabel + '</span>';
-							
+
 							return content;
 						}
 					}
@@ -1061,3 +1061,14 @@ var SalesChart = (function() {
 	}
 
 })();
+
+function sendRequest(data, method, url, type, success) {
+
+    $.ajax({
+        url: url,
+        type:method,
+        data: data,
+        dataType:type,
+        success:success,
+    });
+}

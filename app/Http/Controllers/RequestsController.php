@@ -2,21 +2,20 @@
 
 namespace App\Http\Controllers;
 
-use App\Logging\LoggerFactory;
 use App\Models\Profile;
 use App\Models\Topic;
 use App\Models\User;
-use Illuminate\Support\Facades\Log;
-use function GuzzleHttp\Promise\all;
+use App\TopicRequests\States\RequestReview;
+use Illuminate\Http\Request;
 
 class RequestsController extends Controller
 {
     public function index() {
 
-        $requests = \App\Models\Request::all()->where('user_id', auth()->id());
+        $requests = \App\TopicRequests\Request::all()->where('user_id', auth()->id());
 
         if( auth()->user()->role == 1) {
-            $requests  = \App\Models\Request::all()->where('supervisor_id', auth()->id());
+            $requests  = \App\TopicRequests\Request::all()->where('supervisor_id', auth()->id());
         }
 
         $topics = Topic::all();
@@ -50,10 +49,28 @@ class RequestsController extends Controller
 
         }
 
-//        LoggerFactory::getLogger(LoggerFactory::LOGGER_DB)
-//            ->debug('RequestsController::',
-//                    "Items:".count($mod_requests));
-
         return view('requests.index')->with('mod_requests', $mod_requests);
+    }
+
+    public function review(Request $request) {
+        $id = $request->input('id');
+        $nextState = $request->input('state');
+
+        $req = \App\TopicRequests\Request::all()->where('id', $id)->first();
+
+        $currentState = $req->getState();
+
+        if($nextState == $req::IDLE) {
+            $currentState->onReturn();//go back into idle state
+        } else if($nextState == $req::REVIEW) {
+            $currentState->onFinish();
+        }
+//
+        $req->setState($nextState);
+        $req->getState()->onEnter();
+        $req->save();
+
+        return response()->json(['status' => $req->state,
+            'id'=> $request->input('id')]);
     }
 }

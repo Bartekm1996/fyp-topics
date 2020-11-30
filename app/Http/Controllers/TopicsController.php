@@ -27,7 +27,9 @@ class TopicsController extends Controller
         $id = $request->input('id');
         $sid = $request->input('supervisor_id');
 
-        $res = new \App\Models\Request();
+        $res = new \App\TopicRequests\Request();
+        $res->istate->onEnter(); //we have entered the idle state
+        $res->state = $res::IDLE;
         $res->user_id = auth()->id();
         $res->supervisor_id = $sid;
         $res->topic_id = $id;
