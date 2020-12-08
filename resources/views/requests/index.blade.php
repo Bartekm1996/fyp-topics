@@ -35,10 +35,9 @@
                                     <input class="form-check-input" type="radio" name="inlineRadioOptions" id="rad3" value="2">
                                     <label class="form-check-label mb-0" for="rad3"><span class="badge badge-success">Successful</span></label>
                                 </div>
-
                                 <div class="form-check form-check-inline" onclick="filterlog('3')">
-                                    <input class="form-check-input" type="radio" name="inlineRadioOptions" id="rad3" value="2">
-                                    <label class="form-check-label mb-0" for="rad3"><span class="badge badge-danger">Declined</span></label>
+                                    <input class="form-check-input" type="radio" name="inlineRadioOptions" id="rad4" value="3">
+                                    <label class="form-check-label mb-0" for="rad4"><span class="badge badge-danger">Declined</span></label>
                                 </div>
                             </div>
 
@@ -73,7 +72,7 @@
                             <tbody>
                             @foreach ($mod_requests as $req)
 
-                                <tr id="{{$req['id']}}" style="color: #0a0c0d">
+                                <tr id="{{$req['state']}}_{{$req['id']}}" style="color: #0a0c0d">
                                     <td>@switch ($req['state'])
                                             @case(0) <span class="badge badge-default">Idle</span> @break
                                             @case(1) <span class="badge badge-warning">Reviewing</span> @break
