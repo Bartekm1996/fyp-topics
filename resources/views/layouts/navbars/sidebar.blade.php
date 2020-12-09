@@ -2,17 +2,16 @@
     <div class="container-fluid" style="background-color: whitesmoke">
         <!-- Toggler -->
         <div style="-webkit-writing-mode: vertical-lr;">
-        <span class="navbar-toggler-icon"></span>
-{{--        </button>--}}
+            <span class="navbar-toggler-icon"></span>
+        {{--        </button>--}}
         <!-- Brand -->
-        <a class="navbar-brand pt-0" href="{{ route('home') }}">
-            <img src="{{ asset('argon') }}/img/brand/ul.png" class="navbar-brand-img" alt="..." width="160rem"
-                 height="190rem">
-        </a>
+            <a class="navbar-brand pt-0" href="{{ route('home') }}">
+                <img src="{{ asset('argon') }}/img/brand/ul.png" class="navbar-brand-img" alt="..." width="160rem"
+                     height="190rem">
+            </a>
         </div>
         <!-- User -->
         <ul class="nav align-items-center d-md-none">
-            <li class="nav-item dropdown">
                 <a class="nav-link" href="#" role="button" data-toggle="dropdown" aria-haspopup="true"
                    aria-expanded="false">
                     <div class="media align-items-center">
@@ -63,7 +62,8 @@
 
                 <li class="nav-item">
                     <a class="nav-link" href="{{ route('home') }}">
-                        @if (auth()->user()->role == 0) <i class="ni ni-tv-2 text-primary"></i> {{ __('My Final Year Project') }}
+                        @if (auth()->user()->role == 0) <i
+                            class="ni ni-tv-2 text-primary"></i> {{ __('My Final Year Project') }}
                         @endif
                     </a>
                 </li>
@@ -114,11 +114,11 @@
                                                 {{ __('Messages') }}
                                             </a>
                                         </li>
-{{--                                        <li class="nav-item">--}}
-{{--                                            <a class="nav-link" href="{{ route('topics') }}">--}}
-{{--                                                {{ __('My Topics') }}--}}
-{{--                                            </a>--}}
-{{--                                        </li>--}}
+                                        {{--                                        <li class="nav-item">--}}
+                                        {{--                                            <a class="nav-link" href="{{ route('topics') }}">--}}
+                                        {{--                                                {{ __('My Topics') }}--}}
+                                        {{--                                            </a>--}}
+                                        {{--                                        </li>--}}
                                         <li class="nav-item">
                                             <a class="nav-link" href="{{ route('requests') }}">
                                                 {{ __('Topic Requests') }}
@@ -131,42 +131,43 @@
                     </li>
                 @else
                     <li class="nav-item">
-                        <a class="nav-link active" href="#navbar-examples" data-toggle="collapse" role="button" aria-expanded="true" aria-controls="navbar-examples">
+                        <a class="nav-link active" href="#navbar-examples" data-toggle="collapse" role="button"
+                           aria-expanded="true" aria-controls="navbar-examples">
                             <i class="fa fa-user" style="color: #f4645f;"></i>
                             <span class="nav-link-text" style="color: #f4645f;">{{ __('User') }}</span>
                         </a>
                         @if (auth()->user()->role == 0)
-                           <div class="collapse show" id="navbar-examples">
-                            <ul class="nav nav-sm flex-column">
-                                <li class="nav-item">
-                                    <a class="nav-link" href="{{ route('profile.edit') }}">
-                                        {{ __('Profile') }}
-                                    </a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" href="">
-                                        {{ __('Messages') }}
-                                    </a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" href="{{ route('progress') }}">
-                                        {{ __('My Progress') }}
-                                    </a>
-                                </li>
+                            <div class="collapse show" id="navbar-examples">
+                                <ul class="nav nav-sm flex-column">
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="{{ route('profile.edit') }}">
+                                            {{ __('Profile') }}
+                                        </a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="">
+                                            {{ __('Messages') }}
+                                        </a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="{{ route('progress') }}">
+                                            {{ __('My Progress') }}
+                                        </a>
+                                    </li>
 
-                                <li class="nav-item">
-                                    <a class="nav-link" href="{{ route('requests') }}">
-                                        {{ __('My Requests') }}
-                                    </a>
-                                </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="{{ route('requests') }}">
+                                            {{ __('My Requests') }}
+                                        </a>
+                                    </li>
 
-                                <li class="nav-item">
-                                    <a class="nav-link" href="{{ route('tickets') }}">
-                                        {{ __('My Tickets') }}
-                                    </a>
-                                </li>
-                            </ul>
-                        </div>
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="{{ route('tickets') }}">
+                                            {{ __('My Tickets') }}
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
                         @endif
                     </li>
                 @endif
