@@ -110,7 +110,7 @@ body
 
     text-align: left;
 
-    color: white;
+    color: black;
     background-color: #f8f9fe;
 }
 
@@ -8035,12 +8035,12 @@ a.bg-dark:focus,
 button.bg-dark:hover,
 button.bg-dark:focus
 {
-    background-color: #0a0c0d !important;
+    background-color: whitesmoke !important;
 }
 
 .bg-default
 {
-    background-color: #172b4d !important;
+    background-color: whitesmoke !important;
 }
 
 a.bg-default:hover,
@@ -8048,12 +8048,12 @@ a.bg-default:focus,
 button.bg-default:hover,
 button.bg-default:focus
 {
-    background-color: #0b1526 !important;
+    background-color: whitesmoke !important;
 }
 
 .bg-white
 {
-    background-color: #fff !important;
+    background-color: whitesmoke !important;
 }
 
 a.bg-white:hover,
@@ -8061,12 +8061,12 @@ a.bg-white:focus,
 button.bg-white:hover,
 button.bg-white:focus
 {
-    background-color: #e6e6e6 !important;
+    background-color: whitesmoke !important;
 }
 
 .bg-neutral
 {
-    background-color: #fff !important;
+    background-color: whitesmoke !important;
 }
 
 a.bg-neutral:hover,
@@ -8092,7 +8092,7 @@ button.bg-darker:focus
 
 .bg-white
 {
-    background-color: #fff !important;
+    background-color: whitesmoke !important;
 }
 
 .bg-transparent
@@ -10252,6 +10252,7 @@ button.bg-darker:focus
 .py-5
 {
     padding-bottom: 3rem !important;
+    background-color: #172b4dÚ;
 }
 
 .pl-5,
@@ -10391,18 +10392,21 @@ button.bg-darker:focus
 .px--5
 {
     padding-right: -3rem !important;
+    background-color: #172b4d;
 }
 
 .pb--5,
 .py--5
 {
     padding-bottom: -3rem !important;
+    background-color: #172b4d;
 }
 
 .pl--5,
 .px--5
 {
     padding-left: -3rem !important;
+    background-color: #172b4d;
 }
 
 .p--4
@@ -10571,6 +10575,7 @@ button.bg-darker:focus
 .py-7
 {
     padding-bottom: 6rem !important;
+    background-color: #172b4d;
 }
 
 .pl-7,
@@ -14990,7 +14995,7 @@ button.bg-cyan:focus
 
 .bg-white
 {
-    background-color: #fff !important;
+    background-color: whitesmoke !important;
 }
 
 a.bg-white:hover,
@@ -14998,12 +15003,12 @@ a.bg-white:focus,
 button.bg-white:hover,
 button.bg-white:focus
 {
-    background-color: #e6e6e6 !important;
+    background-color: whitesmoke !important;
 }
 
 .bg-gray
 {
-    background-color: #8898aa !important;
+    background-color: whitesmoke !important;
 }
 
 a.bg-gray:hover,
@@ -17575,6 +17580,7 @@ a.btn-icon-only
 .main-content
 {
     position: relative;
+    background-color: #172b4d;
 }
 .main-content .navbar-top
 {
@@ -19162,8 +19168,6 @@ textarea[resize='horizontal']
         display: block;
 
         margin: 1rem -1rem;
-
-        content: '';
     }
 }
 .navbar-vertical .navbar-nav
@@ -19543,6 +19547,7 @@ textarea[resize='horizontal']
         left: 0;
 
         border-width: 0 1px 0 0;
+        background-color: whitesmoke;
     }
     .navbar-vertical.navbar-expand-md.fixed-right
     {
@@ -19554,7 +19559,7 @@ textarea[resize='horizontal']
     {
         display: flex;
         flex-direction: column;
-
+        background-color: whitesmoke;
         margin-right: -1.5rem;
         margin-left: -1.5rem;
         padding-right: 1.5rem;
@@ -19566,6 +19571,7 @@ textarea[resize='horizontal']
     .navbar-vertical.navbar-expand-md .navbar-collapse > *
     {
         min-width: 100%;
+        background-color: whitesmoke;
     }
     .navbar-vertical.navbar-expand-md .navbar-nav
     {
@@ -19586,7 +19592,7 @@ textarea[resize='horizontal']
         left: 0;
 
         border-bottom: 0;
-        border-left: 2px solid #5e72e4;
+        border-left: 2px solid whitesmoke;
     }
     .navbar-vertical.navbar-expand-md .navbar-nav .nav .nav-link
     {
@@ -19608,6 +19614,7 @@ textarea[resize='horizontal']
     .navbar-vertical.navbar-expand-md .navbar-brand-img
     {
         max-height: 2.5rem;
+        background-color: whitesmoke;
     }
     .navbar-vertical.navbar-expand-md .navbar-user
     {

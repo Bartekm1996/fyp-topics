@@ -1,6 +1,7 @@
 <nav class="navbar navbar-vertical fixed-left navbar-expand-md navbar-light bg-white" id="sidenav-main">
     <div class="container-fluid" style="background-color: whitesmoke">
         <!-- Toggler -->
+        <div style="-webkit-writing-mode: vertical-lr;">
         <span class="navbar-toggler-icon"></span>
 {{--        </button>--}}
         <!-- Brand -->
@@ -8,6 +9,7 @@
             <img src="{{ asset('argon') }}/img/brand/ul.png" class="navbar-brand-img" alt="..." width="160rem"
                  height="190rem">
         </a>
+        </div>
         <!-- User -->
         <ul class="nav align-items-center d-md-none">
             <li class="nav-item dropdown">
