@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Logging\LoggerFactory;
+use App\Models\Profile;
 use App\Models\User;
 use App\Http\Requests\UserRequest;
 use Illuminate\Support\Facades\Hash;
@@ -22,6 +23,10 @@ class UserController extends Controller
         return view('users.index')->with('users', $users);
     }
 
+    public function search()
+    {
+        return view('users.search')->with(['users' => User::all(), 'profiles' => Profile::all()]);
+    }
 
     public function changeAdminRights()
     {

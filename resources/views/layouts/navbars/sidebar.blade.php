@@ -17,7 +17,7 @@
                    aria-expanded="false">
                     <div class="media align-items-center">
                         <span class="avatar avatar-sm rounded-circle">
-                        <img alt="Image placeholder" src="{{ asset('argon') }}/img/theme/team-1-800x800.jpg">
+                        <img alt="Image placeholder" src="{{ asset('argon') }}/img/icons/common/github.svg">
                         </span>
                     </div>
                 </a>
@@ -173,6 +173,11 @@
                 <li class="nav-item ">
                     <a class="nav-link" href="{{ route('topics') }}">
                         <i class="fa fa-book-reader"></i> {{ __('Final Year Topics') }}
+                    </a>
+                </li>
+                <li class="nav-item ">
+                    <a class="nav-link" href="{{ route('search') }}">
+                        <i class="fa fa-search"></i> {{ __('User Search') }}
                     </a>
                 </li>
             </ul>

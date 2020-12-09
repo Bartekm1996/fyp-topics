@@ -191,6 +191,7 @@
 
         function filterlog(mode) {
             $('.tablealt tr').each(function () {
+                debugger;
                 var t = $(this).attr('id');
 
                 t = '' + t;

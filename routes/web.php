@@ -14,7 +14,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('auth.login');
 });
 
 Auth::routes();
@@ -39,6 +39,7 @@ Route::group(['middleware' => 'auth'], function () {
     Route::get('progress', 'App\Http\Controllers\ProgressController@index')->name('progress');
     Route::post('progress', 'App\Http\Controllers\ProgressController@store');
 
+    Route::get('search', 'App\Http\Controllers\UserController@search')->name('search');
 
     Route::get('topics', 'App\Http\Controllers\TopicsController@index')->name('topics');
     Route::post('topics', 'App\Http\Controllers\TopicsController@store');

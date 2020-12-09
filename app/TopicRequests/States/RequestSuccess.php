@@ -45,13 +45,6 @@ class RequestSuccess implements IRequestState
         $fypevent = $this->setFirstEventActive($topicRequest);
         $this->setProgress($fypevent);
 
-        /*
-          TODO: email student and supervisor here. Send message to other students requesting this topic that it is gone
-        */
-//        $student = User::all()->where('id', $topicRequest->user_id)->first();
-//        $supervisor = User::all()->where('id', $topicRequest->supervisor_id)->first();
-//        $studentProfile = Profile::all()->where('user_id', $student->id);
-
         $this->logger->debug('RequestSuccess:onFinish', 'State finished');
     }
 

@@ -19,7 +19,7 @@
                                         @if(strlen($profile->image) > 10)
                                     {{$profile->image}}
                                     @else
-                                    {{ asset('argon') }}/img/theme/team-4-800x800.jpg
+                                    {{ asset('argon') }}/img/icons/common/github.svg
                                         @endif"
                                          class="rounded-circle">
                                 </a>
@@ -49,6 +49,7 @@
                             <h3>
                                 {{ auth()->user()->name }}<span class="font-weight-light"></span>
                             </h3>
+                            @if(auth()->user()->role == 0)
                             <div class="h5 font-weight-300">
                                 <i class="ni location_pin mr-2"></i>{{ $profile->student_id }}
                             </div>
@@ -58,16 +59,18 @@
                             <div class="h5 font-weight-300">
                                 <i class="ni location_pin mr-2"></i>{{ $profile->qca }}
                             </div>
+                            @endif
                             <div class="h2 mt-4">
                                 <i class="ni business_briefcase-24 mr-2"></i>{{ __('Course Of Study') }}
                             </div>
                             <div class="h5 mt-3">
                                 <i class="ni education_hat mr-2"></i>{{ $profile->course }}
                             </div>
-
+                            @if(auth()->user()->role == 0)
                             <div class="h2 mt-4">
                                 <i class="ni business_briefcase-24 mr-2"></i>{{ __('Supervisor') }}
                             </div>
+
                             <div class="h5">
                                 <i class="ni education_hat mr-2"></i>
                                 @if($supervisor)
@@ -76,7 +79,7 @@
                                     {{ __('------') }}
                                 @endif
                             </div>
-
+                            @endif
                             @if($topic)
                                 <div class="h2 mt-4">
                                     <i class="ni business_briefcase-24 mr-2"></i>{{ __('Topic') }}
