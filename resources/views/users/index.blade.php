@@ -114,6 +114,27 @@
             })
         }
 
+
+        function filterTicketsByAttr(filter, attr) {
+            $('#userTable tr').each(function (index, tr) {
+                if (!$(tr).attr(attr).toLowerCase().match($(filter).val().toLowerCase())) {
+                    $(tr).hide();
+                } else {
+                    $(tr).show();
+                }
+            });
+        }
+
+        function filterTicketsByType(filter, attr) {
+            $('#ticketsTable tr').each(function (index, tr) {
+                if ($(tr).attr(attr) === filter) {
+                    $(tr).show();
+                } else {
+                    $(tr).hide();
+                }
+            });
+        }
+
     </script>
 </head>
 <body class="clickup-chrome-ext_installed">
@@ -350,25 +371,29 @@
                         <table class="table align-items-center table-flush">
                             <thead class="thead-light">
                             <tr>
-                                <th scope="col">Name</th>
-                                <th scope="col">Email</th>
+                                <th scope="col">
+                                    <input id="name" placeholder="Name" type="text" class="form-control" oninput="filterTicketsByAttr(this, 'data-name')">
+                                </th>
+                                <th scope="col">
+                                    <input id="email" placeholder="Email" type="text" class="form-control" oninput="filterTicketsByAttr(this, 'data-email')">
+                                </th>
                                 <th scope="col">Creation Date</th>
-                                <th scope="col">Admin</th>
+                                <th scope="col">Role</th>
                                 <th scope="col"></th>
                             </tr>
                             </thead>
-                            <tbody>
+                            <tbody id='userTable'>
                             @foreach ($users as $user)
-                                <tr>
+                                <tr data-name="{{ $user->name }}" data-email="{{ $user->email }}" data-role="{{$user->role}}">
                                     <td>{{ $user->name }}</td>
                                     <td>{{ $user->email }}</td>
                                     <td>{{ $user->created_at }}</td>
                                     @if($user->role == 0)
-                                        <td><span class="badge badge-primary">Student</span></td>
+                                        <td data-role="{{$user->role}}"><span class="badge badge-primary">Student</span></td>
                                     @elseif($user->role == 1)
-                                        <td><span class="badge badge-success">Supervisor</span></td>
+                                        <td data-role="{{$user->role}}"><span class="badge badge-success">Supervisor</span></td>
                                     @else
-                                        <td><span class="badge badge-danger">Administrator</span></td>
+                                        <td data-role="{{$user->role}}"><span class="badge badge-danger">Administrator</span></td>
                                     @endif
 
                                     @if(auth()->user()->role == 2)

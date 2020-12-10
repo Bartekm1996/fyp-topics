@@ -1,29 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="BranchesTreeState">
-    <expand>
-      <path>
-        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
-        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
-      </path>
-      <path>
-        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
-        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
-      </path>
-      <path>
-        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
-        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
-        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
-      </path>
-    </expand>
-    <select />
-  </component>
   <component name="ChangeListManager">
     <list default="true" id="e9da3909-1066-4903-be41-b063a719072d" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/fyp_topics.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/fyp_topics.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/MailController.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/MessageController.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Models/Mail.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Models/Message.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/database/migrations/2020_12_10_094502_create_mails_table.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/database/migrations/2020_12_10_094748_create_messages_table.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/argon/css/argon.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/argon/css/argon.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/layouts/navbars/sidebar.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/navbars/sidebar.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/users/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/users/index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/composer/autoload_classmap.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/composer/autoload_classmap.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/composer/autoload_psr4.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/composer/autoload_psr4.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/composer/autoload_static.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/composer/autoload_static.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/composer/package-versions-deprecated/src/PackageVersions/Versions.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/composer/package-versions-deprecated/src/PackageVersions/Versions.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -32,15 +22,21 @@
   </component>
   <component name="ComposerSettings" doNotAsk="true" synchronizationState="SYNCHRONIZE">
     <pharConfigPath>$PROJECT_DIR$/composer.json</pharConfigPath>
-    <execution />
+    <execution>
+      <executable />
+    </execution>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="JavaScript File" />
+        <option value="CSS File" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
-    <option name="RECENT_BRANCH_BY_REPOSITORY">
-      <map>
-        <entry key="$PROJECT_DIR$" value="master" />
-      </map>
-    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="UPDATE_TYPE" value="MERGE" />
   </component>
   <component name="PhpWorkspaceProjectConfiguration">
     <include_path>
@@ -153,15 +149,21 @@
     </include_path>
   </component>
   <component name="ProjectId" id="1kQ9wyf8SHadrbpnZSPHRf13rAZ" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="editor.config.ad.shown" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -171,19 +173,17 @@
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="nodejs_package_manager_path" value="npm" />
-    <property name="settings.editor.selected.configurable" value="reference.settings.ide.settings.uml" />
-    <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/presets/argon/src/argon-stubs/resources/argon/img/brand" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/app/Http/Controllers" />
       <recent name="$PROJECT_DIR$/presets/argon/src/argon-stubs/resources/views/pages" />
       <recent name="$PROJECT_DIR$/presets/argon/src/argon-stubs/resources/views/messages" />
       <recent name="$PROJECT_DIR$/presets/argon/src/argon-stubs/resources/argon/img/brand" />
       <recent name="$PROJECT_DIR$/presets/argon/src/argon-stubs/resources/assets/img/brand" />
-    </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/presets/argon/src/argon-stubs/resources/argon/img/brand" />
     </key>
   </component>
   <component name="RunManager">
@@ -192,7 +192,6 @@
       <method v="2" />
     </configuration>
   </component>
-  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="SvnConfiguration">
     <configuration />
   </component>
@@ -205,11 +204,9 @@
       <updated>1605215169323</updated>
       <workItem from="1605215176952" duration="25022000" />
       <workItem from="1605622193440" duration="22191000" />
-      <workItem from="1605798187526" duration="2674000" />
-      <workItem from="1605881492614" duration="11027000" />
-      <workItem from="1605971662779" duration="2203000" />
-      <workItem from="1607448592789" duration="5950000" />
-      <workItem from="1607515749960" duration="816000" />
+      <workItem from="1605703013704" duration="15967000" />
+      <workItem from="1605783389949" duration="14205000" />
+      <workItem from="1607589906721" duration="3202000" />
     </task>
     <task id="LOCAL-00001" summary="Edited user pannel, added the functionallity of adding and removing admins and also edited cards to count each type of users by roles">
       <created>1605641245073</created>
@@ -225,98 +222,98 @@
       <option name="project" value="LOCAL" />
       <updated>1605646928370</updated>
     </task>
-    <task id="LOCAL-00003" summary="fixed logo on login screen and changed background colour">
-      <created>1605661408378</created>
+    <task id="LOCAL-00003" summary="Added the functionality which allows users to submit tickets">
+      <created>1605714666661</created>
       <option name="number" value="00003" />
       <option name="presentableId" value="LOCAL-00003" />
       <option name="project" value="LOCAL" />
-      <updated>1605661408378</updated>
+      <updated>1605714666661</updated>
     </task>
-    <task id="LOCAL-00004" summary="changed side nav colour to whitesmoke and adjusted the image, also fixed text colour in log messages">
-      <created>1605890644202</created>
+    <task id="LOCAL-00004" summary="Fixed routing for tickets">
+      <created>1605717748455</created>
       <option name="number" value="00004" />
       <option name="presentableId" value="LOCAL-00004" />
       <option name="project" value="LOCAL" />
-      <updated>1605890644202</updated>
+      <updated>1605717748455</updated>
     </task>
-    <task id="LOCAL-00005" summary="rechanged the background colour on login page to blue">
-      <created>1605892799878</created>
+    <task id="LOCAL-00005" summary="Added filtering of tickets to tickets table">
+      <created>1605811245254</created>
       <option name="number" value="00005" />
       <option name="presentableId" value="LOCAL-00005" />
       <option name="project" value="LOCAL" />
-      <updated>1605892799878</updated>
+      <updated>1605811245254</updated>
     </task>
     <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
-    <option name="version" value="3" />
-  </component>
-  <component name="Vcs.Log.Tabs.Properties">
-    <option name="TAB_STATES">
-      <map>
-        <entry key="MAIN">
-          <value>
-            <State />
-          </value>
-        </entry>
-      </map>
-    </option>
-    <option name="oldMeFiltersMigrated" value="true" />
+    <option name="version" value="1" />
   </component>
   <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="Edited user pannel, added the functionallity of adding and removing admins and also edited cards to count each type of users by roles" />
     <MESSAGE value="Cleaned up layout, edited user sub menu" />
-    <MESSAGE value="fixed logo on login screen and added changed background colour" />
-    <MESSAGE value="fixed logo on login screen and changed background colour" />
-    <MESSAGE value="changed side nav colour to whitesmoke and adjusted the image, also fixed text colour in log messages" />
-    <MESSAGE value="rechanged the background colour on login page to blue" />
-    <option name="LAST_COMMIT_MESSAGE" value="rechanged the background colour on login page to blue" />
+    <MESSAGE value="Added the functionality which allows users to submit tickets" />
+    <MESSAGE value="Fixed routing for tickets" />
+    <MESSAGE value="Added filtering of tickets to tickets table" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added filtering of tickets to tickets table" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="458" y="198" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1605638677845">
-      <screen x="0" y="23" width="1440" height="837" />
+    <state x="722" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1605714117328">
+      <screen x="0" y="0" width="1920" height="1080" />
     </state>
+    <state x="722" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/-1920.0.1920.1080/0.0.1920.1080@0.0.1920.1080" timestamp="1605714117328" />
+    <state x="611" y="226" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1605712900564">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state x="611" y="226" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/-1920.0.1920.1080/0.0.1920.1080@0.0.1920.1080" timestamp="1605712900564" />
     <state x="458" y="198" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.23.1440.837@0.23.1440.837" timestamp="1605638677845" />
-    <state x="85" y="0" key="CommitChangelistDialog2" timestamp="1605892796295">
-      <screen x="0" y="0" width="1366" height="768" />
+    <state x="120" y="19" key="CommitChangelistDialog2" timestamp="1605811244558">
+      <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state x="85" y="0" key="CommitChangelistDialog2/0.0.1366.768@0.0.1366.768" timestamp="1605892796295" />
+    <state x="120" y="19" key="CommitChangelistDialog2/-1920.0.1920.1080/0.0.1920.1080@0.0.1920.1080" timestamp="1605714665747" />
+    <state x="120" y="19" key="CommitChangelistDialog2/0.0.1920.1080/-1920.0.1920.1080@0.0.1920.1080" timestamp="1605811244558" />
+    <state x="90" y="38" key="CommitChangelistDialog2/0.23.1440.836@0.23.1440.836" timestamp="1605717747998" />
     <state x="90" y="38" key="CommitChangelistDialog2/0.23.1440.837@0.23.1440.837" timestamp="1605646927785" />
-    <state x="92" y="92" width="1182" height="584" key="DiffContextDialog" timestamp="1605659632847">
-      <screen x="0" y="0" width="1366" height="768" />
+    <state x="507" y="203" key="MultipleFileMergeDialog" timestamp="1607589942438">
+      <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state x="92" y="92" width="1182" height="584" key="DiffContextDialog/0.0.1366.768@0.0.1366.768" timestamp="1605659632847" />
-    <state x="129" y="58" key="MergeDialog" timestamp="1605881540707">
-      <screen x="0" y="0" width="1366" height="768" />
-    </state>
-    <state x="129" y="58" key="MergeDialog/0.0.1366.768@0.0.1366.768" timestamp="1605881540707" />
-    <state x="676" y="249" key="MultipleFileMergeDialog" timestamp="1605624841095">
-      <screen x="0" y="23" width="1920" height="1006" />
-    </state>
+    <state x="676" y="243" key="MultipleFileMergeDialog/-1920.0.1920.1080/0.0.1920.1080@0.0.1920.1080" timestamp="1605714603670" />
     <state x="676" y="249" key="MultipleFileMergeDialog/-1920.23.1920.1057/0.23.1920.1006@0.23.1920.1006" timestamp="1605624841095" />
-    <state x="784" y="456" key="NewPhpFileDialog" timestamp="1605627519782">
-      <screen x="0" y="23" width="1920" height="1006" />
+    <state x="507" y="203" key="MultipleFileMergeDialog/0.0.1440.900@0.0.1440.900" timestamp="1607589942438" />
+    <state x="659" y="363" key="NewPhpClassDialog" timestamp="1605711900414">
+      <screen x="0" y="0" width="1920" height="1080" />
     </state>
+    <state x="659" y="363" key="NewPhpClassDialog/-1920.0.1920.1080/0.0.1920.1080@0.0.1920.1080" timestamp="1605711900414" />
+    <state x="784" y="465" key="NewPhpFileDialog" timestamp="1605707333153">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state x="784" y="465" key="NewPhpFileDialog/-1920.0.1920.1080/0.0.1920.1080@0.0.1920.1080" timestamp="1605707333153" />
     <state x="784" y="456" key="NewPhpFileDialog/-1920.23.1920.1057/0.23.1920.1006@0.23.1920.1006" timestamp="1605627519782" />
-    <state x="184" y="28" key="SettingsEditor" timestamp="1607453942119">
-      <screen x="0" y="0" width="1366" height="768" />
+    <state x="560" y="261" key="Vcs.Push.Dialog.v2" timestamp="1605811251140">
+      <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state x="184" y="28" key="SettingsEditor/0.0.1366.768@0.0.1366.768" timestamp="1607453942119" />
-    <state x="398" y="185" key="Vcs.Push.Dialog.v2" timestamp="1605892800983">
-      <screen x="0" y="0" width="1366" height="768" />
-    </state>
+    <state x="560" y="261" key="Vcs.Push.Dialog.v2/-1920.0.1920.1080/0.0.1920.1080@0.0.1920.1080" timestamp="1605714671067" />
     <state x="560" y="266" key="Vcs.Push.Dialog.v2/-1920.23.1920.1057/0.23.1920.1006@0.23.1920.1006" timestamp="1605624784762" />
-    <state x="398" y="185" key="Vcs.Push.Dialog.v2/0.0.1366.768@0.0.1366.768" timestamp="1605892800983" />
+    <state x="560" y="261" key="Vcs.Push.Dialog.v2/0.0.1920.1080/-1920.0.1920.1080@0.0.1920.1080" timestamp="1605811251140" />
+    <state x="420" y="225" key="Vcs.Push.Dialog.v2/0.23.1440.836@0.23.1440.836" timestamp="1605717755593" />
     <state x="420" y="225" key="Vcs.Push.Dialog.v2/0.23.1440.837@0.23.1440.837" timestamp="1605647079770" />
-    <state x="544" y="326" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1607515838191">
-      <screen x="0" y="0" width="1366" height="768" />
+    <state x="298" y="398" key="com.intellij.ide.util.TipDialog" timestamp="1607589907087">
+      <screen x="0" y="25" width="1440" height="875" />
     </state>
+    <state x="397" y="452" key="com.intellij.ide.util.TipDialog/0.23.1920.1006/-1920.23.1920.1057@0.23.1920.1006" timestamp="1605792090922" />
+    <state x="298" y="398" key="com.intellij.ide.util.TipDialog/0.25.1440.875@0.25.1440.875" timestamp="1607589907087" />
+    <state x="574" y="397" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1607589923037">
+      <screen x="0" y="25" width="1440" height="875" />
+    </state>
+    <state x="765" y="458" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/-1920.0.1920.1080/0.0.1920.1080@0.0.1920.1080" timestamp="1605714585130" />
     <state x="765" y="450" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/-1920.23.1920.1057/0.23.1920.1006@0.23.1920.1006" timestamp="1605624826659" />
-    <state x="544" y="326" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1366.768@0.0.1366.768" timestamp="1607515838191" />
-    <state x="660" y="324" key="git4idea.merge.GitPullDialog" timestamp="1605624792977">
-      <screen x="0" y="23" width="1920" height="1006" />
+    <state x="574" y="378" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.23.1440.836@0.23.1440.836" timestamp="1605717717078" />
+    <state x="574" y="397" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.25.1440.875@0.25.1440.875" timestamp="1607589923037" />
+    <state x="495" y="273" key="git4idea.merge.GitPullDialog" timestamp="1605729294588">
+      <screen x="0" y="23" width="1440" height="836" />
     </state>
     <state x="660" y="324" key="git4idea.merge.GitPullDialog/-1920.23.1920.1057/0.23.1920.1006@0.23.1920.1006" timestamp="1605624792977" />
+    <state x="495" y="273" key="git4idea.merge.GitPullDialog/0.23.1440.836@0.23.1440.836" timestamp="1605729294588" />
   </component>
 </project>
