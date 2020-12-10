@@ -50,7 +50,7 @@
                                                 @endif
                                             @endforeach
                                         @endif
-                                        @if(auth()->user()->role == 0)
+                                        @if(auth()->user()->role == 2)
                                             @foreach($data['user'] as $users)
                                                 @if($msg->to == $users->id)
                                                     <td>{{ $users->name }}</td>
