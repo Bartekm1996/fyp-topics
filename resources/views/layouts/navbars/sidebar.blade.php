@@ -110,8 +110,13 @@
                                                 {{ __('My Supervisees') }} </a>
                                         </li>
                                         <li class="nav-item">
-                                            <a class="nav-link" href="{{ route('logging') }}">
+                                            <a class="nav-link" href="{{ route('messages') }}">
                                                 {{ __('Messages') }}
+                                            </a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="{{ route('logging') }}">
+                                                {{ __('Log Messages') }}
                                             </a>
                                         </li>
                                         {{--                                        <li class="nav-item">--}}
@@ -145,7 +150,7 @@
                                         </a>
                                     </li>
                                     <li class="nav-item">
-                                        <a class="nav-link" href="">
+                                        <a class="nav-link" href="{{ route('messages') }}">
                                             {{ __('Messages') }}
                                         </a>
                                     </li>
@@ -160,12 +165,14 @@
                                             {{ __('My Requests') }}
                                         </a>
                                     </li>
+                                    {{--
+                                         <li class="nav-item">
+                                            <a class="nav-link" href="{{ route('tickets') }}">
+                                                {{ __('My Tickets') }}
+                                            </a>
+                                        </li>
+                                    --}}
 
-                                    <li class="nav-item">
-                                        <a class="nav-link" href="{{ route('tickets') }}">
-                                            {{ __('My Tickets') }}
-                                        </a>
-                                    </li>
                                 </ul>
                             </div>
                         @endif

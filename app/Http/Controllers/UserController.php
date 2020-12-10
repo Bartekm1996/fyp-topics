@@ -10,17 +10,13 @@ use Illuminate\Support\Facades\Hash;
 
 class UserController extends Controller
 {
-    /**
-     * Display a listing of the users
-     *
-     * @param  \App\Models\User  $model
-     * @return \Illuminate\View\View
-     */
+
     public function index(User $model)
     {
 
         $users = User::all();
-        return view('users.index')->with('users', $users);
+        $profile = Profile::all();
+        return view('users.index')->with('data', ['users'=>$users, 'profiles'=>$profile]);
     }
 
     public function search()

@@ -20,7 +20,14 @@
     <!-- Canonical SEO -->
     <link rel="canonical" href="https://www.creative-tim.com/product/argon-dashboard-laravel"/>
     <link rel="stylesheet" type="text/css" href="resources/css/support.css">
-
+    <link rel="stylesheet" type="text/css" href="resources/css/util.css">
+    <link rel="stylesheet" type="text/css" href="resources/css/main.css">
+    <link rel="stylesheet" type="text/css" href="resources/vendor/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="resources/vendor/animate/animate.css">
+    <link rel="stylesheet" type="text/css" href="resources/vendor/css-hamburgers/hamburgers.min.css">
+    <link rel="stylesheet" type="text/css" href="resources/vendor/animsition/css/animsition.min.css">
+    <link rel="stylesheet" type="text/css" href="resources/vendor/select2/select2.min.css">
+    <link rel="stylesheet" type="text/css" href="resources/vendor/daterangepicker/daterangepicker.css">
     <! -- Sweet Alers -->
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
     <script src="sweetalert2.all.min.js"></script>
@@ -52,6 +59,39 @@
           content="https://s3.amazonaws.com/creativetim_bucket/products/96/original/opt_ad_thumbnail.jpg"/>
     <meta property="og:description" content="Start your development with a Dashboard for Bootstrap 4."/>
     <meta property="og:site_name" content="Creative Tim"/>
+
+    <script>
+        function hiddeSupport() {
+            $('#contact_form').attr('hidden', true);
+            $('#txtMsg').val("");
+            $('#topic').val("");
+        }
+
+        function showSupport(to_id, from_id) {
+            $('#contact_form').attr('hidden', false);
+            $('#contact_form').data('data-to', to_id);
+        }
+
+        function sendMessage(user_id) {
+            jQuery.ajax({
+                type: "POST",
+                url: 'message/create',
+                dataType: 'json',
+                data: {'to': $('#contact_form').data('data-to'), 'from':  user_id, 'message': $('#txtMsg').val(), 'topic': $('#topic').val(), "_token": "{{ csrf_token() }}",},
+                    error : function (response) {
+                        $('#contact_form').attr('hidden', true);
+                        $('#txtMsg').val("");
+                        $('#topic').val("");
+                        Swal.fire({
+                            icon: 'success',
+                            title: 'Message Sent',
+                            text: 'Message has been sent',
+                        })
+                    },
+                });
+
+        }
+    </script>
 </head>
 <body class="clickup-chrome-ext_installed">
 
@@ -285,8 +325,7 @@
                     </div>
 
                     <div class="col-12">
-                        <input id="search" class="form-control" type="text" placeholder="Search..."
-                               onkeyup="filterUsers()">
+                        <input id="search" class="form-control" type="text" placeholder="Search..." oninput="filterUsers(this)">
 
                     </div>
 
@@ -299,7 +338,7 @@
                                 <th scope="col"></th>
                             </tr>
                             </thead>
-                            <tbody>
+                            <tbody id="usersTable">
                             <tr>
                             @php($pos = 0)
                             @foreach ($users as $user)
@@ -342,7 +381,7 @@
                                                         </h6>
                                                     @endif
                                                     <p class="card-text wrap"></p>
-                                                    <button class="btn btn-outline-primary"><i
+                                                    <button class="btn btn-outline-primary" onclick="showSupport('{{$user->id}}')"><i
                                                             class="fa fa-envelope"></i> Message
                                                     </button>
                                                 </div>
@@ -356,6 +395,8 @@
                         </table>
                     </div>
 
+                    <div id="dropDownSelect1"></div>
+
                     <div class="card-footer py-4">
                         <nav class="d-flex justify-content-end" aria-label="...">
 
@@ -365,11 +406,44 @@
             </div>
         </div>
     </div>
+    <div id="contact_form" class="container contact-form" style="position: absolute; top: 30%; left: 10%; background: #fff; border: 2px solid blue;border-radius: 20px;width: 60%;z-index: 99;" hidden>
+        <button class="close-button" style="margin-top: 10px;" onclick="hiddeSupport()"><i class="fas fa-times"></i></button>
+        <form method="post" >
+            <h3></h3>
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <input type="text" id="txtUserName" class="form-control" placeholder="{{auth()->user()->name}}" disabled/>
+                    </div>
+                    <div class="form-group">
+                        <input type="email" class="form-control" id="email_support" placeholder="{{auth()->user()->email}}" disabled/>
+                    </div>
+                    <div class="form-group">
+                        <input type="email" class="form-control" id="topic" placeholder="Enter Topic" required/>
+                    </div>
+                    <div class="form-group">
+                        <input type="button" onclick="sendMessage('{{auth()->user()->id}}')" id="send_message" name="btnSubmit" class="btnContact" value="Send Message" required/>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <textarea id="txtMsg" class="form-control" placeholder="Enter your message" style="width: 100%; height: 150px; resize: none;" required></textarea>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+
+
+
+    <div id="dropDownSelect1"></div>
+
 </div>
 <script src="{{ asset('argon') }}/vendor/jquery/dist/jquery.min.js"></script>
 <script src="{{ asset('argon') }}/vendor/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
 
 <script>
+
     function filterUsers() {
         let search = $('#search').val();
         console.log(search);

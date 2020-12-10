@@ -280,76 +280,6 @@
     <div class="header bg-gradient-primary pb-8 pt-5 pt-md-8">
         <div class="container-fluid">
             <div class="header-body">
-                <div class="row">
-                    <div class="col-xl-3 col-lg-6">
-                        <div class="card card-stats mb-4 mb-xl-0">
-                            <div class="card-body">
-                                <div class="row">
-                                    <div class="col">
-                                        <h5 class="card-title text-uppercase text-muted mb-0">Total Users</h5>
-                                        <span class="h2 font-weight-bold mb-0">{{ count($users)  }}</span>
-                                    </div>
-                                    <div class="col-auto">
-                                        <div class="icon icon-shape bg-danger text-white rounded-circle shadow">
-                                            <i class="fas fa-users"></i>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-xl-3 col-lg-6">
-                        <div class="card card-stats mb-4 mb-xl-0">
-                            <div class="card-body">
-                                <div class="row">
-                                    <div class="col">
-                                        <h5 class="card-title text-uppercase text-muted mb-0">Students</h5>
-                                        <span class="h2 font-weight-bold mb-0">{{ count($users->where('role', 0)) }}</span>
-                                    </div>
-                                    <div class="col-auto">
-                                        <div class="icon icon-shape bg-warning text-white rounded-circle shadow">
-                                            <i class="far fa-user"></i>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-xl-3 col-lg-6">
-                        <div class="card card-stats mb-4 mb-xl-0">
-                            <div class="card-body">
-                                <div class="row">
-                                    <div class="col">
-                                        <h5 class="card-title text-uppercase text-muted mb-0">Supervisors</h5>
-                                        <span class="h2 font-weight-bold mb-0">{{ count($users->where('role', 1)) }}</span>
-                                    </div>
-                                    <div class="col-auto">
-                                        <div class="icon icon-shape bg-yellow text-white rounded-circle shadow">
-                                            <i class="fas fa-chalkboard-teacher"></i>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-xl-3 col-lg-6">
-                        <div class="card card-stats mb-4 mb-xl-0">
-                            <div class="card-body">
-                                <div class="row">
-                                    <div class="col">
-                                        <h5 class="card-title text-uppercase text-muted mb-0">Administrators</h5>
-                                        <span class="h2 font-weight-bold mb-0">{{ count($users->where('role', 2)) }}</span>
-                                    </div>
-                                    <div class="col-auto">
-                                        <div class="icon icon-shape bg-info text-white rounded-circle shadow">
-                                            <i class="fas fa-user-shield"></i>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
             </div>
         </div>
     </div>
@@ -360,7 +290,7 @@
                     <div class="card-header border-0">
                         <div class="row align-items-center">
                             <div class="col-8">
-                                <h3 class="mb-0">Users</h3>
+                                <h3 class="mb-0">My Supervisees</h3>
                             </div>
                         </div>
                     </div>
@@ -378,52 +308,55 @@
                                     <input id="email" placeholder="Email" type="text" class="form-control" oninput="filterTicketsByAttr(this, 'data-email')">
                                 </th>
                                 <th scope="col">Creation Date</th>
-                                <th scope="col">Role</th>
                                 <th scope="col"></th>
                             </tr>
                             </thead>
                             <tbody id='userTable'>
-                            @foreach ($users as $user)
-                                <tr data-name="{{ $user->name }}" data-email="{{ $user->email }}" data-role="{{$user->role}}">
-                                    <td>{{ $user->name }}</td>
-                                    <td>{{ $user->email }}</td>
-                                    <td>{{ $user->created_at }}</td>
-                                    @if($user->role == 0)
-                                        <td data-role="{{$user->role}}"><span class="badge badge-primary">Student</span></td>
-                                    @elseif($user->role == 1)
-                                        <td data-role="{{$user->role}}"><span class="badge badge-success">Supervisor</span></td>
-                                    @else
-                                        <td data-role="{{$user->role}}"><span class="badge badge-danger">Administrator</span></td>
-                                    @endif
+                            @foreach($data['profiles'] as $profile)
+                                @if($profile->supervisor == auth()->user()->id)
+                                    @foreach ($data['users'] as $user)
+                                        <tr data-name="{{ $user->name }}" data-email="{{ $user->email }}" data-role="{{$user->role}}">
+                                            <td>{{ $user->name }}</td>
+                                            <td>{{ $user->email }}</td>
+                                            <td>{{ $user->created_at }}</td>
+                                            @if($user->role == 0)
+                                                <td data-role="{{$user->role}}"><span class="badge badge-primary">Student</span></td>
+                                            @elseif($user->role == 1)
+                                                <td data-role="{{$user->role}}"><span class="badge badge-success">Supervisor</span></td>
+                                            @else
+                                                <td data-role="{{$user->role}}"><span class="badge badge-danger">Administrator</span></td>
+                                            @endif
 
-                                    @if(auth()->user()->role == 2)
-                                        <td>
-                                            <div class="dropdown show">
-                                                <a class="btn btn-secondary dropdown-toggle" href="#" role="button"
-                                                   id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true"
-                                                   aria-expanded="false">
-                                                    Options
-                                                </a>
-                                                <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-                                                    <a class="dropdown-item" href="#">Edit User</a>
-                                                    @if($user->role == 2)
-                                                        <a class="dropdown-item" href="#"
-                                                           onclick="confirmWindow('{{ $user->id }}', '{{ $user->name }}', 'remove')">Remove
-                                                            As Admin</a>
-                                                    @else
-                                                        @if($user->role == 1)
-                                                            <a class="dropdown-item" href="#"
-                                                               onclick="confirmWindow('{{ $user->id }}', '{{ $user->name }}', 'add')">Add
-                                                                As Admin</a>
-                                                        @endif
-                                                    @endif
-                                                    <a class="dropdown-item" href="#">Delete User</a>
-                                                </div>
-                                            </div>
-                                        </td>
+                                            @if(auth()->user()->role == 2)
+                                                <td>
+                                                    <div class="dropdown show">
+                                                        <a class="btn btn-secondary dropdown-toggle" href="#" role="button"
+                                                           id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true"
+                                                           aria-expanded="false">
+                                                            Options
+                                                        </a>
+                                                        <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                                                            <a class="dropdown-item" href="#">Edit User</a>
+                                                            @if($user->role == 2)
+                                                                <a class="dropdown-item" href="#"
+                                                                   onclick="confirmWindow('{{ $user->id }}', '{{ $user->name }}', 'remove')">Remove
+                                                                    As Admin</a>
+                                                            @else
+                                                                @if($user->role == 1)
+                                                                    <a class="dropdown-item" href="#"
+                                                                       onclick="confirmWindow('{{ $user->id }}', '{{ $user->name }}', 'add')">Add
+                                                                        As Admin</a>
+                                                                @endif
+                                                            @endif
+                                                            <a class="dropdown-item" href="#">Delete User</a>
+                                                        </div>
+                                                    </div>
+                                                </td>
 
-                                    @endif
-                                </tr>
+                                            @endif
+                                        </tr>
+                                    @endforeach
+                                @endif
                             @endforeach
                             </tbody>
                         </table>

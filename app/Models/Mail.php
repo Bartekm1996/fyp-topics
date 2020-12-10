@@ -5,9 +5,8 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Mail extends Model
+class Mail
 {
-    use HasFactory;
 
     // Hold the class instance.
     private static $instance = null;

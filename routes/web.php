@@ -24,16 +24,17 @@ Route::get('/home', 'App\Http\Controllers\TopicsController@index')->name('home')
 Route::group(['middleware' => 'auth'], function () {
 	Route::resource('user', 'App\Http\Controllers\UserController', ['except' => ['show']]);
 	Route::post('user/changeAdminRights', ['as' => 'user.changeAdminRights', 'uses' => 'App\Http\Controllers\UserController@changeAdminRights']);
+    Route::post('message/create', ['as' => 'message.create', 'uses' => 'App\Http\Controllers\MessageController@create']);
     Route::post('ticket/create', ['as' => 'ticket.create', 'uses' => 'App\Http\Controllers\TicketController@create']);
     Route::post('ticket/markAsResolved', ['as' => 'ticket.markAsResolved', 'uses' => 'App\Http\Controllers\TicketController@markAsResolved']);
     Route::get('logging', 'App\Http\Controllers\LogMessageController@index')->name('logging');
+    Route::get('messages', 'App\Http\Controllers\MessageController@index')->name('messages');
     Route::get('tickets', 'App\Http\Controllers\TicketController@index')->name('tickets');
     Route::get('profile', ['as' => 'profile.edit', 'uses' => 'App\Http\Controllers\ProfileController@edit']);
 	Route::put('profile', ['as' => 'profile.update', 'uses' => 'App\Http\Controllers\ProfileController@update']);
 	Route::get('upgrade', function () {return view('pages.upgrade');})->name('upgrade');
 	Route::get('map', function () {return view('pages.maps');})->name('map');
 	Route::get('icons', function () {return view('pages.icons');})->name('icons');
-	Route::get('messages', function () {return view('pages.messages');})->name('messages');
 	Route::put('profile/password', ['as' => 'profile.password', 'uses' => 'App\Http\Controllers\ProfileController@password']);
 
     Route::get('progress', 'App\Http\Controllers\ProgressController@index')->name('progress');

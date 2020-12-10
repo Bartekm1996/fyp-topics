@@ -2,19 +2,16 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\LogMessage;
 use App\Models\Mail;
 use Illuminate\Http\Request;
 
 class MailController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
+
     public function index()
     {
-        //
+        return view('messages.index')->with('messages', Message::all());
     }
 
     /**
