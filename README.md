@@ -20,7 +20,6 @@ Php artisan will serve it on your localhost:8000 or the following 127.0.0.1:8000
 ## Live website URL
 http://fyp-topics.herokuapp.com/
 
-
 ## MySql Connection
 If you would like to access the database the details can be found in this page
 
@@ -30,10 +29,7 @@ https://github.com/Bartekm1996/fyp-topics/blob/main/.env
 If any problems arise please email one of the following group members  
 
 * Bartlomiej Mlynarkiewicz - 17241782@studentmail.ul.ie
-
 * Paul Kinsella - 17244412@studentmail.ul.ie
-
 * Norbert Cholewka - 16110366@studentmail.ul.ie
-
 * Ibrahim Alaydi - 16165365@studentmail.ul.ie
 
