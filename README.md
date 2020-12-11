@@ -27,7 +27,7 @@ If you would like to access the database the details can be found in this page
 https://github.com/Bartekm1996/fyp-topics/blob/main/.env
 
 ## Contact Us
-If any problems arise please email one of the following group members - 
+If any problems arise please email one of the following group members  
 * Bartlomiej Mlynarkiewicz - 17241782@studentmail.ul.ie
 * Paul Kinsella - 17244412@studentmail.ul.ie
 * Norbert Cholewka - 16110366@studentmail.ul.ie
