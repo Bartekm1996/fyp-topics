@@ -1,3 +1,6 @@
+(main is our release branch)
+
+
 Our project is hosted on Heroku which is connected to our Github repository for continous deployment. Our application is written in PHP with the use of Laravel. 
 In order to run our application on your own system pleases follow these system:
 
