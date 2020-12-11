@@ -11,7 +11,7 @@ use App\Models\Progress;
 use App\Models\Ticket;
 use App\Models\User;
 
-class TicketController
+class TicketController extends Controller
 {
     public function index() {
 

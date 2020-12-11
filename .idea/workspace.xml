@@ -1,21 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="e9da3909-1066-4903-be41-b063a719072d" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/resources/css/main.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/css/util.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/messages/index.blade.php" afterDir="false" />
+    <list default="true" id="e9da3909-1066-4903-be41-b063a719072d" name="Default Changelist" comment="Upgraded">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/MailController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/MailController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/MessageController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/MessageController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/UserController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/UserController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/Mail.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Mail.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/Message.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Message.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2020_12_10_094748_create_messages_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_12_10_094748_create_messages_table.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/layouts/navbars/sidebar.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/navbars/sidebar.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/users/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/users/index.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/users/search.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/users/search.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/TicketController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/TicketController.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -209,7 +197,8 @@
       <workItem from="1605622193440" duration="22191000" />
       <workItem from="1605703013704" duration="15967000" />
       <workItem from="1605783389949" duration="14205000" />
-      <workItem from="1607589906721" duration="14777000" />
+      <workItem from="1607589906721" duration="19743000" />
+      <workItem from="1607690878403" duration="339000" />
     </task>
     <task id="LOCAL-00001" summary="Edited user pannel, added the functionallity of adding and removing admins and also edited cards to count each type of users by roles">
       <created>1605641245073</created>
@@ -253,7 +242,35 @@
       <option name="project" value="LOCAL" />
       <updated>1607593753279</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="Add messaging functionality">
+      <created>1607607152512</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1607607152512</updated>
+    </task>
+    <task id="LOCAL-00008" summary="Update role id filter in messages view">
+      <created>1607608243330</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1607608243330</updated>
+    </task>
+    <task id="LOCAL-00009" summary="Added ticket migration for">
+      <created>1607609498375</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1607609498375</updated>
+    </task>
+    <task id="LOCAL-00010" summary="Changed Mail class">
+      <created>1607621809892</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1607621809893</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -267,7 +284,11 @@
     <MESSAGE value="Fixed routing for tickets" />
     <MESSAGE value="Added filtering of tickets to tickets table" />
     <MESSAGE value="Added filtering of users, added messaged and mail class" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added filtering of users, added messaged and mail class" />
+    <MESSAGE value="Add messaging functionality" />
+    <MESSAGE value="Update role id filter in messages view" />
+    <MESSAGE value="Added ticket migration for" />
+    <MESSAGE value="Changed Mail class" />
+    <option name="LAST_COMMIT_MESSAGE" value="Changed Mail class" />
   </component>
   <component name="WindowStateProjectService">
     <state x="722" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1605714117328">
@@ -281,14 +302,15 @@
     <state x="458" y="188" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1440.900@0.0.1440.900" timestamp="1607594718542" />
     <state x="458" y="198" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.23.1440.837@0.23.1440.837" timestamp="1605638677845" />
     <state x="458" y="208" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.25.1440.875@0.25.1440.875" timestamp="1607599571350" />
-    <state x="90" y="16" key="CommitChangelistDialog2" timestamp="1607593752435">
-      <screen x="0" y="0" width="1440" height="900" />
+    <state x="90" y="41" key="CommitChangelistDialog2" timestamp="1607716945713">
+      <screen x="0" y="25" width="1440" height="875" />
     </state>
     <state x="120" y="19" key="CommitChangelistDialog2/-1920.0.1920.1080/0.0.1920.1080@0.0.1920.1080" timestamp="1605714665747" />
-    <state x="90" y="16" key="CommitChangelistDialog2/0.0.1440.900@0.0.1440.900" timestamp="1607593752435" />
+    <state x="90" y="16" key="CommitChangelistDialog2/0.0.1440.900@0.0.1440.900" timestamp="1607621808291" />
     <state x="120" y="19" key="CommitChangelistDialog2/0.0.1920.1080/-1920.0.1920.1080@0.0.1920.1080" timestamp="1605811244558" />
     <state x="90" y="38" key="CommitChangelistDialog2/0.23.1440.836@0.23.1440.836" timestamp="1605717747998" />
     <state x="90" y="38" key="CommitChangelistDialog2/0.23.1440.837@0.23.1440.837" timestamp="1605646927785" />
+    <state x="90" y="41" key="CommitChangelistDialog2/0.25.1440.875@0.25.1440.875" timestamp="1607716945713" />
     <state x="507" y="203" key="MultipleFileMergeDialog" timestamp="1607589942438">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
@@ -299,32 +321,35 @@
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state x="659" y="363" key="NewPhpClassDialog/-1920.0.1920.1080/0.0.1920.1080@0.0.1920.1080" timestamp="1605711900414" />
-    <state x="588" y="388" key="NewPhpFileDialog" timestamp="1607594746170">
-      <screen x="0" y="0" width="1440" height="900" />
+    <state x="588" y="402" key="NewPhpFileDialog" timestamp="1607608843196">
+      <screen x="0" y="25" width="1440" height="875" />
     </state>
     <state x="784" y="465" key="NewPhpFileDialog/-1920.0.1920.1080/0.0.1920.1080@0.0.1920.1080" timestamp="1605707333153" />
     <state x="784" y="456" key="NewPhpFileDialog/-1920.23.1920.1057/0.23.1920.1006@0.23.1920.1006" timestamp="1605627519782" />
     <state x="588" y="388" key="NewPhpFileDialog/0.0.1440.900@0.0.1440.900" timestamp="1607594746170" />
-    <state x="560" y="261" key="Vcs.Push.Dialog.v2" timestamp="1605811251140">
-      <screen x="0" y="0" width="1920" height="1080" />
+    <state x="588" y="402" key="NewPhpFileDialog/0.25.1440.875@0.25.1440.875" timestamp="1607608843196" />
+    <state x="420" y="217" key="Vcs.Push.Dialog.v2" timestamp="1607621828437">
+      <screen x="0" y="0" width="1440" height="900" />
     </state>
     <state x="560" y="261" key="Vcs.Push.Dialog.v2/-1920.0.1920.1080/0.0.1920.1080@0.0.1920.1080" timestamp="1605714671067" />
     <state x="560" y="266" key="Vcs.Push.Dialog.v2/-1920.23.1920.1057/0.23.1920.1006@0.23.1920.1006" timestamp="1605624784762" />
+    <state x="420" y="217" key="Vcs.Push.Dialog.v2/0.0.1440.900@0.0.1440.900" timestamp="1607621828437" />
     <state x="560" y="261" key="Vcs.Push.Dialog.v2/0.0.1920.1080/-1920.0.1920.1080@0.0.1920.1080" timestamp="1605811251140" />
     <state x="420" y="225" key="Vcs.Push.Dialog.v2/0.23.1440.836@0.23.1440.836" timestamp="1605717755593" />
     <state x="420" y="225" key="Vcs.Push.Dialog.v2/0.23.1440.837@0.23.1440.837" timestamp="1605647079770" />
-    <state x="298" y="398" key="com.intellij.ide.util.TipDialog" timestamp="1607589907087">
+    <state x="420" y="236" key="Vcs.Push.Dialog.v2/0.25.1440.875@0.25.1440.875" timestamp="1607609504828" />
+    <state x="298" y="398" key="com.intellij.ide.util.TipDialog" timestamp="1607693766806">
       <screen x="0" y="25" width="1440" height="875" />
     </state>
     <state x="397" y="452" key="com.intellij.ide.util.TipDialog/0.23.1920.1006/-1920.23.1920.1057@0.23.1920.1006" timestamp="1605792090922" />
-    <state x="298" y="398" key="com.intellij.ide.util.TipDialog/0.25.1440.875@0.25.1440.875" timestamp="1607589907087" />
-    <state x="574" y="397" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1607589923037">
+    <state x="298" y="398" key="com.intellij.ide.util.TipDialog/0.25.1440.875@0.25.1440.875" timestamp="1607693766806" />
+    <state x="574" y="397" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1607716894427">
       <screen x="0" y="25" width="1440" height="875" />
     </state>
     <state x="765" y="458" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/-1920.0.1920.1080/0.0.1920.1080@0.0.1920.1080" timestamp="1605714585130" />
     <state x="765" y="450" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/-1920.23.1920.1057/0.23.1920.1006@0.23.1920.1006" timestamp="1605624826659" />
     <state x="574" y="378" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.23.1440.836@0.23.1440.836" timestamp="1605717717078" />
-    <state x="574" y="397" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.25.1440.875@0.25.1440.875" timestamp="1607589923037" />
+    <state x="574" y="397" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.25.1440.875@0.25.1440.875" timestamp="1607716894427" />
     <state x="495" y="273" key="git4idea.merge.GitPullDialog" timestamp="1605729294588">
       <screen x="0" y="23" width="1440" height="836" />
     </state>
