@@ -11,10 +11,13 @@ Windos - https://laravel.com/docs/8.x/installation
 macOS - https://medium.com/@sunilrk/setup-laravel-on-macos-for-laravel-development-690e907ed292
 
 Once all the steps above have been completed and a working version of Composer, PHP 7 and Laravel is present on your system. Clone our Git repo and open it with your favourite IDE and run it with the following command php artisan serve.
+
+Php artisan will serve it on your localhost or the following 127.0.0.1:8000
+
 ## Live website URL
 http://fyp-topics.herokuapp.com/
 
-Php artisan will serve it on your localhost or the following 127.0.0.1:8000
+
 ## MySql Connection
 if you would like to access the database the details can be found in this page
 
