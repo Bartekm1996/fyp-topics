@@ -5,8 +5,8 @@ Our project is hosted on Heroku which is connected to our Github repository for 
 In order to run our application on your own system pleases follow these system:
 
 * For windows please follow these steps - https://www.sitepoint.com/how-to-install-php-on-windows/
-* For macOS please follow these steps - https://tecadmin.net/install-php-macos/
 * For Linux (Debian) machines please follow these steps - https://www.php.net/manual/en/install.unix.debian.php
+* For macOS please follow these steps - https://tecadmin.net/install-php-macos/
 
 To install Laravel please follow these steps: 
 
@@ -28,8 +28,8 @@ https://github.com/Bartekm1996/fyp-topics/blob/main/.env
 ## Contact Us
 If any problems arise please email one of the following group members  
 
-* Bartlomiej Mlynarkiewicz - 17241782@studentmail.ul.ie
 * Paul Kinsella - 17244412@studentmail.ul.ie
 * Norbert Cholewka - 16110366@studentmail.ul.ie
+* Bartlomiej Mlynarkiewicz - 17241782@studentmail.ul.ie
 * Ibrahim Alaydi - 16165365@studentmail.ul.ie
 
